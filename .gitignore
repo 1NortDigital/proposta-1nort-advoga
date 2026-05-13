@@ -1,0 +1,12 @@
+# Backups originais (vídeos/imagens antes da compressão) — não vão pro deploy
+assets/videos/_original/
+assets/images/_original/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
