@@ -3904,12 +3904,18 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13.5px;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--c-text-soft);
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.18);
-  padding: 4px 0;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 0;
   line-height: 1.4;
+}
+
+.filter-row__bullet {
+  width: 10px;
+  height: 10px;
 }
 
 .filter-row--ok {
@@ -4291,24 +4297,26 @@ h1, h2, h3, h4, h5 {
 .fs-filter__pill {
   align-self: flex-start;
   display: inline-block;
-  margin-bottom: 6px;
-  padding: 4px 10px;
+  margin-bottom: 8px;
+  padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(239, 68, 68, 0.55);
   color: #ff6b6b;
   font-family: var(--f-display);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.04em;
 }
 .filter-row--out {
-  opacity: 0.65;
+  opacity: 0.85;
   text-decoration: line-through;
-  text-decoration-color: rgba(239, 68, 68, 0.5);
+  text-decoration-color: rgba(239, 68, 68, 0.95);
+  text-decoration-thickness: 2px;
 }
 .filter-row--out .filter-row__bullet--out {
-  box-shadow: 0 0 8px rgba(239, 68, 68, 0.45);
+  background: rgba(239, 68, 68, 0.7);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
 }
 .filter-row--ok {
   position: relative;
