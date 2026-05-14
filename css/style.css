@@ -3702,25 +3702,25 @@ h1, h2, h3, h4, h5 {
 .funnel-step__title {
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 1.12rem;
   line-height: 1.28;
   letter-spacing: -0.01em;
   color: var(--c-text);
 }
 
 .funnel-step__sub {
-  font-size: 12px;
-  color: var(--c-text-muted);
+  font-size: 13.5px;
+  color: var(--c-text-soft);
   margin-top: -4px;
 }
 
 .funnel-step__hint {
-  font-size: 11px;
-  color: var(--c-text-muted);
-  line-height: 1.4;
+  font-size: 13px;
+  color: var(--c-text-soft);
+  line-height: 1.45;
   margin-top: auto;
-  padding-top: 8px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
 }
 
 .funnel-step__list {
@@ -3864,8 +3864,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .mock-form-row__lbl {
-  font-size: 9px;
-  color: var(--c-text-muted);
+  font-size: 11px;
+  color: var(--c-text-soft);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -3903,11 +3903,13 @@ h1, h2, h3, h4, h5 {
 .filter-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  color: var(--c-text-muted);
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--c-text-soft);
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.15);
+  text-decoration-color: rgba(255, 255, 255, 0.18);
+  padding: 4px 0;
+  line-height: 1.4;
 }
 
 .filter-row--ok {
@@ -4167,18 +4169,18 @@ h1, h2, h3, h4, h5 {
   background: rgba(255, 255, 255, 0.18);
 }
 .fs-phone__url {
-  font-size: 0.62rem;
-  color: var(--c-text-muted);
+  font-size: 0.78rem;
+  color: var(--c-text-soft);
   font-family: var(--f-body);
 }
 .fs-phone__step {
   align-self: flex-start;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 184, 0, 0.12);
-  border: 1px solid rgba(255, 184, 0, 0.32);
+  background: rgba(255, 184, 0, 0.14);
+  border: 1px solid rgba(255, 184, 0, 0.36);
   color: var(--c-yellow);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -4222,24 +4224,26 @@ h1, h2, h3, h4, h5 {
   line-height: 1.2;
 }
 .fs-quiz__body strong {
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   color: var(--c-text);
   font-weight: 600;
+  line-height: 1.3;
 }
 .fs-quiz__body span {
-  font-size: 0.66rem;
-  color: var(--c-text-muted);
+  font-size: 0.8rem;
+  color: var(--c-text-soft);
+  line-height: 1.35;
 }
 .fs-quiz__pill {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: var(--c-yellow);
   color: #0a0a0a;
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 800;
 }
 .fs-quiz__score {
@@ -4254,8 +4258,8 @@ h1, h2, h3, h4, h5 {
   border: 1px solid rgba(255, 184, 0, 0.25);
 }
 .fs-quiz__score > span {
-  font-size: 0.65rem;
-  color: var(--c-text-muted);
+  font-size: 0.78rem;
+  color: var(--c-text-soft);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -4273,13 +4277,13 @@ h1, h2, h3, h4, h5 {
 }
 .fs-quiz__score strong {
   font-family: var(--f-display);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--c-yellow);
 }
 .fs-quiz__score strong small {
-  font-size: 0.6rem;
-  color: var(--c-text-muted);
+  font-size: 0.72rem;
+  color: var(--c-text-soft);
   font-weight: 500;
 }
 
