@@ -1197,7 +1197,7 @@ h1, h2, h3, h4, h5 {
 
 /* Tab "Estrutura da 1Nort" — foto do time bem maior */
 .diff-panel[data-panel="estrutura"] {
-  grid-template-columns: 760px 1fr;
+  grid-template-columns: 2.6fr 1fr;
 }
 
 .diff-panel.is-active {
@@ -1321,7 +1321,7 @@ h1, h2, h3, h4, h5 {
 /* Foto maior só na tab "Estrutura da 1Nort" */
 .diff-panel[data-panel="estrutura"] .diff-panel__photo {
   aspect-ratio: 16 / 9;
-  max-height: 540px;
+  max-height: none;
 }
 .diff-panel__photo img {
   width: 100%;
