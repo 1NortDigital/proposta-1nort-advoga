@@ -7725,11 +7725,11 @@ h1, h2, h3, h4, h5 {
   padding: 0 4px;
 }
 .track-wa-card__label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--c-text-muted);
+  color: var(--c-text-soft);
 }
 
 /* Bolha estilo WhatsApp dark mode */
@@ -7765,12 +7765,13 @@ h1, h2, h3, h4, h5 {
 }
 .track-wa-card__bubble-head p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
   color: var(--c-text);
+  font-weight: 600;
   flex: 1;
 }
-.track-wa-card__bubble-head p strong { font-weight: 700; }
+.track-wa-card__bubble-head p strong { font-weight: 800; }
 
 .track-wa-card__avatar {
   flex-shrink: 0;
@@ -7805,21 +7806,22 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 5px;
+  gap: 6px;
   font-family: 'SF Mono', 'Monaco', 'Menlo', 'Courier New', monospace;
-  font-size: 0.76rem;
-  line-height: 1.4;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 .track-wa-card__fields li {
-  padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 6px;
-  color: var(--c-text-soft);
+  color: var(--c-text);
   word-break: break-word;
 }
 .track-wa-card__fields strong {
-  color: var(--c-text-muted);
-  font-weight: 600;
+  color: var(--c-text-soft);
+  font-weight: 800;
   margin-right: 4px;
 }
 .track-wa-card__fields .text-yellow { color: var(--c-yellow); }
@@ -7829,8 +7831,9 @@ h1, h2, h3, h4, h5 {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.7rem;
-  color: var(--c-text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-text-soft);
   margin-top: 2px;
 }
 
