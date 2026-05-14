@@ -1195,9 +1195,10 @@ h1, h2, h3, h4, h5 {
   padding: 28px;
 }
 
-/* Tab "Estrutura da 1Nort" — foto do time bem maior */
+/* Tab "Estrutura da 1Nort" — foto full-width em cima, texto embaixo */
 .diff-panel[data-panel="estrutura"] {
-  grid-template-columns: 2.6fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 28px;
 }
 
 .diff-panel.is-active {
