@@ -9167,17 +9167,29 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -0.02em;
 }
 
+.metrics-invest__period {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.75;
+  margin-left: 2px;
+}
+
 .metrics-invest__hint {
   display: block;
-  font-size: 13px;
-  color: var(--c-text-soft);
-  margin-top: 4px;
+  font-size: 13.5px;
+  color: var(--c-yellow);
+  font-weight: 500;
+  margin-top: 8px;
+  opacity: 0.92;
 }
 
 @media (max-width: 600px) {
   .metrics-invest { padding: 20px 24px 18px; max-width: 320px; }
   .metrics-invest__num { font-size: 54px; }
   .metrics-invest__cur { font-size: 22px; }
+  .metrics-invest__period { font-size: 18px; }
 }
 
 /* ============================================================
