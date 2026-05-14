@@ -8906,8 +8906,8 @@ h1, h2, h3, h4, h5 {
 
 .proposta-card__tag {
   font-family: var(--f-display);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
   letter-spacing: 0.14em;
   color: var(--c-yellow);
   text-transform: uppercase;
