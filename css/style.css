@@ -1189,10 +1189,15 @@ h1, h2, h3, h4, h5 {
 
 .diff-panel {
   display: none;
-  grid-template-columns: 460px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 32px;
   align-items: stretch;
   padding: 28px;
+}
+
+/* Tab "Estrutura da 1Nort" — foto do time bem maior */
+.diff-panel[data-panel="estrutura"] {
+  grid-template-columns: 580px 1fr;
 }
 
 .diff-panel.is-active {
@@ -1305,12 +1310,18 @@ h1, h2, h3, h4, h5 {
 .diff-panel__photo {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 320px;
+  aspect-ratio: 4 / 5;
+  max-height: 380px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 184, 0, 0.18);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Foto maior só na tab "Estrutura da 1Nort" */
+.diff-panel[data-panel="estrutura"] .diff-panel__photo {
+  aspect-ratio: 16 / 10;
+  max-height: 440px;
 }
 .diff-panel__photo img {
   width: 100%;
