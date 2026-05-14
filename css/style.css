@@ -9298,3 +9298,76 @@ html.is-locked body > *:not(#access-gate) {
   font-size: 13px;
   color: #ff6b6b;
 }
+
+/* ============================================================
+   PLANOS S10 — padrão tiered (igual solar)
+============================================================ */
+/* Linha "Tudo do plano X incluso" — destaque dourado */
+.plan-feat--inherit {
+  list-style: none !important;
+  margin: 0 -4px 6px !important;
+  padding: 10px 14px !important;
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.18), rgba(255, 184, 0, 0.06)) !important;
+  border: 1px solid rgba(255, 184, 0, 0.4) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+.plan-feat--inherit::before,
+.plan-feat--inherit::marker { content: none !important; display: none !important; }
+.plan-feat--inherit .plan-feat__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-yellow) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px;
+}
+.plan-feat--inherit .plan-feat__title strong {
+  color: #fff;
+  font-weight: 800;
+}
+.plan-feat--inherit svg {
+  flex-shrink: 0;
+  color: var(--c-yellow);
+}
+
+/* Badge inline com número de usuários */
+.plan-feat__badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #fff !important;
+  font-family: var(--f-display);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.plan-feat__badge--new {
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.95), rgba(255, 200, 50, 0.95));
+  border-color: var(--c-yellow);
+  color: #0a0a0a !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.35);
+}
+
+/* "Mais Vendido" centralizado no topo do card PRO */
+.plan-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Esconder a pílula "PLANO" nos 3 cards */
+.plan-card__pill { display: none !important; }
