@@ -1,6 +1,6 @@
 /* ============================================================
-   1NORT — PROPOSTA SOLAR · main.js
-   GSAP + ScrollTrigger + Lenis
+   1NORT — PROPOSTA ADVOGA · main.js
+   GSAP + ScrollTrigger (scroll nativo)
 ============================================================ */
 
 (() => {
@@ -9,27 +9,6 @@
   /* ----- GSAP setup ----- */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
-  }
-
-  /* ----- Lenis (smooth scroll) ----- */
-  let lenis = null;
-  if (typeof Lenis !== 'undefined') {
-    lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    lenis.on('scroll', () => {
-      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
   }
 
   /* ----- Navbar scroll state ----- */
@@ -42,26 +21,30 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ----- Animações de entrada (.anim-fade-up) ----- */
+  /* ----- Animações de entrada (.anim-fade-up) — IntersectionObserver único ----- */
   document.addEventListener('DOMContentLoaded', () => {
-    if (typeof gsap === 'undefined') return;
-
     const els = document.querySelectorAll('.anim-fade-up');
-    els.forEach((el) => {
-      const delay = parseFloat(el.dataset.delay || 0);
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
+    if (els.length) {
+      els.forEach((el) => {
+        const delay = parseFloat(el.dataset.delay || 0);
+        if (delay) el.style.transitionDelay = delay + 's';
       });
-    });
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -10% 0px' });
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-visible'));
+      }
+    }
+
+    if (typeof gsap === 'undefined') return;
 
     /* ----- Stagger das rows do comparativo ----- */
     const compareCols = document.querySelectorAll('.cmp-col');

@@ -66,6 +66,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   padding: 100px 0;
   overflow: hidden;
 }
+.section:not(.section--hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
 
 /* ============================================================ TIPOGRAFIA */
 h1, h2, h3, h4, h5 {
@@ -90,8 +94,6 @@ h1, h2, h3, h4, h5 {
   font-size: 14px;
   color: var(--c-text);
   transition: all var(--t-fast);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .btn-pill:hover {
@@ -438,8 +440,6 @@ h1, h2, h3, h4, h5 {
   padding: 28px;
   position: relative;
   transition: border-color var(--t), transform var(--t);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   overflow: hidden;
 }
 
@@ -1032,9 +1032,7 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: rgba(10, 10, 10, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgb(10, 10, 10);
   border: 1px solid var(--c-border);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -2185,9 +2183,7 @@ h1, h2, h3, h4, h5 {
   top: 0;
   width: 240px;
   padding: 16px;
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgb(15, 15, 15);
   border: 1px solid rgba(255, 184, 0, 0.4);
   border-radius: 14px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 184, 0, 0.2);
@@ -2675,6 +2671,11 @@ h1, h2, h3, h4, h5 {
 .anim-fade-up {
   opacity: 0;
   transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================================
@@ -4768,8 +4769,7 @@ h1, h2, h3, h4, h5 {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 8px 14px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
   border: 1px dashed rgba(255, 255, 255, 0.25);
   border-radius: 8px;
   font-size: 11px;
@@ -8408,8 +8408,7 @@ h1, h2, h3, h4, h5 {
   bottom: 24px;
   left: 24px;
   padding: 14px 20px;
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgb(20, 20, 20);
   border: 1px solid rgba(255, 184, 0, 0.4);
   border-radius: 14px;
   display: flex;
