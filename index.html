@@ -539,17 +539,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Lightbox modal pra YouTube -->
-    <div class="video-modal" data-video-modal hidden>
-      <div class="video-modal__backdrop" data-video-close></div>
-      <div class="video-modal__inner">
-        <button class="video-modal__close" data-video-close aria-label="Fechar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-        <div class="video-modal__player" data-video-player></div>
-      </div>
-    </div>
   </section>
 
   <!-- ============================================================
@@ -1833,6 +1822,21 @@
       <p class="footer__copy">© 2026 1Nort Digital · Rio de Janeiro, RJ</p>
     </div>
   </footer>
+
+  <!-- ============================================================
+       MODAL · LIGHTBOX DE VÍDEO (depoimentos + criativos)
+       Fica fora de qualquer <section> pra position:fixed
+       não ser capturado por content-visibility/contain.
+  ============================================================ -->
+  <div class="video-modal" data-video-modal hidden>
+    <div class="video-modal__backdrop" data-video-close></div>
+    <div class="video-modal__inner">
+      <button class="video-modal__close" data-video-close aria-label="Fechar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="video-modal__player" data-video-player></div>
+    </div>
+  </div>
 
   <!-- ============================================================
        MODAL · GALERIA DE CRIATIVOS (Imagens + Vídeos)
