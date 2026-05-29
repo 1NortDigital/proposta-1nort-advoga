@@ -9556,10 +9556,10 @@ html.is-locked body > *:not(#access-gate) {
 
 .automacoes-chats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
   align-items: start;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   width: 100%;
 }
@@ -9605,8 +9605,7 @@ html.is-locked body > *:not(#access-gate) {
     gap: 40px;
   }
   .automacoes-head { max-width: none; }
-  .automacoes-chats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .automacoes-chats { grid-template-columns: 1fr; gap: 18px; }
+  .automacoes-chats { grid-template-columns: 1fr; gap: 22px; }
 }
