@@ -9556,8 +9556,8 @@ html.is-locked body > *:not(#access-gate) {
 
 .automacoes-chats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   align-items: start;
 }
 
@@ -9603,6 +9603,7 @@ html.is-locked body > *:not(#access-gate) {
     gap: 40px;
   }
   .automacoes-head { max-width: none; }
+  .automacoes-chats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .automacoes-chats { grid-template-columns: 1fr; gap: 18px; }
