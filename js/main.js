@@ -621,18 +621,23 @@
         vid.src = vid.getAttribute('data-src');
         vid.dataset.loaded = '1';
         vid.load();
-        const tryPlay = vid.play();
-        if (tryPlay && typeof tryPlay.catch === 'function') tryPlay.catch(() => {});
+      };
+      const tryPlay = (vid) => {
+        const p = vid.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
       };
       if (!('IntersectionObserver' in window)) {
-        lazyVideos.forEach(load);
+        lazyVideos.forEach((v) => { load(v); tryPlay(v); });
         return;
       }
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          const vid = entry.target;
           if (entry.isIntersecting) {
-            load(entry.target);
-            io.unobserve(entry.target);
+            load(vid);
+            tryPlay(vid);
+          } else if (vid.dataset.loaded) {
+            vid.pause();
           }
         });
       }, { rootMargin: '200px 0px', threshold: 0.01 });

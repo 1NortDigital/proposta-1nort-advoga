@@ -347,7 +347,6 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  will-change: transform;
 }
 
 .compare-bg__glow--left {
@@ -356,7 +355,6 @@ h1, h2, h3, h4, h5 {
   top: 10%;
   left: -120px;
   background: radial-gradient(circle, rgba(239, 68, 68, 0.18), transparent 70%);
-  animation: glow-float-left 14s ease-in-out infinite;
 }
 
 .compare-bg__glow--right {
@@ -365,7 +363,6 @@ h1, h2, h3, h4, h5 {
   top: 18%;
   right: -140px;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.22), transparent 70%);
-  animation: glow-float-right 16s ease-in-out infinite;
 }
 
 .compare-bg__glow--center {
@@ -375,7 +372,6 @@ h1, h2, h3, h4, h5 {
   left: 50%;
   transform: translateX(-50%);
   background: radial-gradient(circle, rgba(255, 184, 0, 0.14), transparent 70%);
-  animation: glow-pulse 8s ease-in-out infinite;
 }
 
 @keyframes glow-float-left {
@@ -879,7 +875,6 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.12), transparent 70%);
   filter: blur(80px);
-  animation: glow-pulse 8s ease-in-out infinite;
 }
 
 .section--diff > .container {
