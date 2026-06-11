@@ -1292,11 +1292,6 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* Foto maior só na tab "Estrutura da 1Nort" */
-.diff-panel[data-panel="estrutura"] .diff-panel__photo {
-  aspect-ratio: 16 / 9;
-  max-height: none;
-}
 .diff-panel__photo img {
   width: 100%;
   height: 100%;
