@@ -390,6 +390,7 @@ h1, h2, h3, h4, h5 {
 
 /* Linhas curvas decorativas */
 .compare-bg__lines {
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
