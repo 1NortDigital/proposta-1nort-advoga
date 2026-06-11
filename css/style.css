@@ -345,7 +345,6 @@ h1, h2, h3, h4, h5 {
 .compare-bg__glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
 }
 
 .compare-bg__glow--left {
@@ -856,7 +855,6 @@ h1, h2, h3, h4, h5 {
   height: 600px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.12), transparent 70%);
-  filter: blur(80px);
 }
 
 .section--diff > .container {
@@ -1537,7 +1535,6 @@ h1, h2, h3, h4, h5 {
   height: 600px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.1), transparent 70%);
-  filter: blur(80px);
 }
 
 .results-bg__glow--top { top: 10%; left: -10%; }
@@ -2680,7 +2677,6 @@ h1, h2, h3, h4, h5 {
   width: 720px;
   height: 720px;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.18), transparent 65%);
-  filter: blur(80px);
 }
 
 .section--nort > .container { position: relative; z-index: 1; }
@@ -2938,7 +2934,6 @@ h1, h2, h3, h4, h5 {
   height: 460px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.18), transparent 65%);
-  filter: blur(70px);
 }
 
 .funnel-bg__glow--top    { top: -120px;    left: 50%; transform: translateX(-50%); }
@@ -5128,7 +5123,6 @@ h1, h2, h3, h4, h5 {
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(255, 184, 0, 0.1), transparent 60%);
-  filter: blur(60px);
 }
 
 .section--ia > .container { position: relative; z-index: 1; }
@@ -8823,7 +8817,6 @@ h1, h2, h3, h4, h5 {
   height: 760px;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, rgba(255, 184, 0, 0.13), transparent 70%);
-  filter: blur(70px);
 }
 
 .proposta-grid {
@@ -9002,7 +8995,6 @@ h1, h2, h3, h4, h5 {
 ============================================================ */
 #ia-whatsapp .ia-bg__glow {
   opacity: 0.35;
-  filter: blur(80px);
 }
 
 /* Marcador NORT (banner letra O) */
@@ -9464,7 +9456,6 @@ html.is-locked body > *:not(#access-gate) {
   height: 720px;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, rgba(255, 184, 0, 0.10), transparent 70%);
-  filter: blur(80px);
 }
 
 .automacoes-grid {
