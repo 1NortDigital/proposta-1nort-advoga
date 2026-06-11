@@ -334,7 +334,6 @@ h1, h2, h3, h4, h5 {
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 75%);
-  animation: grid-drift 24s linear infinite;
 }
 
 @keyframes grid-drift {
@@ -405,7 +404,6 @@ h1, h2, h3, h4, h5 {
 
 .compare-bg__line {
   stroke-dasharray: 8 12;
-  animation: line-flow 12s linear infinite;
 }
 
 .compare-bg__line--2 {
