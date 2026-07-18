@@ -8920,6 +8920,71 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
+/* Bloco de pagamento à vista + parcelamento */
+.proposta-card__cash {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.proposta-card--featured .proposta-card__cash {
+  background: rgba(255, 184, 0, 0.12);
+  border-color: rgba(255, 184, 0, 0.38);
+}
+
+.proposta-card__cash-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Selo de economia — centralizado no rodapé do card */
+.proposta-card__cash-save {
+  align-self: center;
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+}
+
+.proposta-card__cash-row {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.proposta-card__cash-value {
+  font-family: var(--f-display);
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c-yellow);
+}
+
+.proposta-card__cash-inst {
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.82;
+}
+
+/* Card 1 sem bloco à vista: empurra a nota pro rodapé pra alinhar altura */
+.proposta-card:not(.proposta-card--featured) > .proposta-card__pay:last-child {
+  margin-top: auto;
+}
+
 .proposta-title {
   white-space: nowrap;
 }
