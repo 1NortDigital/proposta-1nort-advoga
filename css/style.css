@@ -1247,7 +1247,7 @@ h1, h2, h3, h4, h5 {
 /* ---- Diff Tabs v2 (Nossos Serviços) ---- */
 .diff-tabs--v2 .diff-panel {
   display: none;
-  grid-template-columns: minmax(260px, 360px) 1fr;
+  grid-template-columns: minmax(360px, 480px) 1fr;
   padding: 32px;
   gap: 36px;
   align-items: center;
@@ -1255,12 +1255,6 @@ h1, h2, h3, h4, h5 {
 .diff-tabs--v2 .diff-panel.is-active {
   display: grid;
   animation: panel-fade 0.4s ease;
-}
-
-/* Painel Estrutura: foto full-width em cima, texto embaixo */
-.diff-tabs--v2 .diff-panel[data-panel="estrutura"] {
-  grid-template-columns: 1fr;
-  align-items: stretch;
 }
 
 /* Foto no botão da tab (humanização) */
@@ -1291,7 +1285,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
-  max-height: 760px;
+  max-height: 420px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 184, 0, 0.18);
