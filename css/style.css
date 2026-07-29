@@ -1291,6 +1291,7 @@ h1, h2, h3, h4, h5 {
   border: 1px solid rgba(255, 184, 0, 0.18);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
+.diff-panel__photo[data-zoom] { cursor: zoom-in; }
 
 .diff-panel__photo img {
   width: 100%;
