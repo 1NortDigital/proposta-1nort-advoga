@@ -1257,6 +1257,12 @@ h1, h2, h3, h4, h5 {
   animation: panel-fade 0.4s ease;
 }
 
+/* Painel Estrutura: foto full-width em cima, texto embaixo */
+.diff-tabs--v2 .diff-panel[data-panel="estrutura"] {
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
 /* Foto no botão da tab (humanização) */
 .diff-tab {
   display: flex;
