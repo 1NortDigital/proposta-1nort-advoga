@@ -1284,8 +1284,8 @@ h1, h2, h3, h4, h5 {
 .diff-panel__photo {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  max-height: 380px;
+  aspect-ratio: 3 / 2;
+  max-height: 420px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 184, 0, 0.18);
@@ -1495,7 +1495,7 @@ h1, h2, h3, h4, h5 {
     padding: 24px;
     gap: 24px;
   }
-  .diff-panel__photo { aspect-ratio: 16 / 10; max-height: 260px; }
+  .diff-panel__photo { aspect-ratio: 3 / 2; max-height: 280px; }
   .diff-tab__label { display: none; }
   .diff-tab--featured::after { display: none; }
 }
