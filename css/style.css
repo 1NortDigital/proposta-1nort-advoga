@@ -326,16 +326,16 @@ h1, h2, h3, h4, h5 {
   pointer-events: none;
 }
 
-/* Grid técnico animado */
+/* Grid técnico — mask trocado por fade nas bordas com radial-gradient no próprio bg
+   (mask-image é custoso em compositing durante screen share) */
 .compare-bg__grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 184, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 184, 0, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 75%);
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255, 184, 0, 0.04) 0%, transparent 75%),
+    linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 56px 56px, 56px 56px;
 }
 
 @keyframes grid-drift {
@@ -496,18 +496,14 @@ h1, h2, h3, h4, h5 {
     inset 0 1px 0 rgba(255, 184, 0, 0.3);
 }
 
-/* Borda animada gradient na coluna boa */
+/* Borda gradient na coluna boa — troca mask-composite (caro) por border sólido dourado
+   com box-shadow interno pra manter o brilho */
 .cmp-col--good::after {
   content: '';
   position: absolute;
-  inset: -1px;
+  inset: 0;
   border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 220, 100, 0.5), rgba(255, 184, 0, 0.2) 50%, rgba(255, 220, 100, 0.5));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  border: 1px solid rgba(255, 220, 100, 0.35);
   pointer-events: none;
   z-index: 0;
 }

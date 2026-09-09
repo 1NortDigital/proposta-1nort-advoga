@@ -621,6 +621,38 @@
       // Troca de tabs já configurada acima — click em vídeo é tratado globalmente abaixo
     })();
 
+    /* ----- Autoplay dos vídeos SÓ quando o card entra na viewport (play-on-viewport) ----- */
+    (function () {
+      const lazyVideos = document.querySelectorAll('video[data-src]');
+      if (!lazyVideos.length) return;
+      const load = (vid) => {
+        if (vid.dataset.loaded) return;
+        vid.src = vid.getAttribute('data-src');
+        vid.dataset.loaded = '1';
+        vid.load();
+      };
+      const tryPlay = (vid) => {
+        const p = vid.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+      };
+      if (!('IntersectionObserver' in window)) {
+        // fallback: só carrega os primeiros, deixa o resto pro clique
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const vid = entry.target;
+          if (entry.isIntersecting) {
+            load(vid);
+            tryPlay(vid);
+          } else if (vid.dataset.loaded) {
+            vid.pause();
+          }
+        });
+      }, { rootMargin: '0px', threshold: 0.35 });
+      lazyVideos.forEach((v) => io.observe(v));
+    })();
+
     /* ----- Handler GLOBAL: video-modal (open + close + ESC) ----- */
     (function () {
       const ytModal = document.querySelector('[data-video-modal]');
