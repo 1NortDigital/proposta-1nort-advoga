@@ -64,20 +64,29 @@
       });
     });
 
-    /* ----- Hover spotlight nos cards comparativos ----- */
-    compareCols.forEach((col) => {
-      col.addEventListener('mousemove', (e) => {
-        const rect = col.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        col.style.setProperty('--spot-x', `${x}%`);
-        col.style.setProperty('--spot-y', `${y}%`);
+    /* ----- Hover spotlight nos cards comparativos (rAF-throttled, só desktop com mouse fino) ----- */
+    const hasFineHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (hasFineHover) {
+      compareCols.forEach((col) => {
+        let pending = null;
+        col.addEventListener('mousemove', (e) => {
+          if (pending) return;
+          const clientX = e.clientX, clientY = e.clientY;
+          pending = requestAnimationFrame(() => {
+            const rect = col.getBoundingClientRect();
+            const x = ((clientX - rect.left) / rect.width) * 100;
+            const y = ((clientY - rect.top) / rect.height) * 100;
+            col.style.setProperty('--spot-x', `${x}%`);
+            col.style.setProperty('--spot-y', `${y}%`);
+            pending = null;
+          });
+        });
+        col.addEventListener('mouseleave', () => {
+          col.style.removeProperty('--spot-x');
+          col.style.removeProperty('--spot-y');
+        });
       });
-      col.addEventListener('mouseleave', () => {
-        col.style.removeProperty('--spot-x');
-        col.style.removeProperty('--spot-y');
-      });
-    });
+    }
 
     /* ----- Tabs (S3 Diferencial) ----- */
     document.querySelectorAll('[data-tabs]').forEach((tabsEl) => {
@@ -610,38 +619,6 @@
       });
 
       // Troca de tabs já configurada acima — click em vídeo é tratado globalmente abaixo
-    })();
-
-    /* ----- Lazy load de <video data-src=""> via IntersectionObserver ----- */
-    (function () {
-      const lazyVideos = document.querySelectorAll('video[data-src]');
-      if (!lazyVideos.length) return;
-      const load = (vid) => {
-        if (vid.dataset.loaded) return;
-        vid.src = vid.getAttribute('data-src');
-        vid.dataset.loaded = '1';
-        vid.load();
-      };
-      const tryPlay = (vid) => {
-        const p = vid.play();
-        if (p && typeof p.catch === 'function') p.catch(() => {});
-      };
-      if (!('IntersectionObserver' in window)) {
-        lazyVideos.forEach((v) => { load(v); tryPlay(v); });
-        return;
-      }
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const vid = entry.target;
-          if (entry.isIntersecting) {
-            load(vid);
-            tryPlay(vid);
-          } else if (vid.dataset.loaded) {
-            vid.pause();
-          }
-        });
-      }, { rootMargin: '200px 0px', threshold: 0.01 });
-      lazyVideos.forEach((v) => io.observe(v));
     })();
 
     /* ----- Handler GLOBAL: video-modal (open + close + ESC) ----- */
