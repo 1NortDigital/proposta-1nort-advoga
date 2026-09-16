@@ -455,6 +455,7 @@
     document.querySelectorAll('[data-chat]').forEach((chat) => {
       const msgs = Array.from(chat.querySelectorAll('.phone-msg'));
       const typing = chat.querySelector('[data-typing]');
+      const isShowcase = chat.classList.contains('ia-conversation__messages');
       if (!msgs.length) return;
 
       const wait = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -470,18 +471,22 @@
         // eslint-disable-next-line no-constant-condition
         while (running) {
           reset();
-          await wait(400);
+          await wait(isShowcase ? 180 : 400);
           for (let i = 0; i < msgs.length; i++) {
             const msg = msgs[i];
             const isIn = msg.classList.contains('phone-msg--in');
-            if (isIn && typing) {
+            if (isIn && typing && !isShowcase) {
               typing.classList.add('is-shown');
               await wait(500);
               typing.classList.remove('is-shown');
               await wait(60);
             }
             msg.classList.add('is-shown');
-            await wait(isIn ? 700 : 500);
+            await wait(isShowcase ? 280 : (isIn ? 700 : 500));
+          }
+          if (isShowcase) {
+            running = false;
+            return;
           }
           await wait(2000);
         }

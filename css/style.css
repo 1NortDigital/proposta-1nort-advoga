@@ -5103,9 +5103,12 @@ h1, h2, h3, h4, h5 {
 ============================================================ */
 .section--ia {
   position: relative;
-  padding: 110px 0;
-  background: #f1eee5;
-  border-top: 1px solid #d8d4c8;
+  padding: 120px 0;
+  background:
+    radial-gradient(65% 55% at 8% 32%, rgba(255, 184, 0, 0.11), transparent 70%),
+    radial-gradient(45% 40% at 90% 12%, rgba(255, 210, 90, 0.055), transparent 72%),
+    #070809;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
@@ -5116,9 +5119,9 @@ h1, h2, h3, h4, h5 {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 184, 0, 0.1), transparent 60%);
+  width: 760px;
+  height: 760px;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.08), transparent 65%);
 }
 
 .section--ia > .container { position: relative; z-index: 1; }
@@ -9052,25 +9055,26 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ============================================================
-   SEÇÃO O (IA WhatsApp) · Paleta CLARA — quebra do dark
+   SEÇÃO O (IA WhatsApp) · Paleta tecnológica escura
 ============================================================ */
 #ia-whatsapp .ia-bg__glow {
-  opacity: 0.35;
+  opacity: 0.75;
 }
 
 /* Marcador NORT (banner letra O) */
 #ia-whatsapp .nort-marker {
-  background: #fff;
-  border: 1px solid #e2ddd0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  background: rgba(14, 15, 17, 0.86);
+  border: 1px solid rgba(255, 184, 0, 0.25);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.035);
+  backdrop-filter: blur(12px);
 }
-#ia-whatsapp .nort-marker__step { color: #6a6a6a; }
-#ia-whatsapp .nort-marker__title { color: #111; }
+#ia-whatsapp .nort-marker__step { color: #8e9299; }
+#ia-whatsapp .nort-marker__title { color: #fff; }
 
 /* Header */
-#ia-whatsapp .section__title { color: #0a0a0a; }
-#ia-whatsapp .section__sub { color: #4a4a4a; }
-#ia-whatsapp .kicker { color: #5a5a5a; }
+#ia-whatsapp .section__title { color: #fff; }
+#ia-whatsapp .section__sub { color: #a8abb2; }
+#ia-whatsapp .kicker { color: #a8abb2; }
 #ia-whatsapp .kicker__dot { background: var(--c-yellow); }
 
 /* 4 etapas — cards brancos com sombra leve */
@@ -9089,32 +9093,424 @@ h1, h2, h3, h4, h5 {
 
 /* Botão "Ver conversa real" */
 #ia-whatsapp .ia-phone__cta {
-  background: #fff;
-  border-color: #d8d4c8;
-  color: #1a1a1a;
+  background: rgba(255, 184, 0, 0.08);
+  border-color: rgba(255, 184, 0, 0.32);
+  color: var(--c-yellow);
 }
 #ia-whatsapp .ia-phone__cta:hover {
-  background: #fffdf6;
-  border-color: rgba(255, 184, 0, 0.5);
+  background: rgba(255, 184, 0, 0.16);
+  border-color: rgba(255, 184, 0, 0.62);
 }
 
 /* Sub-seção carrossel "Sistema 1Nort" */
-#ia-whatsapp .ia-system__title { color: #0a0a0a; }
-#ia-whatsapp .ia-system__sub { color: #4a4a4a; }
-#ia-whatsapp .ia-system__slide { background: #fff; border-color: #e2ddd0; }
-#ia-whatsapp .ia-system__slide img { background: #f5f3ed; }
-#ia-whatsapp .ia-system__slide figcaption { color: #5a5a5a; }
+#ia-whatsapp .ia-system__title { color: #fff; }
+#ia-whatsapp .ia-system__sub { color: #a8abb2; }
+#ia-whatsapp .ia-system__slide { background: #0e0f11; border-color: rgba(255, 184, 0, 0.18); }
+#ia-whatsapp .ia-system__slide img { background: #08090a; }
+#ia-whatsapp .ia-system__slide figcaption { color: #e5e7eb; }
 #ia-whatsapp .ia-system__arrow {
-  background: #fff;
-  border-color: #d8d4c8;
-  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 #ia-whatsapp .ia-system__arrow:hover {
   background: var(--c-yellow);
   color: #0a0a0a;
 }
-#ia-whatsapp .ia-system__dots button { background: #c8c2b3; }
+#ia-whatsapp .ia-system__dots button { background: rgba(255, 255, 255, 0.2); }
 #ia-whatsapp .ia-system__dots button.is-active { background: var(--c-yellow); }
+
+/* Showcase: conversa completa + capacidades da IA de fechamento */
+#ia-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, transparent, black 12%, black 72%, transparent);
+}
+
+.ia-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(410px, 0.92fr);
+  gap: clamp(42px, 5vw, 72px);
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ia-conversation {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 184, 0, 0.045), transparent 32%),
+    #0d0e10;
+  box-shadow:
+    0 36px 90px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(255, 184, 0, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.ia-conversation__top,
+.ia-conversation__lead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ia-conversation__top {
+  padding: 20px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.ia-agent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ia-agent__avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #111;
+  background: linear-gradient(135deg, #ffd86f, var(--c-yellow));
+  box-shadow: 0 9px 24px rgba(255, 184, 0, 0.24);
+}
+
+.ia-agent__copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.ia-agent__copy strong {
+  font-family: var(--f-display);
+  font-size: 14px;
+  color: #fff;
+}
+.ia-agent__copy small {
+  font-size: 11px;
+  color: #59d992;
+}
+
+.ia-live-pill,
+.ia-stage-pill,
+.ia-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.ia-live-pill {
+  gap: 7px;
+  padding: 8px 11px;
+  color: #74e2a6;
+  background: rgba(45, 190, 112, 0.09);
+  border: 1px solid rgba(72, 215, 137, 0.24);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.ia-live-pill i,
+.ia-eyebrow i {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 5px rgba(72, 215, 137, 0.09);
+}
+.ia-live-pill i { animation: iaLivePulse 1.8s ease-in-out infinite; }
+@keyframes iaLivePulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+.ia-conversation__lead {
+  padding: 17px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+  background: #0a0b0c;
+}
+.ia-conversation__lead > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ia-conversation__lead > div span {
+  font-size: 9px;
+  color: #777c84;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.ia-conversation__lead > div strong {
+  font-family: var(--f-display);
+  font-size: 13px;
+  color: #f5f5f5;
+}
+.ia-stage-pill {
+  padding: 7px 11px;
+  color: var(--c-yellow-soft);
+  background: rgba(255, 184, 0, 0.09);
+  border: 1px solid rgba(255, 184, 0, 0.24);
+  font-size: 10px;
+}
+
+.ia-conversation__messages.phone-chat__body {
+  flex: none;
+  min-height: 520px;
+  height: auto;
+  padding: 24px;
+  gap: 11px;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255, 184, 0, 0.055), transparent 36%),
+    #0b0c0e;
+}
+.ia-conversation__messages .phone-msg {
+  max-width: 82%;
+  padding: 11px 14px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+.ia-conversation__messages .phone-msg--in {
+  color: #f2f3f5;
+  background: linear-gradient(135deg, rgba(106, 77, 31, 0.7), rgba(50, 40, 27, 0.94));
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  border-bottom-left-radius: 4px;
+}
+.ia-conversation__messages .phone-msg--out {
+  color: #e1e3e7;
+  background: #202226;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-bottom-right-radius: 4px;
+}
+.ia-msg__label {
+  display: block;
+  margin-bottom: 3px;
+  color: #8f949d;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.phone-msg--in .ia-msg__label { color: var(--c-yellow-soft); }
+.ia-conversation .phone-typing { display: none !important; }
+
+.ia-conversation__pipeline {
+  display: flex;
+  gap: 8px;
+  padding: 16px 18px 18px;
+  overflow-x: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  scrollbar-width: none;
+  background: #090a0b;
+}
+.ia-conversation__pipeline::-webkit-scrollbar { display: none; }
+.ia-conversation__pipeline span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 7px 9px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #a7abb2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+.ia-conversation__pipeline span i {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 9px;
+  font-style: normal;
+}
+.ia-conversation__pipeline .is-done i {
+  color: #08140e;
+  background: #59d992;
+}
+.ia-conversation__pipeline .is-human {
+  color: var(--c-yellow-soft);
+  border-style: dashed;
+  border-color: rgba(255, 184, 0, 0.32);
+  background: rgba(255, 184, 0, 0.055);
+}
+.ia-conversation__pipeline .is-human i {
+  color: #111;
+  background: var(--c-yellow);
+}
+
+.ia-capabilities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ia-eyebrow {
+  gap: 9px;
+  padding: 9px 13px;
+  margin-bottom: 20px;
+  color: #f4c95f;
+  background: rgba(255, 184, 0, 0.07);
+  border: 1px solid rgba(255, 184, 0, 0.22);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.ia-eyebrow i {
+  background: var(--c-yellow);
+  box-shadow: 0 0 0 5px rgba(255, 184, 0, 0.08);
+}
+.ia-capabilities__title {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3.35vw, 3.35rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.045em !important;
+}
+.ia-capabilities__intro {
+  max-width: 580px;
+  margin: 0 0 24px;
+  color: #a8abb2;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ia-capability-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.ia-capability-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.ia-capability-list li:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 184, 0, 0.28);
+  background: rgba(255, 184, 0, 0.045);
+}
+.ia-capability__icon,
+.ia-signature-note__icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--c-yellow-soft);
+  border: 1px solid rgba(255, 184, 0, 0.28);
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.16), rgba(255, 184, 0, 0.05));
+}
+.ia-capability-list li > div,
+.ia-signature-note > div {
+  min-width: 0;
+}
+.ia-capability-list strong,
+.ia-signature-note strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #f6f6f7;
+  font-family: var(--f-display);
+  font-size: 13px;
+  font-weight: 700;
+}
+.ia-capability-list p,
+.ia-signature-note p {
+  margin: 0;
+  color: #92969e;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ia-signature-note {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px dashed rgba(255, 184, 0, 0.36);
+  border-radius: 15px;
+  background: linear-gradient(100deg, rgba(255, 184, 0, 0.09), rgba(255, 184, 0, 0.025));
+}
+.ia-signature-note__icon {
+  color: #111;
+  background: linear-gradient(135deg, #ffd86f, var(--c-yellow));
+}
+#ia-whatsapp .ia-capabilities .ia-phone__cta { align-self: flex-start; }
+
+#ia-whatsapp .ia-system {
+  margin-top: 96px;
+  padding-top: 76px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 980px) {
+  .ia-showcase { grid-template-columns: 1fr; gap: 42px; }
+  .ia-capabilities { order: -1; max-width: 760px; margin: 0 auto; }
+  .ia-conversation { width: 100%; max-width: 760px; margin: 0 auto; }
+  .ia-capabilities__intro { max-width: 680px; }
+}
+
+@media (max-width: 640px) {
+  #ia-whatsapp.section--ia { padding: 76px 0; }
+  #ia-whatsapp::before { background-size: 48px 48px; }
+  #ia-whatsapp .nort-marker-wrap { margin-bottom: 40px; }
+  .ia-showcase { gap: 32px; }
+  .ia-capabilities__title { font-size: clamp(1.85rem, 9.5vw, 2.45rem) !important; }
+  .ia-capabilities__intro { font-size: 14px; }
+  .ia-conversation { border-radius: 20px; }
+  .ia-conversation__top,
+  .ia-conversation__lead { align-items: flex-start; }
+  .ia-conversation__top { flex-direction: column; padding: 17px; }
+  .ia-conversation__lead { padding: 15px 17px; }
+  .ia-live-pill { margin-left: 56px; }
+  .ia-conversation__messages.phone-chat__body {
+    min-height: 600px;
+    padding: 17px;
+    gap: 10px;
+  }
+  .ia-conversation__messages .phone-msg {
+    max-width: 92%;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .ia-conversation__pipeline {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding: 14px;
+  }
+  .ia-capability-list li,
+  .ia-signature-note { padding: 13px; }
+  .ia-capability__icon,
+  .ia-signature-note__icon { width: 38px; height: 38px; }
+  #ia-whatsapp .ia-system { margin-top: 72px; padding-top: 60px; }
+}
 
 /* ============================================================
    SEÇÃO T (Tracking) · Paleta CLARA — quebra do dark

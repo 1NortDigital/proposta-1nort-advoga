@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20260916" />
+  <link rel="stylesheet" href="css/style.css?v=20260916b" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -960,100 +960,91 @@
         </div>
       </div>
 
-      <header class="section__head section__head--center anim-fade-up">
-        <h2 class="section__title">
-          Seu lead não espera resposta.<br/>
-          <span class="text-yellow">Ele já está sendo atendido</span>.
-        </h2>
-        <p class="section__sub">
-          Enquanto você está offline, a IA responde, conduz e qualifica automaticamente.
-        </p>
-      </header>
+      <!-- Conversa demonstrativa + capacidades da IA de fechamento -->
+      <div class="ia-showcase">
+        <article class="ia-conversation anim-fade-up" data-delay="0.1" aria-label="Exemplo de conversa conduzida pela IA 1Nort">
+          <header class="ia-conversation__top">
+            <div class="ia-agent">
+              <span class="ia-agent__avatar" aria-hidden="true">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.65 4.35L18 9l-4.35 1.65L12 15l-1.65-4.35L6 9l4.35-1.65L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.5 15l.85 2.15L21.5 18l-2.15.85L18.5 21l-.85-2.15L15.5 18l2.15-.85L18.5 15z" fill="currentColor"/></svg>
+              </span>
+              <span class="ia-agent__copy">
+                <strong>Agente IA 1Nort</strong>
+                <small>online 24/7 · respondendo agora</small>
+              </span>
+            </div>
+            <span class="ia-live-pill"><i></i> conversa em andamento</span>
+          </header>
 
-      <!-- Layout: 4 etapas à esquerda + mockup WhatsApp + painel scoring à direita -->
-      <div class="ia-grid">
-        <!-- Etapas -->
-        <ol class="ia-steps anim-fade-up" data-delay="0.1">
-          <li class="ia-step">
-            <span class="ia-step__num">1</span>
-            <div class="ia-step__body">
-              <strong>Primeiro contato</strong>
-              <span>Início imediato</span>
-              <p>O lead recebe a primeira mensagem em segundos depois do clique.</p>
+          <div class="ia-conversation__lead">
+            <div>
+              <span>LEAD TRABALHISTA</span>
+              <strong>João · Demissão + horas extras</strong>
             </div>
-          </li>
-          <li class="ia-step">
-            <span class="ia-step__num">2</span>
-            <div class="ia-step__body">
-              <strong>Qualificação</strong>
-              <span>Perguntas inteligentes</span>
-              <p>A IA conduz a conversa e identifica perfil e capacidade de contratar.</p>
-            </div>
-          </li>
-          <li class="ia-step">
-            <span class="ia-step__num">3</span>
-            <div class="ia-step__body">
-              <strong>Confirmação</strong>
-              <span>Com IA + dados importantes</span>
-              <p>O sistema cruza informações e confirma se o lead tem causa real e perfil pra contratar.</p>
-            </div>
-          </li>
-          <li class="ia-step">
-            <span class="ia-step__num">4</span>
-            <div class="ia-step__body">
-              <strong>Avanço</strong>
-              <span>Pré-agenda no melhor horário</span>
-              <p>Com o lead qualificado, a IA pergunta a melhor data e horário e deixa pré-agendado pro advogado confirmar.</p>
-            </div>
-          </li>
-        </ol>
-
-        <!-- Mockup WhatsApp -->
-        <div class="ia-phone anim-fade-up" data-delay="0.2">
-          <div class="phone-frame">
-            <div class="phone-frame__notch"></div>
-            <div class="phone-screen">
-              <div class="phone-chat__head">
-                <button class="phone-chat__back" aria-label="Voltar">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div class="phone-chat__avatar">J</div>
-                <div class="phone-chat__info">
-                  <strong>Jardim Advogados</strong>
-                  <span>online · digitando…</span>
-                </div>
-              </div>
-              <div class="phone-chat__body" data-chat>
-                <div class="phone-msg phone-msg--out">Oi, vi o anúncio sobre direitos trabalhistas</div>
-                <div class="phone-msg phone-msg--in">Olá! 👋 Posso te fazer algumas perguntinhas pra avaliar seu caso?</div>
-                <div class="phone-msg phone-msg--in">Como foi seu <strong>desligamento</strong> da empresa?</div>
-                <div class="phone-msg phone-msg--out">Mandado embora sem justa causa, 8 anos de carteira</div>
-                <div class="phone-msg phone-msg--in">Aconteceu alguma <strong>irregularidade</strong>? Hora extra, FGTS…</div>
-                <div class="phone-msg phone-msg--out">Hora extra que nunca pagaram</div>
-                <div class="phone-msg phone-msg--in">Sua causa tem <strong>boa viabilidade</strong> ⚖️ Prefere <strong>manhã</strong> ou <strong>tarde</strong>?</div>
-                <div class="phone-msg phone-msg--out">Tarde</div>
-                <div class="phone-msg phone-msg--in">Perfeito! Qual dia? Deixo <strong>pré-agendado</strong> pro advogado confirmar 📅</div>
-                <div class="phone-typing" data-typing>
-                  <i></i><i></i><i></i>
-                </div>
-              </div>
-              <div class="phone-chat__input">
-                <span>Mensagem</span>
-                <span class="phone-chat__send">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4l17.5-7.5c.8-.4.8-1.5 0-1.9L3.4 3.6c-.8-.4-1.6.4-1.4 1.2L4 11l11 1L4 13l-2 6.2c-.2.8.6 1.6 1.4 1.2z"/></svg>
-                </span>
-              </div>
-            </div>
+            <span class="ia-stage-pill">Em fechamento</span>
           </div>
+
+          <div class="ia-conversation__messages phone-chat__body" data-chat>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Oi, fui demitido e nunca pagaram minhas horas extras.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Sinto muito por isso, João. Você trabalhava com registro CLT e ainda tem holerites ou comprovantes?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Sim. Foram 8 anos de carteira e tenho os documentos.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Ótimo. Há indícios de uma causa viável. Posso confirmar seus dados para avançarmos?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Quero pensar. Tenho receio dos honorários.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Faz sentido ter essa preocupação. A equipe explica todas as condições antes da assinatura. Posso validar seus dados e deixar tudo pronto para você decidir com segurança?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Pode. Quero seguir.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Perfeito! Aceite confirmado e contexto organizado. Vou acionar a equipe para enviar o link de assinatura.</div>
+            <div class="phone-typing" data-typing><i></i><i></i><i></i></div>
+          </div>
+
+          <footer class="ia-conversation__pipeline" aria-label="Etapas concluídas pela IA">
+            <span class="is-done"><i>✓</i>Atendido</span>
+            <span class="is-done"><i>✓</i>Qualificado</span>
+            <span class="is-done"><i>✓</i>Objeção superada</span>
+            <span class="is-done"><i>✓</i>Aceite confirmado</span>
+            <span class="is-human"><i>↗</i>Link pela equipe</span>
+          </footer>
+        </article>
+
+        <div class="ia-capabilities anim-fade-up" data-delay="0.2">
+          <span class="ia-eyebrow"><i></i> IA DE FECHAMENTO · 24/7</span>
+          <h2 class="section__title ia-capabilities__title">
+            Sua IA não para na qualificação.<br/>
+            <span class="text-yellow">Ela conduz até o fechamento.</span>
+          </h2>
+          <p class="ia-capabilities__intro">
+            Do primeiro “oi” ao “quero seguir”: a IA entende o caso, responde dúvidas, contorna objeções e mantém o lead avançando sem esfriar.
+          </p>
+
+          <ol class="ia-capability-list">
+            <li>
+              <span class="ia-capability__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><strong>Resposta instantânea</strong><p>Atende em segundos, inclusive fora do horário comercial.</p></div>
+            </li>
+            <li>
+              <span class="ia-capability__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <div><strong>Qualificação com contexto</strong><p>Identifica a causa, o perfil e os dados que o advogado precisa.</p></div>
+            </li>
+            <li>
+              <span class="ia-capability__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0114.6-4.5L21 10M20 12a8 8 0 01-14.6 4.5L3 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 5v5h-5M3 19v-5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><strong>Contorno de objeções</strong><p>Entende a dúvida, responde com clareza e recupera o avanço.</p></div>
+            </li>
+            <li>
+              <span class="ia-capability__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><strong>Condução até o aceite</strong><p>Confirma a decisão e deixa o fechamento pronto para concluir.</p></div>
+            </li>
+          </ol>
+
+          <div class="ia-signature-note">
+            <span class="ia-signature-note__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19c4-5 6-1 9-5 1.5-2.5 2-7 5-7 2.5 0 1.5 4-1 7-2 2.5-4.5 3.5-7 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15 19h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><strong>O único passo humano hoje</strong><p>Sua equipe recebe o histórico completo e só precisa enviar o link de assinatura.</p></div>
+          </div>
+
           <button class="ia-phone__cta" data-conversa-img="assets/images/conversa-real.webp" data-conversa-caption="Conversa real · atendimento da IA com lead qualificado" type="button">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Ver conversa real</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-
       </div>
 
       <!-- Sub-seção: carrossel de prints do sistema 1Nort -->
@@ -1950,7 +1941,7 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20260611"></script>
+  <script src="js/main.js?v=20260916b"></script>
 
   <!-- Gate de acesso · valida senha do time -->
   <script>
