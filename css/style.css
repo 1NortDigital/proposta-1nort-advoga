@@ -9828,3 +9828,645 @@ html.is-locked body > *:not(#access-gate) {
     font-size: 18px;
   }
 }
+
+/* ============================================================
+   SEÇÃO QUALIFICAÇÃO — Funil deitado + fluxo animado
+============================================================ */
+
+.qual-sieve {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(340px, 1.8fr) minmax(180px, 0.9fr);
+  align-items: stretch;
+  gap: 18px;
+  padding: 20px 22px;
+  margin: 6px 0 22px;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(255, 184, 0, 0.06), transparent 60%),
+    linear-gradient(180deg, rgba(20, 20, 20, 0.85), rgba(10, 10, 10, 0.9));
+  border: 1px solid rgba(255, 184, 0, 0.18);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.qual-sieve::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 184, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 184, 0, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: radial-gradient(90% 70% at 50% 50%, black, transparent 78%);
+}
+
+/* Colunas */
+.qual-sieve__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+}
+.qual-sieve__col--out { align-items: flex-end; }
+.qual-sieve__col-lbl {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.qual-sieve__col-lbl--gold { color: rgba(255, 220, 140, 0.9); }
+
+/* Lista de perguntas */
+.qual-q-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.qual-q {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: qualQIn 0.6s ease forwards, qualQPulse 4s ease-in-out infinite;
+  animation-delay: var(--d, 0s), calc(var(--d, 0s) + 0.6s);
+  will-change: transform, opacity;
+}
+.qual-q--pass {
+  border-color: rgba(255, 184, 0, 0.32);
+  background:
+    linear-gradient(90deg, rgba(255, 184, 0, 0.08), transparent 80%);
+}
+.qual-q--fail {
+  border-color: rgba(239, 68, 68, 0.28);
+  background:
+    linear-gradient(90deg, rgba(239, 68, 68, 0.06), transparent 80%);
+  opacity: 0.55;
+}
+.qual-q__ico {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 184, 0, 0.12);
+  border: 1px solid rgba(255, 184, 0, 0.28);
+  color: var(--c-yellow);
+}
+.qual-q--fail .qual-q__ico {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+.qual-q__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 1px;
+}
+.qual-q__body strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-text, #fff);
+  line-height: 1.15;
+}
+.qual-q__body span {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+}
+.qual-q__mark {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+}
+.qual-q--pass .qual-q__mark {
+  background: linear-gradient(135deg, #FFD25A, var(--c-yellow));
+  color: #0a0a0a;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.5);
+}
+.qual-q--fail .qual-q__mark {
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* Palco central: funil deitado + grid + fluxo */
+.qual-sieve__stage {
+  position: relative;
+  min-height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 90% at 90% 50%, rgba(255, 184, 0, 0.14), transparent 70%),
+    radial-gradient(60% 90% at 10% 50%, rgba(255, 255, 255, 0.03), transparent 70%);
+}
+.qual-sieve__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 184, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 184, 0, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  animation: qualGrid 12s linear infinite;
+  mask-image: radial-gradient(70% 90% at 55% 50%, black, transparent 85%);
+  opacity: 0.6;
+}
+.qual-sieve__funnel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 24px rgba(255, 184, 0, 0.25));
+}
+
+/* Fluxo de tokens */
+.qual-flow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.qual-tok {
+  position: absolute;
+  top: var(--y, 50%);
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+  animation: qualTokFlow 4.8s cubic-bezier(.4,.1,.6,1) infinite;
+  animation-delay: var(--d, 0s);
+}
+.qual-tok--pass {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+}
+.qual-tok--fail {
+  animation-name: qualTokReject;
+  animation-duration: 3.6s;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895);
+}
+
+/* Scan tech + pulse na saída */
+.qual-sieve__scan {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  left: -3%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(255, 184, 0, 0.85), transparent);
+  filter: blur(0.5px);
+  box-shadow: 0 0 18px rgba(255, 184, 0, 0.5);
+  animation: qualScan 5s ease-in-out infinite;
+  opacity: 0.9;
+  border-radius: 2px;
+}
+.qual-sieve__pulse {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+  animation: qualPulse 1.6s ease-out infinite;
+}
+
+/* Coluna de saída */
+.qual-sieve__col-lbl--green {
+  color: rgba(74, 222, 128, 0.95);
+}
+.qual-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  min-width: 168px;
+}
+.qual-out--green {
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(34, 197, 94, 0.18), transparent 65%),
+    linear-gradient(180deg, rgba(10, 28, 18, 0.9), rgba(6, 14, 10, 0.9));
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.18);
+}
+.qual-out__check {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #4ade80, #16a34a);
+  color: #062812;
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.15),
+    0 0 24px rgba(34, 197, 94, 0.55);
+  animation: qualCheckPulse 2.4s ease-in-out infinite;
+}
+.qual-out__title {
+  font-family: var(--f-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+.qual-out__sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(187, 247, 208, 0.85);
+  letter-spacing: 0.3px;
+}
+.qual-out__dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 4px;
+}
+.qual-out__dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: qualDotPulse 1.2s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes qualCheckPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15), 0 0 24px rgba(34, 197, 94, 0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.08), 0 0 32px rgba(34, 197, 94, 0.7); transform: scale(1.05); }
+}
+
+/* Keyframes */
+@keyframes qualQIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+.qual-q--fail { animation-name: qualQInFail, qualQPulse; }
+@keyframes qualQInFail {
+  to { opacity: 0.55; transform: translateX(0); }
+}
+@keyframes qualQPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0); }
+  50% { box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.1); }
+}
+@keyframes qualGrid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 44px 0, 0 22px; }
+}
+@keyframes qualTokFlow {
+  0% { left: -2%; opacity: 0; transform: translate(-50%, -50%) scale(0.5); background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895); }
+  10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  55% { top: var(--y, 50%); left: 55%; background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895); box-shadow: 0 0 6px rgba(255,255,255,0.4); }
+  70% { top: 50%; left: 74%; background: radial-gradient(circle at 30% 30%, #ffffff, #86efac 55%, #16a34a); box-shadow: 0 0 12px rgba(74, 222, 128, 0.7); transform: translate(-50%, -50%) scale(1.15); }
+  90% { top: 50%; left: 96%; background: radial-gradient(circle at 30% 30%, #ffffff, #86efac 55%, #16a34a); box-shadow: 0 0 20px rgba(74, 222, 128, 0.85); opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  100% { top: 50%; left: 104%; opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+}
+@keyframes qualTokReject {
+  0% { left: -2%; opacity: 0; transform: translate(-50%, -50%) scale(0.5); background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895); }
+  15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { top: var(--y, 50%); left: 45%; background: radial-gradient(circle at 30% 30%, #ffffff, #cfd6dd 65%, #7f8895); }
+  65% { top: calc(var(--y, 50%) + 6%); left: 52%; background: radial-gradient(circle at 30% 30%, #ffb4b4, #ef4444 65%, #991b1b); transform: translate(-50%, -50%) scale(0.95); box-shadow: 0 0 10px rgba(239, 68, 68, 0.5); }
+  100% { top: 120%; left: 58%; opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(45deg); background: radial-gradient(circle at 30% 30%, #ffb4b4, #ef4444 65%, #991b1b); }
+}
+@keyframes qualScan {
+  0%, 100% { transform: translateX(0); opacity: 0.3; }
+  50% { transform: translateX(105%); opacity: 0.9; }
+}
+@keyframes qualPulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); transform: translateY(-50%) scale(1); }
+  70% { box-shadow: 0 0 0 18px rgba(74, 222, 128, 0); transform: translateY(-50%) scale(1.1); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); transform: translateY(-50%) scale(1); }
+}
+@keyframes qualDotPulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 8px rgba(74, 222, 128, 0.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qual-tok, .qual-sieve__grid, .qual-sieve__scan, .qual-sieve__pulse,
+  .qual-out__dots i, .qual-q { animation: none !important; }
+  .qual-q { opacity: 1; transform: none; }
+  .qual-q--fail { opacity: 0.55; }
+}
+
+/* Card output (IA WhatsApp) — realçado como "resultado do funil" */
+.funnel-step--output {
+  border-color: rgba(255, 184, 0, 0.5) !important;
+  background:
+    radial-gradient(120% 100% at 100% 0%, rgba(255, 184, 0, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(30, 22, 8, 0.92), rgba(10, 10, 10, 0.92)) !important;
+  box-shadow: 0 8px 32px rgba(255, 184, 0, 0.15);
+}
+.funnel-step__badge {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: linear-gradient(135deg, #FFD25A, var(--c-yellow));
+  padding: 4px 9px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px var(--c-bg), 0 4px 12px rgba(255, 184, 0, 0.45);
+  white-space: nowrap;
+}
+
+/* Showcase — vídeo funil + CRM lado a lado, alturas equalizadas + seta de fluxo */
+.qual-flow-story {
+  margin: 32px 0 8px;
+}
+.qual-flow-story__head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.qual-flow-story__head h4 {
+  font-family: var(--f-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c-text, #fff);
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+.qual-flow-story__head p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.qual-showcase {
+  --showcase-h: clamp(340px, 40vw, 460px);
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+}
+.qual-showcase__step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+.qual-showcase__step--crm { align-items: stretch; }
+.qual-showcase__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 220, 140, 0.9);
+  padding: 5px 11px 5px 5px;
+  border-radius: 999px;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+}
+.qual-showcase__badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #FFD25A, var(--c-yellow));
+  color: #0a0a0a;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 0 2px 10px rgba(255, 184, 0, 0.4);
+}
+
+/* Vídeo com altura fixa igual à do CRM */
+.qual-showcase__step--video .qual-video__frame--story {
+  height: var(--showcase-h);
+  width: auto;
+  max-width: none;
+  aspect-ratio: 9 / 16;
+}
+.qual-showcase__step--video .qual-video__vid {
+  object-fit: cover;
+}
+
+/* CRM print com mesma altura, contain pra não cortar */
+.qual-showcase__crm {
+  margin: 0;
+  position: relative;
+  height: var(--showcase-h);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 184, 0, 0.22);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  cursor: zoom-in;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.qual-showcase__crm:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 184, 0, 0.42);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.65);
+}
+.qual-showcase__crm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.qual-showcase__crm figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 12px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
+  text-align: center;
+}
+
+/* Seta de fluxo entre vídeo e CRM */
+.qual-showcase__arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 100px;
+  position: relative;
+  filter: drop-shadow(0 0 12px rgba(255, 184, 0, 0.35));
+}
+.qual-showcase__arrow svg {
+  width: 100px;
+  height: 32px;
+}
+.qual-showcase__arrow-lbl {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 220, 140, 0.85);
+}
+.qual-showcase__arrow line {
+  stroke-dasharray: 6 6;
+  animation: qualDash 1.4s linear infinite;
+}
+.qual-showcase__spark {
+  position: absolute;
+  top: calc(50% + 4px);
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFD25A;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.9);
+  animation: qualSpark 1.8s ease-in-out infinite;
+}
+@keyframes qualDash {
+  to { stroke-dashoffset: -24; }
+}
+@keyframes qualSpark {
+  0% { transform: translateX(0) scale(0.6); opacity: 0; }
+  15% { opacity: 1; transform: translateX(0) scale(1); }
+  85% { opacity: 1; transform: translateX(88px) scale(1); }
+  100% { transform: translateX(102px) scale(0.4); opacity: 0; }
+}
+
+.qual-video__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--c-accent, #FFB800);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 184, 0, 0.1);
+  border: 1px solid rgba(255, 184, 0, 0.32);
+}
+.qual-video__frame {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 50% 50%, rgba(255, 184, 0, 0.08), transparent 65%),
+    linear-gradient(180deg, #1a1a1a, #0a0a0a);
+  border: 1px solid rgba(255, 184, 0, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.qual-video__frame--story {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 22px;
+}
+.qual-video__frame--gif { cursor: default; }
+.qual-video__frame--gif:hover { transform: none; }
+.qual-video__frame:hover,
+.qual-video__frame:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(255, 184, 0, 0.5);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.65), 0 0 0 3px rgba(255, 184, 0, 0.12);
+  outline: none;
+}
+.qual-video__vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.qual-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 184, 0, 0.95);
+  color: #0a0a0a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 32px rgba(255, 184, 0, 0.55);
+  z-index: 2;
+  pointer-events: none;
+  transition: transform .3s ease;
+}
+.qual-video__frame:hover .qual-video__play { transform: translate(-50%, -50%) scale(1.08); }
+.qual-video__placeholder {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 220, 140, 0.7);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px dashed rgba(255, 184, 0, 0.35);
+  z-index: 3;
+}
+/* Esconde placeholder quando vídeo carrega (fica com src) */
+.qual-video__vid[src] ~ .qual-video__placeholder { display: none; }
+
+/* Responsivo */
+@media (max-width: 960px) {
+  .qual-sieve {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .qual-sieve__col--out { align-items: stretch; }
+  .qual-out { align-items: center; text-align: center; }
+  .qual-sieve__stage { min-height: 180px; }
+  .qual-video__title { font-size: 18px; }
+  .qual-flow-story__head h4 { font-size: 20px; }
+  .qual-showcase {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    --showcase-h: auto;
+  }
+  .qual-showcase__step--video .qual-video__frame--story {
+    height: auto;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .qual-showcase__crm { height: auto; aspect-ratio: 16 / 10; }
+  .qual-showcase__arrow { transform: rotate(90deg); min-width: 0; }
+}
