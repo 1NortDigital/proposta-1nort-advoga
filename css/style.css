@@ -9308,7 +9308,12 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 .phone-msg--in .ia-msg__label { color: var(--c-yellow-soft); }
-.ia-conversation .phone-typing { display: none !important; }
+.ia-conversation .phone-typing {
+  flex: 0 0 auto;
+  margin: 1px 0 0;
+  background: rgba(255, 184, 0, 0.08);
+  border: 1px solid rgba(255, 184, 0, 0.16);
+}
 
 .ia-conversation__pipeline {
   display: flex;
@@ -10772,18 +10777,6 @@ html.is-locked body > *:not(#access-gate) {
   object-position: center top;
   display: block;
 }
-.qual-showcase__crm figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 16px 12px;
-  font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.75);
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
-  text-align: center;
-}
-
 /* Seta de fluxo entre vídeo e CRM */
 .qual-showcase__arrow {
   display: flex;

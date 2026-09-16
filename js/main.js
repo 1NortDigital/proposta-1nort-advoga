@@ -459,10 +459,24 @@
       if (!msgs.length) return;
 
       const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const scrollShowcaseTo = (element) => {
+        if (!isShowcase || !element) return;
+        requestAnimationFrame(() => {
+          const elementBottom = element.offsetTop + element.offsetHeight;
+          const nextScrollTop = Math.max(0, elementBottom - chat.clientHeight + 18);
+          chat.scrollTo({ top: nextScrollTop, behavior: 'smooth' });
+        });
+      };
       const reset = () => {
-        msgs.forEach((m) => m.classList.remove('is-shown'));
-        if (typing) typing.classList.remove('is-shown');
-        if (isShowcase) chat.scrollTop = 0;
+        msgs.forEach((m) => {
+          m.classList.remove('is-shown');
+          if (isShowcase) m.hidden = true;
+        });
+        if (typing) {
+          typing.classList.remove('is-shown');
+          if (isShowcase) typing.hidden = true;
+        }
+        if (isShowcase) chat.scrollTo({ top: 0, behavior: 'auto' });
       };
 
       let running = false;
@@ -472,25 +486,35 @@
         // eslint-disable-next-line no-constant-condition
         while (running) {
           reset();
-          await wait(isShowcase ? 180 : 400);
+          await wait(isShowcase ? 700 : 400);
           for (let i = 0; i < msgs.length; i++) {
             const msg = msgs[i];
             const isIn = msg.classList.contains('phone-msg--in');
-            if (isIn && typing && !isShowcase) {
+            if (isIn && typing && isShowcase) {
+              typing.hidden = false;
+              typing.classList.add('is-shown');
+              scrollShowcaseTo(typing);
+              const typingDelay = Math.min(1700, Math.max(900, 550 + msg.textContent.trim().length * 6));
+              await wait(typingDelay);
+              typing.classList.remove('is-shown');
+              typing.hidden = true;
+              await wait(140);
+            } else if (isIn && typing) {
               typing.classList.add('is-shown');
               await wait(500);
               typing.classList.remove('is-shown');
               await wait(60);
             }
-            msg.classList.add('is-shown');
             if (isShowcase) {
-              requestAnimationFrame(() => {
-                const msgBottom = msg.offsetTop + msg.offsetHeight;
-                const nextScrollTop = Math.max(0, msgBottom - chat.clientHeight + 18);
-                chat.scrollTo({ top: nextScrollTop, behavior: 'smooth' });
-              });
+              msg.hidden = false;
+              void msg.offsetHeight;
             }
-            await wait(isShowcase ? 280 : (isIn ? 700 : 500));
+            msg.classList.add('is-shown');
+            scrollShowcaseTo(msg);
+            const readingDelay = isShowcase
+              ? Math.min(2600, Math.max(900, 700 + msg.textContent.trim().length * 11))
+              : (isIn ? 700 : 500);
+            await wait(readingDelay);
           }
           if (isShowcase) {
             running = false;
