@@ -462,6 +462,7 @@
       const reset = () => {
         msgs.forEach((m) => m.classList.remove('is-shown'));
         if (typing) typing.classList.remove('is-shown');
+        if (isShowcase) chat.scrollTop = 0;
       };
 
       let running = false;
@@ -482,6 +483,13 @@
               await wait(60);
             }
             msg.classList.add('is-shown');
+            if (isShowcase) {
+              requestAnimationFrame(() => {
+                const msgBottom = msg.offsetTop + msg.offsetHeight;
+                const nextScrollTop = Math.max(0, msgBottom - chat.clientHeight + 18);
+                chat.scrollTo({ top: nextScrollTop, behavior: 'smooth' });
+              });
+            }
             await wait(isShowcase ? 280 : (isIn ? 700 : 500));
           }
           if (isShowcase) {
