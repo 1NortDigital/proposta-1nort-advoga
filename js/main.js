@@ -64,30 +64,6 @@
       });
     });
 
-    /* ----- Hover spotlight nos cards comparativos (rAF-throttled, só desktop com mouse fino) ----- */
-    const hasFineHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (hasFineHover) {
-      compareCols.forEach((col) => {
-        let pending = null;
-        col.addEventListener('mousemove', (e) => {
-          if (pending) return;
-          const clientX = e.clientX, clientY = e.clientY;
-          pending = requestAnimationFrame(() => {
-            const rect = col.getBoundingClientRect();
-            const x = ((clientX - rect.left) / rect.width) * 100;
-            const y = ((clientY - rect.top) / rect.height) * 100;
-            col.style.setProperty('--spot-x', `${x}%`);
-            col.style.setProperty('--spot-y', `${y}%`);
-            pending = null;
-          });
-        });
-        col.addEventListener('mouseleave', () => {
-          col.style.removeProperty('--spot-x');
-          col.style.removeProperty('--spot-y');
-        });
-      });
-    }
-
     /* ----- Tabs (S3 Diferencial) ----- */
     document.querySelectorAll('[data-tabs]').forEach((tabsEl) => {
       const tabs = tabsEl.querySelectorAll('.diff-tab');

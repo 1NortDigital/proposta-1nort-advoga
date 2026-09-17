@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20260917a" />
+  <link rel="stylesheet" href="css/style.css?v=20260917b" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -838,6 +838,21 @@
                 <line x1="6" y1="75" x2="214" y2="96"/>
                 <line x1="6" y1="105" x2="214" y2="96"/>
                 <line x1="6" y1="135" x2="214" y2="86"/>
+              </g>
+              <!-- Só três pontos em movimento: animação vetorial leve, sem filtros nem repintura do painel inteiro. -->
+              <g class="qual-motion-dots">
+                <circle class="qual-motion-dot qual-motion-dot--pass" r="4.2">
+                  <animateMotion dur="7.6s" begin="-1.2s" repeatCount="indefinite" path="M 8 42 C 92 42 154 66 214 88 C 258 90 300 90 334 90"/>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.88;1" dur="7.6s" begin="-1.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="qual-motion-dot qual-motion-dot--pass" r="3.8">
+                  <animateMotion dur="8.4s" begin="-5.4s" repeatCount="indefinite" path="M 8 118 C 86 118 154 107 214 94 C 258 90 300 90 334 90"/>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="8.4s" begin="-5.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="qual-motion-dot qual-motion-dot--reject" r="4">
+                  <animateMotion dur="8s" begin="-3.6s" repeatCount="indefinite" path="M 8 72 C 88 72 142 82 186 91 C 205 99 214 130 220 176"/>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="8s" begin="-3.6s" repeatCount="indefinite"/>
+                </circle>
               </g>
             </svg>
 
@@ -1942,7 +1957,7 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20260917a"></script>
+  <script src="js/main.js?v=20260917b"></script>
 
   <!-- Gate de acesso · valida senha do time -->
   <script>
