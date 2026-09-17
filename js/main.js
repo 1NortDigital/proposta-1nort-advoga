@@ -660,7 +660,7 @@
 
     /* ----- Autoplay dos vídeos SÓ quando o card entra na viewport (play-on-viewport) ----- */
     (function () {
-      const lazyVideos = document.querySelectorAll('video[data-src]');
+      const lazyVideos = document.querySelectorAll('video[data-src]:not([data-manual-play])');
       if (!lazyVideos.length) return;
       const load = (vid) => {
         if (vid.dataset.loaded) return;
