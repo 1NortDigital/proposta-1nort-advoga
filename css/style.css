@@ -15378,6 +15378,17 @@ html.is-locked body > *:not(#access-gate) {
 }
 .fs-adwrap .fs-real { aspect-ratio: auto; }
 .fs-adwrap .fs-real img { display: block; width: 100%; height: auto; }
+.fs-adwrap .fs-qual-media {
+  aspect-ratio: 1 / 1;
+}
+.fs-adwrap .fs-qual-media img,
+.fs-adwrap .fs-qual-media .fs-real__vid {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #090909;
+}
+.fs-qual-media--video:hover .fs-real__play { transform: translate(-50%, -50%) scale(1.08); }
 .crm-diff {
   display: grid;
   grid-template-columns: 1.35fr 1fr;

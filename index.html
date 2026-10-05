@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261005a" />
+  <link rel="stylesheet" href="css/style.css?v=20261005b" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -1035,10 +1035,37 @@
           </div>
           <h3 class="funnel-step__title">Primeira Qualificação</h3>
           <span class="funnel-step__sub">Quero ser avaliado</span>
-          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap">
-            <figure class="fs-real" data-zoom>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="reclamante">
+            <figure class="fs-real fs-qual-media" data-zoom>
               <img src="assets/images/ad-real-4.jpg" alt="Anúncio real de escritório trabalhista: pediu as contas ou foi demitido?" loading="lazy" />
               <figcaption class="visually-hidden">Anúncio real · escritório trabalhista</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="reclamada">
+            <figure class="fs-real fs-qual-media" data-zoom>
+              <img src="assets/images/criativo-trabalhista-reclamada-1.jpg" alt="Criativo para defesa trabalhista empresarial: sua empresa está preparada para uma ação trabalhista?" loading="lazy" />
+              <figcaption class="visually-hidden">Anúncio real · defesa trabalhista empresarial</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="previdenciario">
+            <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-previdenciario-auxilio-acidente.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação previdenciária">
+              <video class="fs-real__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption class="visually-hidden">Vídeo · auxílio-acidente</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="bancario">
+            <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-bancario-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação bancária">
+              <video class="fs-real__vid" src="assets/videos/criativo-bancario-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption class="visually-hidden">Vídeo · direito bancário</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="consumidor">
+            <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-consumidor-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação do consumidor">
+              <video class="fs-real__vid" src="assets/videos/criativo-consumidor-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption class="visually-hidden">Vídeo · direito do consumidor</figcaption>
             </figure>
           </div>
         </article>
@@ -2776,7 +2803,7 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20261005a"></script>
+  <script src="js/main.js?v=20261005b"></script>
 
   <!-- Gate de acesso · valida senha do time -->
   <script>
