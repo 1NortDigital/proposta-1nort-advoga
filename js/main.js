@@ -44,6 +44,274 @@
       }
     }
 
+    /* ----- Títulos com revelação palavra a palavra ([data-reveal] > [data-reveal-words]) ----- */
+    document.querySelectorAll('[data-reveal-words]').forEach((title) => {
+      let i = 0;
+      const wrapWords = (node) => {
+        [...node.childNodes].forEach((child) => {
+          if (child.nodeType === 3) {
+            const frag = document.createDocumentFragment();
+            child.textContent.split(/(\s+)/).forEach((part) => {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+              const w = document.createElement('span');
+              w.className = 'rw';
+              const inner = document.createElement('span');
+              inner.className = 'rw__in';
+              inner.style.setProperty('--i', i++);
+              inner.textContent = part;
+              w.appendChild(inner);
+              frag.appendChild(w);
+            });
+            child.replaceWith(frag);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+            wrapWords(child);
+          }
+        });
+      };
+      wrapWords(title);
+      const holder = title.closest('[data-reveal]') || title;
+      holder.style.setProperty('--sub-delay', (0.3 + i * 0.055) + 's');
+    });
+    const reveals = document.querySelectorAll('[data-reveal]');
+    if (reveals.length) {
+      if ('IntersectionObserver' in window) {
+        const rio = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              rio.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0, rootMargin: '0px 0px -18% 0px' });   // dispara ao entrar na tela (funciona até em blocos altos)
+        reveals.forEach((el) => rio.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add('is-revealed'));
+      }
+    }
+
+    /* ----- Etapas que acendem uma de cada vez ([data-steps-cycle]) ----- */
+    document.querySelectorAll('[data-steps-cycle]').forEach((list) => {
+      const sel = list.dataset.stepsCycle;   // opcional: seletor dos itens (ex.: ".track-step")
+      const steps = sel ? [...list.querySelectorAll(sel)] : [...list.children];
+      if (steps.length < 2 || !('IntersectionObserver' in window)) return;
+      let idx = -1;
+      let timer = null;
+      const next = () => {
+        steps.forEach((s) => s.classList.remove('is-current'));
+        idx = (idx + 1) % steps.length;
+        steps[idx].classList.add('is-current');
+      };
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !timer) {
+            setTimeout(next, 1100);
+            timer = setInterval(next, 2800);
+          } else if (!entry.isIntersecting && timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        });
+      }, { threshold: 0.3 }).observe(list);
+    });
+
+    /* ----- Holofote que segue o mouse nos cards ([data-spotlight]) ----- */
+    document.querySelectorAll('[data-spotlight]').forEach((grid) => {
+      grid.addEventListener('pointermove', (e) => {
+        const card = [...grid.children].find((c) => c.contains(e.target));
+        if (!card) return;
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+
+    /* ----- Abas do "Nosso CRM" ([data-crm-tabs]) -----
+       A tela só troca quando alguém clica na aba (sem troca automática). */
+    document.querySelectorAll('[data-crm-tabs]').forEach((root) => {
+      const tabs = [...root.querySelectorAll('[data-crm-tab]')];
+      const panels = [...root.querySelectorAll('[data-crm-panel]')];
+      if (!tabs.length) return;
+      const show = (i) => {
+        tabs.forEach((t, k) => {
+          const on = k === i;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach((p, k) => p.classList.toggle('is-active', k === i));
+        // celular: as abas viram uma faixa com rolagem lateral — mantém a clicada à vista
+        const nav = tabs[i].parentElement;
+        if (nav.scrollWidth > nav.clientWidth) {
+          nav.scrollTo({ left: tabs[i].offsetLeft - nav.offsetLeft - 16, behavior: 'smooth' });
+        }
+      };
+      tabs.forEach((t, k) => t.addEventListener('click', () => show(k)));
+      show(0);
+    });
+
+    /* ----- Portal 1Nort: telas passando sozinhas (4s cada); bolinhas trocam na hora ----- */
+    document.querySelectorAll('[data-portal-show]').forEach((show) => {
+      const slides = [...show.querySelectorAll('.portal-slide')];
+      const dots = [...show.querySelectorAll('.portal-show__dots button')];
+      let idx = 0;
+      let timer = null;
+      const go = (i) => {
+        idx = (i + slides.length) % slides.length;
+        slides.forEach((s, k) => s.classList.toggle('is-active', k === idx));
+        dots.forEach((d, k) => d.classList.toggle('is-active', k === idx));
+      };
+      const start = () => { if (!timer) timer = setInterval(() => go(idx + 1), 4000); };
+      const stop = () => { clearInterval(timer); timer = null; };
+      dots.forEach((d, k) => d.addEventListener('click', () => { go(k); stop(); start(); }));
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? start() : stop())), { threshold: 0.2 }).observe(show);
+      } else { start(); }
+    });
+
+    /* ----- Números da calculadora "pulam" quando o valor muda ----- */
+    document.querySelectorAll('[data-calc-out]').forEach((el) => {
+      new MutationObserver(() => {
+        el.classList.remove('is-bump');
+        void el.offsetWidth;                   // reinicia a animação
+        el.classList.add('is-bump');
+      }).observe(el, { childList: true, characterData: true, subtree: true });
+    });
+
+    /* ----- Contador dos números (ex.: stats do Instagram) ----- */
+    const counters = document.querySelectorAll('[data-count-to]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (counters.length && 'IntersectionObserver' in window && !reduceMotion) {
+      const runCount = (el) => {
+        const to = parseInt(el.dataset.countTo, 10);
+        const prefix = el.dataset.countPrefix || '';
+        const suffix = el.dataset.countSuffix || '';
+        const dur = 1800;
+        const t0 = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(to * eased).toLocaleString('pt-BR') + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runCount(entry.target);
+            cio.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      counters.forEach((el) => {
+        el.textContent = (el.dataset.countPrefix || '') + '0' + (el.dataset.countSuffix || '');
+        cio.observe(el);
+      });
+    }
+
+
+    /* ----- Seletor de área de atuação ([data-area-set]) -----
+       Troca público, quiz, conversa da IA e notificações.
+       ?area=bancario na URL já abre na área (script no <head>). */
+    (function () {
+      const root = document.documentElement;
+      const btns = [...document.querySelectorAll('[data-area-set]')];
+      const sync = (area) => {
+        btns.forEach((b) => {
+          const on = b.getAttribute('data-area-set') === area;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+      };
+      const setArea = (area) => {
+        if (root.getAttribute('data-area') === area) return;
+        root.setAttribute('data-area', area);
+        sync(area);
+        try {
+          const u = new URL(window.location.href);
+          u.searchParams.set('area', area);
+          history.replaceState(null, '', u);
+        } catch (e) {}
+        document.dispatchEvent(new CustomEvent('area:change', { detail: area }));
+        if (typeof ScrollTrigger !== 'undefined') requestAnimationFrame(() => ScrollTrigger.refresh());
+      };
+      btns.forEach((b) => b.addEventListener('click', () => setArea(b.getAttribute('data-area-set'))));
+
+      // "veja os planos" na proposta abre direto a aba Valores do CRM
+      document.querySelectorAll('[data-crm-open]').forEach((a) => {
+        a.addEventListener('click', () => {
+          const tab = document.querySelector('[data-crm-tab="' + a.getAttribute('data-crm-open') + '"]');
+          if (tab) tab.click();
+        });
+      });
+      sync(root.getAttribute('data-area') || 'reclamante');
+    })();
+
+    /* ----- Calculadora de investimento (Métricas) -----
+       Mantidos CPL e taxas, dobrar o investimento dobra o volume (CAC constante). */
+    (function () {
+      const sec  = document.getElementById('metricas');
+      const root = sec && sec.querySelector('[data-calc]');
+      if (!sec || !root) return;
+
+      const DIAS_MES = 30;
+      const CPL_MIN  = 12;    // R$/contato no melhor caso
+      const CPL_MAX  = 15;    // R$/contato no pior caso
+      const CAC      = 171;   // custo por contrato fechado
+      const TX = { resp: 0.8, oport: 0.5, agend: 0.3, realiz: 0.21, contMin: 0.05, contMax: 0.10 };  // 100 → 80 → 50 → 30 → 21 → 5 a 10
+
+      const INVEST = { min: 30,  max: 300,   step: 10,  valor: 40 };
+      const TICKET = { min: 500, max: 20000, step: 500, valor: 1500 };
+
+      const br  = (n) => n.toLocaleString('pt-BR');
+      const mil = (n) => 'R$ ' + (n / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' mil';
+      const alvoDe = (nome) => (nome === 'invest' ? INVEST : TICKET);
+      const outs = {};
+      sec.querySelectorAll('[data-calc-out]').forEach((el) => { outs[el.getAttribute('data-calc-out')] = el; });
+
+      const render = () => {
+        const mensal   = INVEST.valor * DIAS_MES;
+        const leadsMin = Math.round(mensal / CPL_MAX);
+        const leadsMax = Math.round(mensal / CPL_MIN);
+        const faixa = (t) => br(Math.round(leadsMin * t)) + ' a ' + br(Math.round(leadsMax * t));
+        const cMin = Math.max(1, Math.round(leadsMin * TX.contMin));
+        const cMax = Math.max(cMin, Math.round(leadsMax * TX.contMax));
+        const set = (k, txt) => { if (outs[k] && outs[k].textContent !== txt) outs[k].textContent = txt; };
+
+        set('invest', br(INVEST.valor));
+        set('mensal', 'R$ ' + br(mensal));
+        set('ticket', (TICKET.valor / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 1 }));
+        set('leads', br(leadsMin) + ' a ' + br(leadsMax));
+        set('resp',  faixa(TX.resp));
+        set('oport', faixa(TX.oport));
+        set('agend', faixa(TX.agend));
+        set('realiz', faixa(TX.realiz));
+        set('vendas', cMin === cMax ? br(cMin) : br(cMin) + ' a ' + br(cMax));
+        set('cac', br(Math.round(mensal / cMax)) + ' a ' + br(Math.round(mensal / cMin)));
+        set('fat', mil(cMin * TICKET.valor) + ' a ' + mil(cMax * TICKET.valor));
+
+        root.querySelectorAll('[data-calc-step]').forEach((b) => {
+          const alvo = alvoDe(b.getAttribute('data-calc-step'));
+          const prox = alvo.valor + Number(b.getAttribute('data-calc-dir')) * alvo.step;
+          b.disabled = prox < alvo.min || prox > alvo.max;
+        });
+        const lim = root.querySelector('[data-calc-limit="invest"]');
+        if (lim) lim.textContent = INVEST.valor <= INVEST.min ? 'mínimo R$ 30/dia'
+                               : INVEST.valor >= INVEST.max ? 'máximo R$ 300/dia' : '';
+      };
+
+      root.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-calc-step]');
+        if (!btn || btn.disabled) return;
+        const alvo = alvoDe(btn.getAttribute('data-calc-step'));
+        const prox = alvo.valor + Number(btn.getAttribute('data-calc-dir')) * alvo.step;
+        if (prox < alvo.min || prox > alvo.max) return;
+        alvo.valor = prox;
+        render();
+      });
+      render();
+    })();
+
     if (typeof gsap === 'undefined') return;
 
     /* ----- Stagger das rows do comparativo ----- */
@@ -456,9 +724,13 @@
       };
 
       let running = false;
+      let gen = 0;                 // cada execução tem um id; troca de área invalida a anterior
       const play = async () => {
         if (running) return;
         running = true;
+        const my = ++gen;
+        const wait = (ms) => new Promise((r) => setTimeout(r, ms)).then(() => { if (my !== gen) throw 0; });
+        try {
         // eslint-disable-next-line no-constant-condition
         while (running) {
           reset();
@@ -498,7 +770,9 @@
           }
           await wait(2000);
         }
+        } catch (e) { /* execução cancelada */ }
       };
+      const stop = () => { running = false; gen++; };
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -506,13 +780,22 @@
             if (entry.isIntersecting) {
               play();
             } else {
-              running = false;
+              stop();
             }
           });
         },
         { threshold: 0.3 }
       );
       observer.observe(chat);
+      // conversa da área que ficou visível recomeça do zero
+      document.addEventListener('area:change', () => {
+        stop();
+        reset();
+        if (chat.offsetParent !== null) {
+          const r = chat.getBoundingClientRect();
+          if (r.bottom > 0 && r.top < window.innerHeight) play();
+        }
+      });
     });
 
     /* ----- Carrossel de prints do sistema 1Nort (Seção 8) ----- */
