@@ -903,7 +903,13 @@
       const tabs = modal.querySelectorAll('.creatives-modal__tab');
       const panels = modal.querySelectorAll('.creatives-modal__panel');
 
+      const selectTab = (target) => {
+        tabs.forEach((t) => t.classList.toggle('is-active', t.getAttribute('data-tab') === target));
+        panels.forEach((p) => p.classList.toggle('is-active', p.getAttribute('data-panel') === target));
+      };
       const open = () => {
+        const area = document.documentElement.getAttribute('data-area') || 'reclamante';
+        selectTab(['previdenciario', 'bancario', 'consumidor'].includes(area) ? 'vids' : 'imgs');
         modal.hidden = false;
         document.body.style.overflow = 'hidden';
       };
@@ -920,11 +926,7 @@
 
       // Troca de tabs
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const target = tab.getAttribute('data-tab');
-          tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
-          panels.forEach((p) => p.classList.toggle('is-active', p.getAttribute('data-panel') === target));
-        });
+        tab.addEventListener('click', () => selectTab(tab.getAttribute('data-tab')));
       });
 
       // Troca de tabs já configurada acima — click em vídeo é tratado globalmente abaixo

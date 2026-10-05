@@ -17166,6 +17166,31 @@ html[data-area="consumidor"] [data-area-show]:not([data-area-show~="consumidor"]
   font-size: 0.78rem; line-height: 1.45; color: rgba(255,255,255,0.72);
   background: rgba(255,184,0,0.08); border: 1px dashed rgba(255,184,0,0.35);
 }
+.funnel-step__creatives-real.area-creatives { display: block; }
+.area-creatives__videos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.area-creatives__video {
+  min-width: 0;
+  aspect-ratio: 9 / 16;
+}
+.area-creatives__video:hover .fs-real__play { transform: translate(-50%, -50%) scale(1.08); }
+.area-creatives__image {
+  height: clamp(190px, 22vw, 260px);
+  margin-top: 10px;
+}
+.area-creatives__image img {
+  object-fit: contain;
+  background: #090909;
+}
+.media-contain { object-fit: contain !important; background: #090909; }
+@media (max-width: 520px) {
+  .area-creatives__videos { gap: 5px; }
+  .area-creatives__video .fs-real__play { width: 30px; height: 30px; }
+  .area-creatives__image { height: 200px; }
+}
 .hero-areas { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; }
 .hero-areas__lbl { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
 .hero-areas .prod-tabs { margin: 0; justify-content: center; }
