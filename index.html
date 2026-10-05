@@ -917,7 +917,7 @@
           </div>
           <h3 class="funnel-step__title">Criativos</h3>
           <span class="funnel-step__sub">(imagens e vídeos)</span>
-          <div class="funnel-step__mock funnel-step__creatives-real">
+          <div class="funnel-step__mock funnel-step__creatives-real" data-area-show="reclamante previdenciario bancario consumidor">
             <figure class="fs-real fs-real--video" data-cm-video="assets/videos/video-real-3.mp4?v=20260916" tabindex="0" role="button" aria-label="Abrir vídeo criativo">
               <video class="fs-real__vid" data-src="assets/videos/video-real-3.mp4?v=20260916" data-manual-play poster="assets/videos/video-real-3-poster-lite.webp?v=20260917" muted playsinline preload="none"></video>
               <span class="fs-real__play" aria-hidden="true">
@@ -933,6 +933,24 @@
               <figcaption class="visually-hidden">Anúncio real · 2</figcaption>
             </figure>
           </div>
+          <div class="funnel-step__mock funnel-step__creatives-real" data-area-show="reclamada">
+            <figure class="fs-real fs-real--video" data-zoom>
+              <img src="assets/images/criativo-trabalhista-reclamada-1.jpg" alt="Criativo para defesa trabalhista empresarial: sua empresa está preparada para uma ação trabalhista?" loading="lazy" style="object-fit: contain" />
+              <figcaption class="visually-hidden">Criativo real · Trabalhista reclamada</figcaption>
+            </figure>
+            <figure class="fs-real" data-cm-video="assets/videos/criativo-trabalhista-reclamada-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 1">
+              <video class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="fs-real__play" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </figure>
+            <figure class="fs-real" data-cm-video="assets/videos/criativo-trabalhista-reclamada-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 2">
+              <video class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="fs-real__play" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </figure>
+          </div>
           <button class="fs-creative-cta" data-open-creatives type="button">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/>
@@ -942,7 +960,7 @@
             <span>Ver criativos reais</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="area-note" data-area-show="reclamada previdenciario bancario consumidor">Exemplos rodando hoje em trabalhista. Os criativos da sua área são produzidos no 1º mês.</p>
+          <p class="area-note" data-area-show="previdenciario bancario consumidor">Exemplos rodando hoje em trabalhista. Os criativos da sua área são produzidos no 1º mês.</p>
           <p class="funnel-step__hint">Aqui definimos se você atrai cliente… ou negociador.</p>
         </article>
 
@@ -2543,7 +2561,8 @@
         <button class="creatives-modal__tab is-active" data-tab="imgs" type="button">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Imagens
-          <span class="creatives-modal__count">4</span>
+          <span class="creatives-modal__count" data-area-show="reclamante previdenciario bancario consumidor">4</span>
+          <span class="creatives-modal__count" data-area-show="reclamada">1</span>
         </button>
         <button class="creatives-modal__tab" data-tab="vids" type="button">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
@@ -2555,7 +2574,7 @@
       <div class="creatives-modal__content">
         <!-- TAB IMAGENS -->
         <div class="creatives-modal__panel is-active" data-panel="imgs">
-          <div class="creatives-modal__grid">
+          <div class="creatives-modal__grid" data-area-show="reclamante previdenciario bancario consumidor">
             <figure class="cm-thumb" data-zoom>
               <img src="assets/images/ad-real-1.jpg" alt="Criativo real 1" loading="lazy" />
               <button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -2577,11 +2596,18 @@
               <figcaption>Anúncio real · 4</figcaption>
             </figure>
           </div>
+          <div class="creatives-modal__grid" data-area-show="reclamada">
+            <figure class="cm-thumb" data-zoom>
+              <img src="assets/images/criativo-trabalhista-reclamada-1.jpg" alt="Criativo para defesa trabalhista empresarial: sua empresa está preparada para uma ação trabalhista?" loading="lazy" />
+              <button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <figcaption>Defesa trabalhista empresarial</figcaption>
+            </figure>
+          </div>
         </div>
 
         <!-- TAB VÍDEOS -->
         <div class="creatives-modal__panel" data-panel="vids">
-          <div class="creatives-modal__grid creatives-modal__grid--videos">
+          <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="reclamante previdenciario bancario consumidor">
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/video-real-1.mp4">
               <img class="cm-thumb__vid" src="assets/videos/video-real-1-poster.jpg" alt="Anúncio real 1" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span>
@@ -2599,6 +2625,26 @@
               <span class="cm-thumb__overlay"></span>
               <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Anúncio real · 3</figcaption>
+            </figure>
+          </div>
+          <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="reclamada">
+            <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 1">
+              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="cm-thumb__overlay"></span>
+              <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption>Trabalhista reclamada · Vídeo 1</figcaption>
+            </figure>
+            <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 2">
+              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="cm-thumb__overlay"></span>
+              <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption>Trabalhista reclamada · Vídeo 2</figcaption>
+            </figure>
+            <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 3">
+              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <span class="cm-thumb__overlay"></span>
+              <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <figcaption>Trabalhista reclamada · Vídeo 3</figcaption>
             </figure>
           </div>
         </div>
