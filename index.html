@@ -1863,35 +1863,28 @@
           <span class="text-yellow">sob controle</span>.
         </h2>
         <p class="section__sub">
-          O portal da 1Nort mostra o que entrou, o que avançou e o que virou contrato. Você decide com dados, não com achismo.
+          No portal da 1Nort você vê o que entrou, o que avançou e o que virou contrato, tudo numa tela só.
         </p>
       </header>
 
-
-      <!-- Portal 1Nort: telas reais passando + botão para abrir o portal -->
-      <div class="crm-video" data-reveal>
-        <header class="crm-video__head">
-          <span class="kicker"><span class="kicker__dot"></span>VEJA NA PRÁTICA</span>
-          <h3 class="crm-video__title" data-reveal-words>Conheça o <span class="text-yellow">portal da 1Nort</span></h3>
-          <p class="crm-video__sub">Onde você acompanha a operação do escritório:</p>
-          <ul class="crm-video__chips" aria-label="O que tem no portal">
-            <li style="--i: 0">Dashboard</li><li style="--i: 1">Leads</li><li style="--i: 2">IA</li><li style="--i: 3">Cursos</li>
-          </ul>
-          <p class="crm-video__sub crm-video__sub--end">Tudo <span class="crm-video__hl">numa tela só</span>.</p>
+      <!-- Portal 1Nort: abas em cima, tela grande embaixo (clique amplia) -->
+      <div class="portal-wrap anim-fade-up" data-delay="0.1">
+        <div class="portal-toolbar">
+          <div class="portal-tabs" role="tablist" aria-label="Telas do portal"><button class="portal-tab is-active" type="button" role="tab" aria-selected="true" data-portal-go="0">Dashboard</button><button class="portal-tab" type="button" role="tab" aria-selected="false" data-portal-go="1">Leads</button><button class="portal-tab" type="button" role="tab" aria-selected="false" data-portal-go="2">IA no WhatsApp</button><button class="portal-tab" type="button" role="tab" aria-selected="false" data-portal-go="3">Cursos</button></div>
           <a class="portal-btn" href="https://portal.1nort.com.br" target="_blank" rel="noopener">Acessar o portal 1Nort<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg></a>
-        </header>
+        </div>
         <div class="portal-show" data-portal-show>
-          <div class="portal-show__bar" aria-hidden="true"><i></i><i></i><i></i><span>portal.1nort.com.br</span><em class="portal-show__hint">clique na tela para ampliar</em></div>
+          <div class="portal-show__bar" aria-hidden="true"><i></i><i></i><i></i><span>portal.1nort.com.br</span></div>
           <div class="portal-show__screen">
-              <figure data-conversa-img="assets/images/sistema-1.webp" data-conversa-caption="Portal 1Nort · Dashboard" role="button" tabindex="0" aria-label="Ampliar Portal 1Nort · Dashboard" class="portal-slide is-active"><img src="assets/images/sistema-1.webp" alt="Portal 1Nort · Dashboard do escritório com leads, qualificados, agendamentos e fechamentos por campanha" loading="lazy" /><figcaption>Dashboard</figcaption></figure>
-              <figure data-conversa-img="assets/images/portal-leads-advoga.webp" data-conversa-caption="Portal 1Nort · Leads" role="button" tabindex="0" aria-label="Ampliar Portal 1Nort · Leads" class="portal-slide"><img src="assets/images/portal-leads-advoga.webp" alt="Portal 1Nort · Lista de leads do escritório com status, origem do tráfego e dados de qualificação" loading="lazy" /><figcaption>Leads</figcaption></figure>
-              <figure data-conversa-img="assets/images/sistema-3.webp" data-conversa-caption="Portal 1Nort · IA no WhatsApp" role="button" tabindex="0" aria-label="Ampliar Portal 1Nort · IA no WhatsApp" class="portal-slide"><img src="assets/images/sistema-3.webp" alt="Portal 1Nort · Configuração da IA de atendimento do escritório no WhatsApp" loading="lazy" /><figcaption>IA no WhatsApp</figcaption></figure>
-              <figure data-conversa-img="assets/images/portal-cursos.jpg" data-conversa-caption="Portal 1Nort · Cursos" role="button" tabindex="0" aria-label="Ampliar Portal 1Nort · Cursos" class="portal-slide"><img src="assets/images/portal-cursos.jpg" alt="Portal 1Nort · Área de cursos do 1Nort.APP" loading="lazy" /><figcaption>Cursos</figcaption></figure>
+              <figure class="portal-slide is-active" data-conversa-img="assets/images/sistema-1.webp" data-conversa-caption="Portal 1Nort · Dashboard" role="button" tabindex="0" aria-label="Ampliar tela: Dashboard"><img src="assets/images/sistema-1.webp" alt="Portal 1Nort · Dashboard do escritório com leads, qualificados, agendamentos e fechamentos por campanha" loading="lazy" /></figure>
+              <figure class="portal-slide" data-conversa-img="assets/images/portal-leads-advoga.webp" data-conversa-caption="Portal 1Nort · Leads" role="button" tabindex="0" aria-label="Ampliar tela: Leads"><img src="assets/images/portal-leads-advoga.webp" alt="Portal 1Nort · Lista de leads do escritório com status, origem do tráfego e dados de qualificação" loading="lazy" /></figure>
+              <figure class="portal-slide" data-conversa-img="assets/images/sistema-3.webp" data-conversa-caption="Portal 1Nort · IA no WhatsApp" role="button" tabindex="0" aria-label="Ampliar tela: IA no WhatsApp"><img src="assets/images/sistema-3.webp" alt="Portal 1Nort · Configuração da IA de atendimento do escritório no WhatsApp" loading="lazy" /></figure>
+              <figure class="portal-slide" data-conversa-img="assets/images/portal-cursos.jpg" data-conversa-caption="Portal 1Nort · Cursos" role="button" tabindex="0" aria-label="Ampliar tela: Cursos"><img src="assets/images/portal-cursos.jpg" alt="Portal 1Nort · Área de cursos do 1Nort.APP" loading="lazy" /></figure>
           </div>
           <div class="portal-show__dots"><button type="button" aria-label="Tela 1" class="is-active"></button><button type="button" aria-label="Tela 2"></button><button type="button" aria-label="Tela 3"></button><button type="button" aria-label="Tela 4"></button></div>
         </div>
+        <p class="portal-hint">Clique na tela para ampliar.</p>
       </div>
-
     </div>
   </section>
 

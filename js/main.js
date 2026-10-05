@@ -237,6 +237,19 @@
       };
       btns.forEach((b) => b.addEventListener('click', () => setArea(b.getAttribute('data-area-set'))));
 
+      // Abas do portal: trocam a tela e acompanham o carrossel automático
+      document.querySelectorAll('.portal-wrap').forEach((wrap) => {
+        const tabs = [...wrap.querySelectorAll('[data-portal-go]')];
+        const dots = [...wrap.querySelectorAll('.portal-show__dots button')];
+        const slides = [...wrap.querySelectorAll('.portal-slide')];
+        const sync = () => {
+          const i = slides.findIndex((sl) => sl.classList.contains('is-active'));
+          tabs.forEach((t, k) => { t.classList.toggle('is-active', k === i); t.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+        };
+        tabs.forEach((t) => t.addEventListener('click', () => { const d = dots[+t.getAttribute('data-portal-go')]; if (d) d.click(); sync(); }));
+        slides.forEach((sl) => new MutationObserver(sync).observe(sl, { attributes: true, attributeFilter: ['class'] }));
+      });
+
       // "veja os planos" na proposta abre direto a aba Valores do CRM
       document.querySelectorAll('[data-crm-open]').forEach((a) => {
         a.addEventListener('click', () => {
