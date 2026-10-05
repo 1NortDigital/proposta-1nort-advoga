@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261005b" />
+  <link rel="stylesheet" href="css/style.css?v=20261005d" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -66,6 +66,19 @@
       <p id="access-gate-error" class="access-gate__error" aria-live="polite"></p>
     </div>
   </div>
+
+  <button class="call-prep" data-call-prep type="button" title="Baixar os vídeos antes da reunião para uma apresentação mais estável">
+    <span class="call-prep__icon" aria-hidden="true">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="call-prep__copy">
+      <strong data-call-prep-label>Preparar para a call</strong>
+      <small data-call-prep-status>Baixar vídeos antecipadamente</small>
+    </span>
+    <span class="call-prep__progress" aria-hidden="true"><span data-call-prep-bar></span></span>
+  </button>
 
   <!-- ============================================================
        SEÇÃO 1 — HERO (sem navbar, sem CTA — é proposta comercial)
@@ -487,28 +500,28 @@
       <div class="cases-block anim-fade-up" data-delay="0.1" style="margin-bottom: 80px;">
         <div class="cases-grid" data-cases style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
           <article class="video-card" data-cm-video="assets/videos/depoimento-1.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 1">
-            <video class="video-card__iframe" data-src="assets/videos/depoimento-1.mp4" poster="assets/videos/depoimento-1-poster.jpg" muted loop playsinline preload="none"></video>
+            <img class="video-card__iframe" src="assets/videos/depoimento-1-poster.jpg" alt="" loading="lazy" decoding="async" />
             <span class="video-card__overlay" aria-hidden="true"></span>
             <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </article>
           <article class="video-card" data-cm-video="assets/videos/depoimento-2.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 2">
-            <video class="video-card__iframe" data-src="assets/videos/depoimento-2.mp4" poster="assets/videos/depoimento-2-poster.jpg" muted loop playsinline preload="none"></video>
+            <img class="video-card__iframe" src="assets/videos/depoimento-2-poster.jpg" alt="" loading="lazy" decoding="async" />
             <span class="video-card__overlay" aria-hidden="true"></span>
             <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </article>
           <article class="video-card" data-cm-video="assets/videos/depoimento-3.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 3">
-            <video class="video-card__iframe" data-src="assets/videos/depoimento-3.mp4" poster="assets/videos/depoimento-3-poster.jpg" muted loop playsinline preload="none"></video>
+            <img class="video-card__iframe" src="assets/videos/depoimento-3-poster.jpg" alt="" loading="lazy" decoding="async" />
             <span class="video-card__overlay" aria-hidden="true"></span>
             <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </button>
           </article>
           <article class="video-card" data-cm-video="assets/videos/depoimento-4.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 4">
-            <video class="video-card__iframe" data-src="assets/videos/depoimento-4.mp4" poster="assets/videos/depoimento-4-poster.jpg" muted loop playsinline preload="none"></video>
+            <img class="video-card__iframe" src="assets/videos/depoimento-4-poster.jpg" alt="" loading="lazy" decoding="async" />
             <span class="video-card__overlay" aria-hidden="true"></span>
             <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -936,15 +949,15 @@
           <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="reclamada">
             <div class="area-creatives__videos">
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 1">
-                <video class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-1-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 2">
-                <video class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-2-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 3">
-                <video class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-trabalhista-reclamada-3-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
             </div>
@@ -956,15 +969,15 @@
           <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="previdenciario">
             <div class="area-creatives__videos">
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-previdenciario-auxilio-acidente.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre auxílio-acidente">
-                <video class="fs-real__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-previdenciario-bpc-loas.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre BPC LOAS">
-                <video class="fs-real__vid" src="assets/videos/criativo-previdenciario-bpc-loas.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-previdenciario-bpc-loas-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-previdenciario-salario-maternidade.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre salário-maternidade">
-                <video class="fs-real__vid" src="assets/videos/criativo-previdenciario-salario-maternidade.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-previdenciario-salario-maternidade-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
             </div>
@@ -972,15 +985,15 @@
           <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="bancario">
             <div class="area-creatives__videos">
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-bancario-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 1">
-                <video class="fs-real__vid" src="assets/videos/criativo-bancario-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-bancario-1-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-bancario-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 2">
-                <video class="fs-real__vid" src="assets/videos/criativo-bancario-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-bancario-2-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-bancario-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 3">
-                <video class="fs-real__vid media-contain" src="assets/videos/criativo-bancario-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid media-contain" src="assets/videos/criativo-bancario-3-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
             </div>
@@ -988,15 +1001,15 @@
           <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="consumidor">
             <div class="area-creatives__videos">
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-consumidor-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 1">
-                <video class="fs-real__vid" src="assets/videos/criativo-consumidor-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-consumidor-1-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-consumidor-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 2">
-                <video class="fs-real__vid" src="assets/videos/criativo-consumidor-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-consumidor-2-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
               <figure class="fs-real area-creatives__video" data-cm-video="assets/videos/criativo-consumidor-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 3">
-                <video class="fs-real__vid" src="assets/videos/criativo-consumidor-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+                <img class="fs-real__vid" src="assets/videos/criativo-consumidor-3-poster.jpg" alt="" loading="lazy" decoding="async" />
                 <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               </figure>
             </div>
@@ -1049,21 +1062,21 @@
           </div>
           <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="previdenciario">
             <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-previdenciario-auxilio-acidente.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação previdenciária">
-              <video class="fs-real__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="fs-real__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption class="visually-hidden">Vídeo · auxílio-acidente</figcaption>
             </figure>
           </div>
           <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="bancario">
             <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-bancario-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação bancária">
-              <video class="fs-real__vid" src="assets/videos/criativo-bancario-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="fs-real__vid" src="assets/videos/criativo-bancario-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption class="visually-hidden">Vídeo · direito bancário</figcaption>
             </figure>
           </div>
           <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="consumidor">
             <figure class="fs-real fs-qual-media fs-qual-media--video" data-cm-video="assets/videos/criativo-consumidor-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo de primeira qualificação do consumidor">
-              <video class="fs-real__vid" src="assets/videos/criativo-consumidor-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="fs-real__vid" src="assets/videos/criativo-consumidor-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption class="visually-hidden">Vídeo · direito do consumidor</figcaption>
             </figure>
@@ -2705,19 +2718,19 @@
           </div>
           <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="reclamada">
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 1">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span>
               <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Trabalhista reclamada · Vídeo 1</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 2">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-2-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span>
               <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Trabalhista reclamada · Vídeo 2</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-trabalhista-reclamada-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de trabalhista reclamada 3">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-trabalhista-reclamada-3-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span>
               <span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Trabalhista reclamada · Vídeo 3</figcaption>
@@ -2725,51 +2738,51 @@
           </div>
           <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="previdenciario">
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-previdenciario-auxilio-acidente.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre auxílio-acidente">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-auxilio-acidente-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Previdenciário · Auxílio-acidente</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-previdenciario-bpc-loas.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre BPC LOAS">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-bpc-loas.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-bpc-loas-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Previdenciário · BPC LOAS</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-previdenciario-salario-maternidade.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo sobre salário-maternidade">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-salario-maternidade.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-previdenciario-salario-maternidade-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Previdenciário · Salário-maternidade</figcaption>
             </figure>
           </div>
           <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="bancario">
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-bancario-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 1">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-bancario-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-bancario-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Bancário · Vídeo 1</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-bancario-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 2">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-bancario-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-bancario-2-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Bancário · Vídeo 2</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-bancario-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo bancário 3">
-              <video class="cm-thumb__vid media-contain" src="assets/videos/criativo-bancario-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid media-contain" src="assets/videos/criativo-bancario-3-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Bancário · Vídeo 3</figcaption>
             </figure>
           </div>
           <div class="creatives-modal__grid creatives-modal__grid--videos" data-area-show="consumidor">
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-consumidor-1.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 1">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-consumidor-1.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-consumidor-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Consumidor · Vídeo 1</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-consumidor-2.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 2">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-consumidor-2.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-consumidor-2-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Consumidor · Vídeo 2</figcaption>
             </figure>
             <figure class="cm-thumb cm-thumb--video" data-cm-video="assets/videos/criativo-consumidor-3.mp4" tabindex="0" role="button" aria-label="Abrir vídeo criativo de direito do consumidor 3">
-              <video class="cm-thumb__vid" src="assets/videos/criativo-consumidor-3.mp4#t=0.1" muted playsinline preload="metadata"></video>
+              <img class="cm-thumb__vid" src="assets/videos/criativo-consumidor-3-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="cm-thumb__overlay"></span><span class="cm-thumb__play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption>Consumidor · Vídeo 3</figcaption>
             </figure>
@@ -2803,7 +2816,8 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20261005b"></script>
+  <script src="js/main.js?v=20261005d"></script>
+  <script src="js/call-prep.js?v=20261005d"></script>
 
   <!-- Gate de acesso · valida senha do time -->
   <script>
