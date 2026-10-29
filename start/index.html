@@ -104,6 +104,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .live iframe{position:absolute;top:0;left:0;border:0;background:#fff;transform-origin:0 0;opacity:0;transition:opacity .4s}
 .live.ready iframe{opacity:1}
 .live--static{pointer-events:none}
+/* Google Meu Negócio: print de referência real */
+.gmb-real{width:min(560px,100%);margin:0;background:#1a1a1a;border:1px solid #2c2c2c;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.gmb-shot{aspect-ratio:820/764;overflow:hidden;background:#fff}
+.gmb-shot img{width:191.22%;max-width:none;height:auto;display:block}
+.gmb-real figcaption{padding:12px 16px;font-size:13px;line-height:1.5;color:#cfcfcf;background:#202020;border-top:1px solid #2c2c2c}
+.gmb-real figcaption b{color:#ffb800}
 .live-hint{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-family:var(--f-display);font-size:13px;font-weight:600;color:var(--fg-soft)}
 .live-hint i{width:8px;height:8px;border-radius:50%;background:#28c840;box-shadow:0 0 0 4px rgba(40,200,64,.18)}
 .showcase .phone{position:absolute;right:-10px;bottom:-30px;width:210px}
@@ -500,18 +506,11 @@ footer img{height:26px;width:auto;opacity:.8}
       </div>
     </div>
     <div class="stage" aria-label="Exemplo de perfil no Google">
-      <div class="gmn">
-        <div class="map"><div class="road"></div><span class="pin2" style="left:20%;top:25%"></span><span class="pin2" style="left:78%;top:70%"></span><div class="pin"></div></div>
-        <div class="gmn-body">
-          <p class="gmn-name">Seu Escritório Advocacia</p>
-          <div class="stars"><b>4,9</b> <span>★★★★★</span> (87 avaliações)</div>
-          <div class="gmn-cat">Advogado trabalhista · Sua cidade</div>
-          <div class="gmn-actions"><div><i>✆</i>Ligar</div><div><i>➚</i>Rotas</div><div><i>◎</i>Site</div><div><i>✉</i>Mensagem</div></div>
-          <div class="gmn-row"><b>Aberto</b> · Fecha às 18h</div>
-          <div class="gmn-row">Atende na sua cidade e região</div>
-          <div class="gmn-review">"Me explicaram tudo com paciência e resolveram minha rescisão." <em>Resposta do proprietário: Obrigado pela confiança, Carlos!</em></div>
-        </div>
-      </div>
+      <figure class="gmb-real">
+        <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">google.com/<b>maps</b> · advogado barra da tijuca</div></div>
+        <div class="gmb-shot"><img src="../assets/images/gmb-referencia.jpg" alt="Perfil real no Google Maps de um escritório de advocacia na Barra da Tijuca, com nota 4,6 e 1.490 avaliações" width="1568" height="764" loading="lazy"></div>
+        <figcaption><b>Referência real:</b> escritório na Barra da Tijuca com nota 4,6 e 1.490 avaliações, entre os primeiros na busca “advogado barra da tijuca”.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
