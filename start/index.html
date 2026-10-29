@@ -157,8 +157,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .fill{height:100%;border-radius:12px;width:0;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
 .fill.slow{background:linear-gradient(90deg,#5a5a5a,#7a7a7a)}
 .fill.fast{background:linear-gradient(90deg,var(--y-soft),var(--y),var(--y-deep));box-shadow:0 0 16px rgba(255,184,0,.5)}
-.fill.slow{width:100%}
-.fill.fast{width:28%}
+.fill.slow{width:30%;transition-duration:6s}
+.fill.fast{width:100%;transition-duration:.9s}
+.opt--simple{grid-template-columns:1fr}
 .speed.wait .fill{width:0}
 .kb{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
 .kb strong{font-family:var(--f-display);font-size:44px;line-height:1;font-weight:800;color:var(--y);font-variant-numeric:tabular-nums}
@@ -301,7 +302,7 @@ footer img{height:26px;width:auto;opacity:.8}
   .showcase .phone::before{display:none}
   .tags{margin-top:56px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.speed .fill.slow{width:100%}.speed .fill.fast{width:28%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.speed .fill.slow{width:30%}.speed .fill.fast{width:100%}}
 </style>
 
 <nav class="nav" aria-label="Topo">
@@ -325,7 +326,6 @@ footer img{height:26px;width:auto;opacity:.8}
       <span class="chip"><i></i>Mapa de calor</span>
       <span class="chip"><i></i>Rastreamento completo</span>
     </div>
-    <div class="hero-price"><a class="btn" href="#modelo">Ver página modelo</a><span>Investimento único de <b>R$ 600</b></span></div>
   </div>
 </header>
 
@@ -385,24 +385,21 @@ footer img{height:26px;width:auto;opacity:.8}
   <div class="wrap speed-grid">
     <div>
       <div class="head" style="margin-bottom:0">
-        <span class="pill">Página otimizada</span>
-        <h2>Carrega <span class="hl">rápido</span>, até no 4G</h2>
-        <p class="lead">Página lenta perde o cliente antes de ele ler a primeira linha. Por isso a sua landing page é feita em código próprio e enxuto, sem construtor de sites, sem plugins e sem tema pesado.</p>
+        <span class="pill">Página rápida</span>
+        <h2>Cada segundo de espera é <span class="hl">um cliente a menos</span></h2>
+        <p class="lead">Quem procura advogado está no celular e com pressa. Se a página demora, ele volta pro Google e chama o próximo escritório. A sua abre na hora.</p>
       </div>
-      <div class="opt">
-        <div class="op"><b>Código enxuto</b><span>Só o que a página precisa, sem sobras de construtor.</span></div>
-        <div class="op"><b>Imagens leves</b><span>Comprimidas em WebP, sem perder qualidade.</span></div>
-        <div class="op"><b>Topo carrega primeiro</b><span>Título, foto e botão aparecem antes do resto.</span></div>
-        <div class="op"><b>Testada no PageSpeed</b><span>Medimos no Google antes de publicar.</span></div>
-        <div class="op"><b>Layout estável</b><span>Nada "pula" na tela enquanto carrega.</span></div>
-        <div class="op"><b>SEO técnico</b><span>Título, descrição e estrutura que o Google entende.</span></div>
+      <div class="opt opt--simple">
+        <div class="op"><b>Abre na hora</b><span>Feita do zero, sem construtor de sites e sem plugins deixando tudo lento.</span></div>
+        <div class="op"><b>Rápida em qualquer celular</b><span>Funciona bem até no 4G, com sinal fraco.</span></div>
+        <div class="op"><b>Ajuda no Google</b><span>O Google valoriza página rápida, na busca e nos anúncios.</span></div>
       </div>
     </div>
     <div class="meter" id="meter">
-      <div class="load"><div class="load-top"><b>Site em construtor com plugins</b><span>carregando…</span></div><div class="track"><div class="fill slow"></div></div></div>
-      <div class="load"><div class="load-top"><b>Landing page 1Nort</b><span style="color:var(--y)">pronta</span></div><div class="track"><div class="fill fast"></div></div></div>
-      <div class="kb"><strong>36 KB</strong><span>é o tamanho do código da página modelo. Menos que uma única foto de celular.</span></div>
-      <p class="muted small">Comparação ilustrativa. A velocidade final também depende da hospedagem e das imagens usadas.</p>
+      <div class="load"><div class="load-top"><b>Site comum</b><span>ainda carregando…</span></div><div class="track"><div class="fill slow"></div></div></div>
+      <div class="load"><div class="load-top"><b>Landing page 1Nort</b><span style="color:var(--y)">pronta ✓</span></div><div class="track"><div class="fill fast"></div></div></div>
+      <div class="kb"><strong>53%</strong><span>das pessoas desistem quando a página leva mais de 3 segundos para abrir no celular.</span></div>
+      <p class="muted small">Fonte: Google.</p>
     </div>
   </div>
 </section>
@@ -572,7 +569,7 @@ footer img{height:26px;width:auto;opacity:.8}
       <h2>Tudo no ar em até <span class="hl">7 dias</span></h2>
     </div>
     <div class="weeks">
-      <div class="week"><span class="n">Dia 1</span><h3>Diagnóstico</h3><ul><li>Reunião de briefing</li><li>Auditoria do Google Meu Negócio</li><li>Pesquisa de buscas na sua região</li></ul></div>
+      <div class="week"><span class="n">Dia 1</span><h3>Diagnóstico</h3><ul><li>Auditoria do Google Meu Negócio</li><li>Pesquisa de buscas na sua região</li></ul></div>
       <div class="week"><span class="n">Dias 2 a 4</span><h3>Construção</h3><ul><li>Texto e layout da landing page</li><li>Otimização completa do perfil</li><li>Você aprova antes de publicar</li></ul></div>
       <div class="week"><span class="n">Dias 5 e 6</span><h3>Publicação</h3><ul><li>Página no ar e testada no PageSpeed</li><li>Tag Manager, conversões e Pixel</li><li>Mapa de calor instalado</li></ul></div>
       <div class="week"><span class="n">Dia 7</span><h3>Entrega</h3><ul><li>Teste completo de ponta a ponta</li><li>Ajustes finais na página</li><li>Acesso a tudo que foi configurado</li></ul></div>
@@ -604,7 +601,7 @@ footer img{height:26px;width:auto;opacity:.8}
         </ul>
         <a class="btn" href="#topo-final">Quero começar</a>
       </div></div>
-      <p class="next" id="topo-final">Aprovando hoje, a reunião de briefing acontece no dia seguinte e em até 7 dias está tudo no ar. Quando quiser crescer, a estrutura já está pronta para tráfego pago, IA de atendimento e CRM.</p>
+      <p class="next" id="topo-final">Aprovando hoje, começamos no dia seguinte e em até 7 dias está tudo no ar. Quando quiser crescer, a estrutura já está pronta para tráfego pago, IA de atendimento e CRM.</p>
     </div>
   </div>
 </section>
