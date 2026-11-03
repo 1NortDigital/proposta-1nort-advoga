@@ -17851,3 +17851,17 @@ html.is-locked .call-prep { display: none; }
 .rcase__vid--photo { background: linear-gradient(160deg, #2a2212, #121212); }
 .rcase__vid--photo img { z-index: 1; }
 .rcase__initials { position: absolute; inset: 0; display: grid; place-items: center; font: 900 2.6rem/1 var(--f-display); color: var(--c-yellow); opacity: .55; }
+
+/* ---- Resultados v3: 3 colunas, card vertical ---- */
+.rcases { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.rcase { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+.rcase__vid { aspect-ratio: 4 / 3.4; }
+.rcase__vid img { object-position: center 22%; }
+.rcase__vid--photo img { object-position: center top; }
+.rcase__body { padding: 20px 20px 20px; }
+.rcase__num { margin: 14px 0 4px; font-size: clamp(1.6rem, 2.3vw, 2.1rem); }
+.rcase__lab { font-size: 13px; }
+.rcase__quote { margin-top: 14px; padding-top: 14px; font-size: 13.5px; }
+.rcase__who { padding-top: 14px; }
+@media (max-width: 1000px) { .rcases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .rcases { grid-template-columns: 1fr; } .rcase { grid-template-columns: 130px 1fr; grid-template-rows: auto; } .rcase__vid { aspect-ratio: auto; min-height: 100%; } }
