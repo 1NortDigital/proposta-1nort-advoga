@@ -17895,16 +17895,3 @@ html.is-locked .call-prep { display: none; }
 .rcase__play { left: 12px; top: auto; bottom: 12px; transform: none; width: 38px; height: 38px; }
 .rcase__vid:hover .rcase__play { transform: scale(1.08); }
 
-/* ---- Resultados v5: foto/vídeo em cima, compacto ---- */
-.rcase { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-.rcase__vid { aspect-ratio: auto; min-height: 0; height: 200px; }
-.rcase__vid img { object-position: center 25%; }
-.rcase__body { padding: 14px 18px 16px; }
-.rcase__num { margin: 10px 0 2px; }
-@media (max-width: 680px) { .rcase { grid-template-columns: 1fr; } .rcase__vid { height: 220px; } }
-.rcase__vid { height: 176px; }
-#resultados.section { padding: 52px 0; }
-#resultados .section__head { margin-bottom: 22px; }
-.rcase__body { padding: 12px 18px 14px; }
-.rcase__quote { margin-top: 8px; padding-top: 8px; }
-.rcase__who { padding-top: 8px; }
