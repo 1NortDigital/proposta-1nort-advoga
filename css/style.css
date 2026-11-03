@@ -17641,3 +17641,64 @@ html.is-locked .call-prep { display: none; }
 @media (max-width: 520px) {
   .prev-bridge { padding: 24px 20px; }
 }
+
+/* ============================================================
+   O QUE ESTÁ INCLUÍDO (#direcionamento) — 2026-11-03
+============================================================ */
+.section--inc { padding: 72px 0; }
+.inc-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 26px; flex-wrap: wrap; }
+.inc-head .kicker { margin-bottom: 14px; }
+.inc-head .section__title { margin: 0; }
+.inc-time { list-style: none; margin: 0; padding: 4px; display: flex; gap: 4px; background: #0c0c0c; border: 1px solid var(--c-border-soft); border-radius: 14px; }
+.inc-time li { display: flex; flex-direction: column; padding: 9px 18px; border-radius: 10px; }
+.inc-time li:first-child { background: var(--c-yellow); color: #0a0a0a; }
+.inc-time b { font: 800 13px/1.2 var(--f-display); }
+.inc-time span { font-size: 12px; opacity: .75; }
+.inc-time li:not(:first-child) b { color: #fff; }
+.inc-time li:not(:first-child) span { color: var(--c-text-soft); }
+
+.inc-feature {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 26px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffc845 0%, #ffb800 55%, #e09a00 100%);
+  color: #0a0a0a;
+  box-shadow: 0 18px 44px rgba(255, 184, 0, 0.18);
+  margin-bottom: 18px;
+}
+.inc-feature__tag { font: 800 10.5px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; padding: 8px 12px; border-radius: 99px; background: #0a0a0a; color: var(--c-yellow); white-space: nowrap; }
+.inc-feature__main strong { display: block; font: 800 clamp(1.15rem, 1.8vw, 1.4rem)/1.2 var(--f-display); }
+.inc-feature__main p { margin: 4px 0 0; font-size: 14px; line-height: 1.45; opacity: .8; }
+.inc-feature__chips { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; }
+.inc-feature__chips li { font-size: 12px; font-weight: 600; padding: 6px 11px; border-radius: 99px; background: rgba(255,255,255,.4); border: 1px solid rgba(0,0,0,.1); white-space: nowrap; }
+
+.inc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.inc-col { background: linear-gradient(180deg, #161616, #101010); border: 1px solid var(--c-border-soft); border-radius: 16px; padding: 20px 20px 18px; }
+.inc-col__head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 12px; border-bottom: 1px solid var(--c-border-soft); }
+.inc-col__letter { width: 34px; height: 34px; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; background: rgba(255,184,0,.12); border: 1px solid rgba(255,184,0,.4); color: var(--c-yellow); font: 900 16px/1 var(--f-display); }
+.inc-col__head h3 { margin: 0; font: 700 15px/1.2 var(--f-display); color: #fff; }
+.inc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.inc-list li { position: relative; padding-left: 20px; font-size: 13.5px; line-height: 1.4; color: #e6e6e6; }
+.inc-list li::before { content: ""; position: absolute; left: 2px; top: 5px; width: 9px; height: 5px; border-left: 2px solid var(--c-yellow); border-bottom: 2px solid var(--c-yellow); transform: rotate(-45deg); }
+.inc-list em { font-style: normal; color: var(--c-text-muted); }
+.inc-list em::before { content: "· "; }
+.inc-list i { font-style: normal; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; color: var(--c-yellow); background: rgba(255,184,0,.1); border: 1px solid rgba(255,184,0,.3); padding: 1px 6px; border-radius: 99px; margin-left: 4px; white-space: nowrap; }
+
+.inc-note { margin: 18px 0 0; font-size: 13px; color: var(--c-text-muted); }
+.inc-note strong { color: var(--c-text-soft); }
+
+@media (max-width: 1100px) {
+  .inc-grid { grid-template-columns: repeat(2, 1fr); }
+  .inc-feature { grid-template-columns: 1fr; gap: 14px; }
+  .inc-feature__tag { justify-self: start; }
+  .inc-feature__chips { display: flex; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .section--inc { padding: 56px 0; }
+  .inc-grid { grid-template-columns: 1fr; }
+  .inc-time { width: 100%; }
+  .inc-time li { flex: 1; }
+}
