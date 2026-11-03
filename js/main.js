@@ -260,6 +260,16 @@
       sync(root.getAttribute('data-area') || 'reclamante');
     })();
 
+    /* ----- Landing page ao vivo: escala o iframe pra caber na moldura ----- */
+    document.querySelectorAll('.lpx-live-frame').forEach((box) => {
+      const f = box.querySelector('iframe'), w = +box.dataset.w;
+      const fit = () => { const sc = box.clientWidth / w; if (!sc) return; f.style.width = w + 'px'; f.style.height = Math.ceil(box.clientHeight / sc) + 'px'; f.style.transform = 'scale(' + sc + ')'; };
+      fit();
+      f.addEventListener('load', () => box.classList.add('ready'));
+      setTimeout(() => box.classList.add('ready'), 6000);
+      if ('ResizeObserver' in window) new ResizeObserver(fit).observe(box); else window.addEventListener('resize', fit);
+    });
+
     /* ----- Simulador de faturamento (Métricas) -----
        leads = tráfego / custo por lead · contratos = leads × taxa · faturamento = contratos × honorário */
     (function () {

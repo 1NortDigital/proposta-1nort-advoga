@@ -17702,3 +17702,48 @@ html.is-locked .call-prep { display: none; }
   .inc-time { width: 100%; }
   .inc-time li { flex: 1; }
 }
+
+/* ============================================================
+   LANDING PAGE DO ESCRITÓRIO (#funil, bloco 0) — 2026-11-03
+============================================================ */
+.lpx-block { margin-bottom: 72px; }
+.lpx { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 44px; align-items: center; }
+.lpx-live { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 99px; background: #141414; border: 1px solid var(--c-border-soft); font: 600 12.5px/1 var(--f-display); color: var(--c-text-soft); }
+.lpx-live i { width: 8px; height: 8px; border-radius: 50%; background: #28c840; box-shadow: 0 0 0 4px rgba(40, 200, 64, .18); }
+.lpx-title { margin: 16px 0 10px; font: 800 clamp(1.4rem, 2.4vw, 1.9rem)/1.2 var(--f-display); color: #fff; letter-spacing: -0.01em; }
+.lpx-sub { margin: 0 0 22px; font-size: 14px; line-height: 1.55; color: var(--c-text-soft); }
+.lpx-tags { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.lpx-tags li { padding: 14px 16px; border-radius: 12px; background: linear-gradient(180deg, #161616, #101010); border: 1px solid var(--c-border-soft); display: grid; gap: 3px; }
+.lpx-tags b { font: 700 14px/1.25 var(--f-display); color: #fff; }
+.lpx-tags span { font-size: 12.5px; color: var(--c-text-muted); line-height: 1.4; }
+.lpx-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 99px; background: var(--c-yellow); color: #0a0a0a; font: 700 14px/1 var(--f-display); text-decoration: none; box-shadow: 0 10px 28px rgba(255, 184, 0, .25); transition: transform var(--t-fast); }
+.lpx-btn:hover { transform: translateY(-2px); }
+
+.lpx-show { position: relative; padding: 0 40px 36px 0; }
+.lpx-browser { background: #1a1a1a; border: 1px solid #2c2c2c; border-radius: 16px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 184, 0, .08); }
+.lpx-bar { display: flex; align-items: center; gap: 12px; padding: 11px 14px; background: #202020; border-bottom: 1px solid #2c2c2c; }
+.lpx-dots { display: flex; gap: 6px; }
+.lpx-dots i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+.lpx-dots i:nth-child(2) { background: #febc2e; } .lpx-dots i:nth-child(3) { background: #28c840; }
+.lpx-url { flex: 1; min-width: 0; background: #141414; border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #9a9a9a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lpx-url b { color: #e6e6e6; font-weight: 500; }
+.lpx-view { position: relative; aspect-ratio: 1400 / 729; background: #0f1424; isolation: isolate; }
+.lpx-view img, .lpx-screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.lpx-phone { position: absolute; right: 0; bottom: 0; width: 170px; background: #050505; border-radius: 30px; padding: 7px; border: 1px solid #333; box-shadow: 0 30px 80px rgba(0, 0, 0, .7), 0 0 0 4px #121212; z-index: 3; }
+.lpx-screen { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 296 / 600; background: #111; isolation: isolate; }
+.lpx-live-frame { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+.lpx-live-frame iframe { position: absolute; top: 0; left: 0; border: 0; background: #fff; transform-origin: 0 0; opacity: 0; transition: opacity .4s; }
+.lpx-live-frame.ready iframe { opacity: 1; }
+.lpx-live-frame--static { pointer-events: none; }
+
+@media (max-width: 960px) {
+  .lpx { grid-template-columns: 1fr; gap: 32px; }
+  .lpx-show { order: -1; }
+}
+@media (max-width: 520px) {
+  .lpx-tags { grid-template-columns: 1fr; }
+  .lpx-show { padding: 0 24px 30px 0; }
+  .lpx-phone { width: 110px; border-radius: 20px; padding: 5px; }
+  .lpx-screen { border-radius: 16px; }
+  .lpx-block { margin-bottom: 56px; }
+}
