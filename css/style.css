@@ -17905,3 +17905,4 @@ html.is-locked .call-prep { display: none; }
 /* Resultados: conteúdo centralizado na dobra */
 #resultados.section { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; }
 #resultados > .container { width: 100%; }
+#resultados.section { padding: 16px 0 96px; }
