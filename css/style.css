@@ -17844,3 +17844,10 @@ html.is-locked .call-prep { display: none; }
 .rcases__foot { margin: 22px 0 0; text-align: center; font-size: 13.5px; color: var(--c-text-muted); }
 @media (max-width: 900px) { .rcases { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .rcase { grid-template-columns: 128px 1fr; } .rcase__body { padding: 18px 16px; } .rcase__num { font-size: 1.9rem; } .rcase__quote { font-size: 13px; } }
+.rcase__num { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
+.rcase__vid--photo { cursor: default; }
+.rcase__vid--photo img { object-position: center top; }
+.rcase__vid--photo:hover img { transform: none; }
+.rcase__vid--photo { background: linear-gradient(160deg, #2a2212, #121212); }
+.rcase__vid--photo img { z-index: 1; }
+.rcase__initials { position: absolute; inset: 0; display: grid; place-items: center; font: 900 2.6rem/1 var(--f-display); color: var(--c-yellow); opacity: .55; }
