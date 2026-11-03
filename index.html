@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261103g" />
+  <link rel="stylesheet" href="css/style.css?v=20261103h" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -1336,6 +1336,95 @@
         </div>
       </div>
 
+      <!-- Trackeamento: etapas do pixel voltam pro Meta -->
+      <div class="funnel-track">
+        <!-- O argumento mais forte: as etapas do funil voltam pro Meta -->
+        <div class="crm-pixel">
+          <header class="crm-pixel__head">
+            <span class="crm-pixel__badge">Novo · Etapas do pixel</span>
+            <h4 class="crm-pixel__title">
+              O Meta aprende com os seus <span class="text-yellow">contratos</span>, não com os seus cliques.
+            </h4>
+            <p class="crm-pixel__lead">
+              Com a IA lendo as conversas e o seu time registrando os contratos, o CRM devolve para o Meta
+              as etapas reais do seu funil. Já deixamos sua conta estruturada para a nova atualização
+              de etapas do pixel.
+            </p>
+          </header>
+
+          <!-- Gráfico: curva de aprendizado do Meta; cada ponto desce até o card da etapa -->
+          <div class="pixel-chart" data-reveal>
+            <div class="pixel-chart__head">
+              <span class="pixel-chart__label">Aprendizado da campanha</span>
+              <span class="pixel-chart__tag"><i></i>otimizando para contrato</span>
+            </div>
+
+            <div class="pixel-chart__plot" aria-hidden="true">
+              <svg class="pixel-chart__svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="pxArea" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFB800" stop-opacity="0.26"/>
+                    <stop offset="100%" stop-color="#FFB800" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="pxLine" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#F5C542"/>
+                    <stop offset="60%" stop-color="#E9A200"/>
+                    <stop offset="100%" stop-color="#E07800"/>
+                  </linearGradient>
+                </defs>
+                <path class="pixel-chart__area" d="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32 L 1000 300 L 0 300 Z" fill="url(#pxArea)"/>
+                <path class="pixel-chart__line" pathLength="1" d="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32" stroke="url(#pxLine)"/>
+                <circle class="pixel-chart__runner" r="5">
+                  <animateMotion dur="5s" repeatCount="indefinite" begin="2.6s" path="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32"/>
+                </circle>
+              </svg>
+
+              <span class="pixel-node" style="--x: 12.5%; --y: 83.3%; --s: 0">
+                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 01-12.3 7.4L3 21l1.9-5.7A8.4 8.4 0 1121 11.5z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></i>
+              </span>
+              <span class="pixel-node" style="--x: 37.5%; --y: 63.3%; --s: 1">
+                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></i>
+              </span>
+              <span class="pixel-node" style="--x: 62.5%; --y: 43.3%; --s: 2">
+                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+              </span>
+              <span class="pixel-node pixel-node--end" style="--x: 87.5%; --y: 20.7%; --s: 3">
+                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 5h2l2.2 10.2a1.5 1.5 0 001.5 1.2h7.6a1.5 1.5 0 001.5-1.1L20.5 9H7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.3" fill="currentColor"/><circle cx="17" cy="20" r="1.3" fill="currentColor"/></svg></i>
+              </span>
+            </div>
+
+            <ol class="pixel-chart__steps" data-steps-cycle>
+              <li class="pixel-step" style="--s: 0">
+                <span class="pixel-step__num">01</span>
+                <strong>A IA lê a conversa</strong>
+                <span>Identifica quem tem causa real e perfil pra contratar</span>
+              </li>
+              <li class="pixel-step" style="--s: 1">
+                <span class="pixel-step__num">02</span>
+                <strong>Sobe o evento <code>Qualificado</code></strong>
+                <span>O Meta passa a saber quem prestou</span>
+              </li>
+              <li class="pixel-step" style="--s: 2">
+                <span class="pixel-step__num">03</span>
+                <strong>Você registra o contrato</strong>
+                <span>O fechamento entra no CRM e vira evento</span>
+              </li>
+              <li class="pixel-step pixel-step--end" style="--s: 3">
+                <span class="pixel-step__num">04</span>
+                <strong>Sobe o evento <code>Purchase</code></strong>
+                <span>A campanha se reotimiza atrás de quem contrata</span>
+              </li>
+            </ol>
+          </div>
+
+
+          <p class="crm-pixel__close">
+            A campanha para de perseguir <strong>lead barato</strong> e passa a perseguir
+            <strong class="text-yellow">contrato</strong>. Quanto mais tempo roda, melhor ela fica.
+          </p>
+    </div>
+      </div>
+
       <!-- Banner final -->
       <div class="funnel-banner anim-fade-up" data-delay="0.55" data-reveal>
         <div class="funnel-banner__icon">
@@ -1795,91 +1884,6 @@
           </div>
         </div>
 
-        <!-- O argumento mais forte: as etapas do funil voltam pro Meta -->
-        <div class="crm-pixel">
-          <header class="crm-pixel__head">
-            <span class="crm-pixel__badge">Novo · Etapas do pixel</span>
-            <h4 class="crm-pixel__title">
-              O Meta aprende com os seus <span class="text-yellow">contratos</span>, não com os seus cliques.
-            </h4>
-            <p class="crm-pixel__lead">
-              Com a IA lendo as conversas e o seu time registrando os contratos, o CRM devolve para o Meta
-              as etapas reais do seu funil. Já deixamos sua conta estruturada para a nova atualização
-              de etapas do pixel.
-            </p>
-          </header>
-
-          <!-- Gráfico: curva de aprendizado do Meta; cada ponto desce até o card da etapa -->
-          <div class="pixel-chart" data-reveal>
-            <div class="pixel-chart__head">
-              <span class="pixel-chart__label">Aprendizado da campanha</span>
-              <span class="pixel-chart__tag"><i></i>otimizando para contrato</span>
-            </div>
-
-            <div class="pixel-chart__plot" aria-hidden="true">
-              <svg class="pixel-chart__svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="pxArea" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#FFB800" stop-opacity="0.26"/>
-                    <stop offset="100%" stop-color="#FFB800" stop-opacity="0"/>
-                  </linearGradient>
-                  <linearGradient id="pxLine" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#F5C542"/>
-                    <stop offset="60%" stop-color="#E9A200"/>
-                    <stop offset="100%" stop-color="#E07800"/>
-                  </linearGradient>
-                </defs>
-                <path class="pixel-chart__area" d="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32 L 1000 300 L 0 300 Z" fill="url(#pxArea)"/>
-                <path class="pixel-chart__line" pathLength="1" d="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32" stroke="url(#pxLine)"/>
-                <circle class="pixel-chart__runner" r="5">
-                  <animateMotion dur="5s" repeatCount="indefinite" begin="2.6s" path="M0 282 C 50 274, 90 262, 125 250 C 220 222, 290 206, 375 190 C 470 172, 540 150, 625 130 C 720 108, 800 88, 875 62 C 920 46, 960 38, 1000 32"/>
-                </circle>
-              </svg>
-
-              <span class="pixel-node" style="--x: 12.5%; --y: 83.3%; --s: 0">
-                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 01-12.3 7.4L3 21l1.9-5.7A8.4 8.4 0 1121 11.5z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></i>
-              </span>
-              <span class="pixel-node" style="--x: 37.5%; --y: 63.3%; --s: 1">
-                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></i>
-              </span>
-              <span class="pixel-node" style="--x: 62.5%; --y: 43.3%; --s: 2">
-                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-              </span>
-              <span class="pixel-node pixel-node--end" style="--x: 87.5%; --y: 20.7%; --s: 3">
-                <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 5h2l2.2 10.2a1.5 1.5 0 001.5 1.2h7.6a1.5 1.5 0 001.5-1.1L20.5 9H7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.3" fill="currentColor"/><circle cx="17" cy="20" r="1.3" fill="currentColor"/></svg></i>
-              </span>
-            </div>
-
-            <ol class="pixel-chart__steps" data-steps-cycle>
-              <li class="pixel-step" style="--s: 0">
-                <span class="pixel-step__num">01</span>
-                <strong>A IA lê a conversa</strong>
-                <span>Identifica quem tem causa real e perfil pra contratar</span>
-              </li>
-              <li class="pixel-step" style="--s: 1">
-                <span class="pixel-step__num">02</span>
-                <strong>Sobe o evento <code>Qualificado</code></strong>
-                <span>O Meta passa a saber quem prestou</span>
-              </li>
-              <li class="pixel-step" style="--s: 2">
-                <span class="pixel-step__num">03</span>
-                <strong>Você registra o contrato</strong>
-                <span>O fechamento entra no CRM e vira evento</span>
-              </li>
-              <li class="pixel-step pixel-step--end" style="--s: 3">
-                <span class="pixel-step__num">04</span>
-                <strong>Sobe o evento <code>Purchase</code></strong>
-                <span>A campanha se reotimiza atrás de quem contrata</span>
-              </li>
-            </ol>
-          </div>
-
-
-          <p class="crm-pixel__close">
-            A campanha para de perseguir <strong>lead barato</strong> e passa a perseguir
-            <strong class="text-yellow">contrato</strong>. Quanto mais tempo roda, melhor ela fica.
-          </p>
-    </div>
   </section>
   <!-- ============================================================
        SEÇÃO 9 — RECEITA SOB CONTROLE
@@ -2047,9 +2051,6 @@
           De lead a contrato, um processo<br/>
           estruturado para <span class="text-yellow">gerar resultado</span>.
         </h2>
-        <p class="section__sub reveal-sub">
-          Cada etapa é otimizada pra transformar investimento em contratos assinados. Ajuste o tráfego, o custo por lead, o honorário médio e a taxa de fechamento do escritório e veja o faturamento.
-        </p>
       </header>
 
       <!-- Simulador de faturamento: tráfego + honorário + taxa de fechamento -->
