@@ -17895,3 +17895,10 @@ html.is-locked .call-prep { display: none; }
 .rcase__play { left: 12px; top: auto; bottom: 12px; transform: none; width: 38px; height: 38px; }
 .rcase__vid:hover .rcase__play { transform: scale(1.08); }
 
+/* Resultados mais largo */
+#resultados > .container { max-width: 1480px; }
+.rcase { grid-template-columns: 160px 1fr; }
+.rcase__body { padding: 18px 20px 16px; }
+.rcase__num { font-size: clamp(1.45rem, 2vw, 1.85rem); }
+.rcase__quote { font-size: 13px; }
+@media (max-width: 680px) { .rcase { grid-template-columns: 120px 1fr; } }
