@@ -17747,3 +17747,47 @@ html.is-locked .call-prep { display: none; }
   .lpx-screen { border-radius: 16px; }
   .lpx-block { margin-bottom: 56px; }
 }
+
+/* ---- Entregáveis v2: diferenciais + listas maiores (2026-11-03) ---- */
+.inc-dif { margin-bottom: 16px; padding: 20px 22px 22px; border-radius: 20px; border: 1px solid rgba(255,184,0,.38); background: linear-gradient(135deg, rgba(255,184,0,.12), rgba(255,184,0,.02) 65%); box-shadow: 0 18px 50px rgba(255,184,0,.08); }
+.inc-dif__label { display: block; margin-bottom: 16px; font: 700 11.5px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--c-yellow); }
+.inc-dif__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.inc-dif__list li { display: flex; flex-direction: column; gap: 4px; padding: 16px 14px; border-radius: 14px; background: #121212; border: 1px solid var(--c-border-soft); transition: transform var(--t-fast), border-color var(--t-fast); }
+.inc-dif__list li:hover { transform: translateY(-3px); border-color: rgba(255,184,0,.5); }
+.inc-dif__icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; margin-bottom: 8px; background: linear-gradient(135deg, #ffc845, #ffb800); color: #0a0a0a; box-shadow: 0 8px 20px rgba(255,184,0,.25); }
+.inc-dif__list strong { font: 800 15px/1.2 var(--f-display); color: #fff; }
+.inc-dif__list span:not(.inc-dif__icon) { font-size: 12px; line-height: 1.4; color: var(--c-text-soft); }
+
+.inc-col { padding: 22px 22px 20px; }
+.inc-col__head h3 { font-size: 16px; }
+.inc-list { gap: 8px; }
+.inc-list li { font-size: 14.5px; line-height: 1.35; color: #f0f0f0; }
+.inc-list li::before { top: 6px; }
+
+@media (max-width: 1100px) { .inc-dif__list { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .inc-dif { padding: 18px 16px; } .inc-dif__list { grid-template-columns: 1fr 1fr; } }
+
+/* ---- Landing page v2: maior, sem celular, expandir ---- */
+.lpx { grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr); gap: 40px; }
+.lpx-tags { grid-template-columns: 1fr; gap: 8px; }
+.lpx-tags li { padding: 11px 14px; }
+.lpx-show { padding: 0; }
+.lpx-view { cursor: zoom-in; }
+.lpx-view:focus-visible { outline: 3px solid var(--c-yellow); outline-offset: -3px; }
+.lpx-expand { position: absolute; right: 14px; bottom: 14px; z-index: 4; display: inline-flex; align-items: center; gap: 7px; padding: 9px 15px; border-radius: 99px; background: rgba(12,12,12,.9); color: #fff; font: 600 12.5px/1 var(--f-display); box-shadow: 0 8px 24px rgba(0,0,0,.45); transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast); pointer-events: none; }
+.lpx-view:hover .lpx-expand { background: var(--c-yellow); color: #0a0a0a; transform: translateY(-2px); }
+
+.lpx-dlg { width: min(1280px, 96vw); height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid #2c2c2c; border-radius: 16px; background: #1a1a1a; overflow: hidden; }
+.lpx-dlg[open] { display: flex; flex-direction: column; }
+.lpx-dlg::backdrop { background: rgba(0,0,0,.82); }
+.lpx-dlg__bar { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 14px; background: #202020; border-bottom: 1px solid #2c2c2c; }
+.lpx-dlg__open { flex-shrink: 0; padding: 8px 14px; border-radius: 99px; background: #2a2a2a; color: #fff; font: 600 12.5px/1 var(--f-display); text-decoration: none; }
+.lpx-dlg__open:hover { background: var(--c-yellow); color: #0a0a0a; }
+.lpx-dlg__x { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--c-yellow); color: #0a0a0a; font-size: 22px; line-height: 1; cursor: pointer; }
+.lpx-dlg iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+
+@media (max-width: 960px) { .lpx { grid-template-columns: 1fr; } .lpx-tags { grid-template-columns: 1fr 1fr; } .lpx-tags li { display: grid; grid-template-columns: 1fr; } .lpx-tags li span { grid-column: 1; } }
+@media (max-width: 520px) { .lpx-tags { grid-template-columns: 1fr; } .lpx-dlg { height: 88vh; } .lpx-dlg__open { display: none; } }
+
+.section--inc { padding: 56px 0; }
+.inc-head { margin-bottom: 20px; }

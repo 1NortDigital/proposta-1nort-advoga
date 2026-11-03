@@ -270,6 +270,20 @@
       if ('ResizeObserver' in window) new ResizeObserver(fit).observe(box); else window.addEventListener('resize', fit);
     });
 
+    /* ----- Landing page: expandir em tela cheia ----- */
+    (function () {
+      const dlg = document.getElementById('lpx-dlg');
+      if (!dlg) return;
+      const fr = dlg.querySelector('iframe');
+      const open = () => { if (!fr.src) fr.src = fr.dataset.src; dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); };
+      const close = () => (dlg.close ? dlg.close() : dlg.removeAttribute('open'));
+      document.querySelectorAll('[data-lpx-open]').forEach((el) => {
+        el.addEventListener('click', open);
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      });
+      dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.lpx-dlg__x')) close(); });
+    })();
+
     /* ----- Simulador de faturamento (Métricas) -----
        leads = tráfego / custo por lead · contratos = leads × taxa · faturamento = contratos × honorário */
     (function () {
