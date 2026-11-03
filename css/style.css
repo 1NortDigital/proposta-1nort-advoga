@@ -17902,3 +17902,6 @@ html.is-locked .call-prep { display: none; }
 .rcase__num { font-size: clamp(1.45rem, 2vw, 1.85rem); }
 .rcase__quote { font-size: 13px; }
 @media (max-width: 680px) { .rcase { grid-template-columns: 120px 1fr; } }
+/* Resultados: conteúdo centralizado na dobra */
+#resultados.section { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; }
+#resultados > .container { width: 100%; }
