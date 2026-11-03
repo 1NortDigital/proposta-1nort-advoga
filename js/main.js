@@ -261,13 +261,12 @@
     })();
 
     /* ----- Simulador de faturamento (Métricas) -----
-       leads = tráfego / CPL · contratos = leads × taxa · faturamento = contratos × honorário */
+       leads = tráfego / custo por lead · contratos = leads × taxa · faturamento = contratos × honorário */
     (function () {
       const root = document.querySelector('#metricas [data-sim]');
       if (!root) return;
 
-      const CPL = 15;   // R$ por lead (estimativa conservadora — ajuste aqui)
-      const st = { invest: 1200, ticket: 1500, taxa: 7, meses: 1 };
+      const st = { invest: 1200, cpl: 30, ticket: 1500, taxa: 7, meses: 1 };
 
       const brl = (n) => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
       const num = (n) => Math.round(n).toLocaleString('pt-BR');
@@ -282,7 +281,7 @@
 
       const render = () => {
         const total     = st.invest * st.meses;
-        const leads     = Math.round(total / CPL);
+        const leads     = Math.round(total / st.cpl);
         const contratos = Math.round(leads * st.taxa / 100);
         const fat       = contratos * st.ticket;
         const roi       = total ? fat / total : 0;
@@ -291,7 +290,7 @@
         set('dia', '≈ ' + brl(st.invest / 30) + '/dia');
         set('ticket', brl(st.ticket));
         set('taxa', st.taxa + '%');
-        set('cpl', brl(CPL));
+        set('cpl', brl(st.cpl));
         set('total', brl(total));
         set('leads', num(leads));
         set('contratos', num(contratos));

@@ -17446,11 +17446,11 @@ html.is-locked .call-prep { display: none; }
 .sim-period__btn.is-active { background: var(--c-yellow); color: #0a0a0a; }
 
 /* Resultados */
-.sim-results { display: flex; flex-direction: column; gap: 16px; }
+.sim-results { display: flex; flex-direction: column; gap: 16px; align-self: center; }
 .sim-hero {
   position: relative;
   overflow: hidden;
-  flex: 1;
+  min-height: 340px;
   border-radius: 20px;
   padding: 30px 32px;
   background: linear-gradient(135deg, #ffc845 0%, #ffb800 55%, #e09a00 100%);
