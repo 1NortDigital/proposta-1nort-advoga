@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261005d" />
+  <link rel="stylesheet" href="css/style.css?v=20261103a" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -2127,183 +2127,87 @@
           estruturado para <span class="text-yellow">gerar resultado</span>.
         </h2>
         <p class="section__sub reveal-sub">
-          Cada etapa é otimizada pra transformar investimento em contratos assinados. Ajuste o investimento e o honorário médio do escritório.
+          Cada etapa é otimizada pra transformar investimento em contratos assinados. Ajuste o tráfego, o honorário médio e a taxa de fechamento do escritório e veja o faturamento.
         </p>
       </header>
 
-      <!-- Calculadora: investimento diário + ticket médio -->
-      <div class="metrics-calc anim-fade-up" data-delay="0.05" data-calc data-reveal>
+      <!-- Simulador de faturamento: tráfego + honorário + taxa de fechamento -->
+      <div class="sim anim-fade-up" data-delay="0.05" data-sim data-reveal>
 
-        <div class="metrics-invest">
-          <span class="metrics-invest__label">Investimento sugerido</span>
-          <div class="calc-control">
-            <button class="calc-btn" type="button" data-calc-step="invest" data-calc-dir="-1" aria-label="Diminuir investimento diário">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-            </button>
-            <div class="metrics-invest__value">
-              <span class="metrics-invest__cur">R$</span>
-              <strong class="metrics-invest__num" data-calc-out="invest">40</strong>
-              <span class="metrics-invest__period">/dia</span>
+        <div class="sim-panel">
+          <div class="sim-field">
+            <div class="sim-field__head">
+              <label class="sim-field__label" for="sim-invest">Investimento em tráfego por mês</label>
+              <strong class="sim-field__val" data-sim-out="invest">R$ 1.200</strong>
             </div>
-            <button class="calc-btn" type="button" data-calc-step="invest" data-calc-dir="1" aria-label="Aumentar investimento diário">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-            </button>
+            <input class="sim-range" id="sim-invest" type="range" min="600" max="10000" step="100" value="1200" data-sim-in="invest" />
+            <p class="sim-field__hint">Vai direto pro Meta e Google, na conta e no nome do escritório. <span data-sim-out="dia">≈ R$ 40/dia</span>.</p>
           </div>
-          <span class="metrics-invest__hint">≈ <strong data-calc-out="mensal">R$ 1.200</strong>/mês em tráfego pago</span>
-          <span class="calc-limit" data-calc-limit="invest"></span>
-        </div>
 
-        <div class="metrics-ticket">
-          <span class="metrics-ticket__label">Honorário médio por contrato</span>
-          <div class="calc-control calc-control--sm">
-            <button class="calc-btn calc-btn--sm" type="button" data-calc-step="ticket" data-calc-dir="-1" aria-label="Diminuir honorário médio">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-            </button>
-            <div class="metrics-ticket__value">
-              <span class="metrics-ticket__cur">R$</span>
-              <strong class="metrics-ticket__num" data-calc-out="ticket">1,5</strong>
-              <span class="metrics-ticket__period">mil</span>
+          <div class="sim-field">
+            <div class="sim-field__head">
+              <label class="sim-field__label" for="sim-ticket">Honorário médio por contrato</label>
+              <strong class="sim-field__val" data-sim-out="ticket">R$ 1.500</strong>
             </div>
-            <button class="calc-btn calc-btn--sm" type="button" data-calc-step="ticket" data-calc-dir="1" aria-label="Aumentar honorário médio">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-            </button>
+            <input class="sim-range" id="sim-ticket" type="range" min="500" max="20000" step="250" value="1500" data-sim-in="ticket" />
+            <p class="sim-field__hint">Quanto entra, em média, por contrato fechado na sua área.</p>
           </div>
-          <span class="metrics-ticket__hint">Quanto entra, em média, por contrato fechado</span>
-        </div>
 
-      </div>
-
-      <!-- Funil 6 etapas -->
-      <div class="metrics-funnel anim-fade-up" data-delay="0.1" data-funnel>
-        <header class="metrics-funnel__cols">
-          <span>ETAPAS DO PROCESSO</span>
-          <span>CONVERSÃO MÉDIA</span>
-        </header>
-
-        <ol class="metrics-funnel__list" data-steps-cycle>
-          <li class="metrics-row" style="--bar-w: 100%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.8"/></svg>
+          <div class="sim-field">
+            <div class="sim-field__head">
+              <label class="sim-field__label" for="sim-taxa">Taxa de fechamento</label>
+              <strong class="sim-field__val" data-sim-out="taxa">7%</strong>
             </div>
-            <div class="metrics-row__num">1</div>
-            <div class="metrics-row__info">
-              <strong>CONTATOS</strong>
-              <span>Pessoas impactadas pelas campanhas que se cadastram pra avaliar o caso.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="leads">80 a 100</strong>
-              <span>contatos/mês · 100%</span>
-            </div>
-          </li>
-
-          <li class="metrics-row" style="--bar-w: 92%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <div class="metrics-row__num">2</div>
-            <div class="metrics-row__info">
-              <strong>RESPONDEM A IA</strong>
-              <span>Leads que interagem e iniciam conversa com a IA da 1Nort.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="resp">64 a 80</strong>
-              <span>respondem · 80%</span>
-            </div>
-          </li>
-
-          <li class="metrics-row" style="--bar-w: 82%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <div class="metrics-row__num">3</div>
-            <div class="metrics-row__info">
-              <strong>OPORTUNIDADES</strong>
-              <span>Leads com causa real e perfil pra fechar contrato.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="oport">40 a 50</strong>
-              <span>oportunidades · 62%</span>
-            </div>
-          </li>
-
-          <li class="metrics-row" style="--bar-w: 68%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <div class="metrics-row__num">4</div>
-            <div class="metrics-row__info">
-              <strong>AGENDAMENTOS</strong>
-              <span>Leads que agendam ligação ou Meet com o advogado.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="agend">24 a 30</strong>
-              <span>agendamentos · 60%</span>
-            </div>
-          </li>
-
-
-          <li class="metrics-row" style="--bar-w: 58%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 10.5l6-3.5v10l-6-3.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="metrics-row__num">5</div>
-            <div class="metrics-row__info">
-              <strong>REUNIÕES REALIZADAS</strong>
-              <span>Ligações e Meets em que o advogado apresenta o caso e os honorários.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="realiz">17 a 21</strong>
-              <span>reuniões · 70%</span>
-            </div>
-          </li>
-
-          <li class="metrics-row" style="--bar-w: 54%;" data-reveal>
-            <div class="metrics-row__icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M16 6H10a3 3 0 000 6h4a3 3 0 010 6H7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="metrics-row__num">6</div>
-            <div class="metrics-row__info">
-              <strong>CONTRATOS FECHADOS</strong>
-              <span>Causas assinadas que viram faturamento pro escritório.</span>
-            </div>
-            <div class="metrics-row__bar">
-              <strong data-calc-out="vendas">4 a 10</strong>
-              <span>contratos · 5% a 10%</span>
-            </div>
-          </li>
-        </ol>
-
-        <!-- CAC card (full width no rodapé do funil) -->
-        <div class="metrics-cac" data-reveal>
-          <div class="metrics-cac__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="7" y="5" width="10" height="3" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="12" r="0.8" fill="currentColor"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/><circle cx="15.5" cy="12" r="0.8" fill="currentColor"/><circle cx="8.5" cy="16" r="0.8" fill="currentColor"/><circle cx="12" cy="16" r="0.8" fill="currentColor"/><circle cx="15.5" cy="16" r="0.8" fill="currentColor"/></svg>
+            <input class="sim-range" id="sim-taxa" type="range" min="1" max="20" step="1" value="7" data-sim-in="taxa" />
+            <p class="sim-field__hint">A cada 100 contatos, quantos viram contrato. Padrão do mercado jurídico: 5% a 10%.</p>
           </div>
-          <div class="metrics-cac__body">
-            <strong class="metrics-cac__value">CAC R$ <span class="text-yellow" data-calc-out="cac">120 a 300</span></strong>
-            <span class="metrics-cac__label">Custo de aquisição por contrato fechado</span>
+
+          <div class="sim-field sim-field--period">
+            <span class="sim-field__label">Período de análise</span>
+            <div class="sim-period" role="radiogroup" aria-label="Período de análise">
+              <button type="button" class="sim-period__btn is-active" role="radio" aria-checked="true" data-sim-period="1">1 mês</button>
+              <button type="button" class="sim-period__btn" role="radio" aria-checked="false" data-sim-period="3">3 meses</button>
+              <button type="button" class="sim-period__btn" role="radio" aria-checked="false" data-sim-period="6">6 meses</button>
+              <button type="button" class="sim-period__btn" role="radio" aria-checked="false" data-sim-period="12">12 meses</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Faturamento estimado banner -->
-      <div class="metrics-revenue anim-fade-up" data-delay="0.3" data-reveal>
-        <div class="metrics-revenue__icon">
-          <!-- ícone de faturamento: saco de dinheiro + moedas subindo -->
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-            <path class="mr-draw" pathLength="1" d="M9 3h6l-1.6 3.2c3.6 1.7 5.6 5 5.6 8.3 0 3.6-2.9 6.5-7 6.5s-7-2.9-7-6.5c0-3.3 2-6.6 5.6-8.3z"/>
-            <path class="mr-draw mr-draw--head" pathLength="1" d="M13.8 11.3c-.4-.7-1.1-1-1.9-1-1.1 0-1.9.6-1.9 1.4 0 1.9 3.9 1 3.9 3 0 .8-.9 1.5-2 1.5-.9 0-1.6-.4-2-1.1M12 9.2v1.1M12 16.2v1.1"/>
-          </svg>
-          <i class="mr-coin mr-coin--1" aria-hidden="true"></i><i class="mr-coin mr-coin--2" aria-hidden="true"></i><i class="mr-coin mr-coin--3" aria-hidden="true"></i>
+        <div class="sim-results">
+          <div class="sim-hero">
+            <span class="sim-hero__label">Faturamento projetado em contratos</span>
+            <strong class="sim-hero__value" data-sim-out="fat">R$ 9.000</strong>
+            <span class="sim-hero__roi"><b data-sim-out="roi">7,5x</b> sobre o investido em tráfego <span data-sim-out="periodo">no mês</span></span>
+
+            <div class="sim-hero__grid">
+              <div class="sim-hero__stat">
+                <strong data-sim-out="leads">80</strong>
+                <span>Leads gerados</span>
+              </div>
+              <div class="sim-hero__stat">
+                <strong data-sim-out="contratos">6</strong>
+                <span>Contratos fechados</span>
+              </div>
+              <div class="sim-hero__stat sim-hero__stat--wide">
+                <strong data-sim-out="lucro">R$ 7.800</strong>
+                <span>Acima do investido</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-cards">
+            <div class="sim-card">
+              <strong data-sim-out="total">R$ 1.200</strong>
+              <span>Investimento total em tráfego no período</span>
+            </div>
+            <div class="sim-card sim-card--accent">
+              <strong data-sim-out="cac">R$ 200</strong>
+              <span>CAC · custo de aquisição por contrato fechado</span>
+            </div>
+          </div>
+          <p class="sim-note">Projeção com custo médio de <span data-sim-out="cpl">R$ 15</span> por lead. Resultado real varia por área, região e velocidade de atendimento.</p>
         </div>
-        <div class="metrics-revenue__main">
-          <span class="metrics-revenue__label">FATURAMENTO ESTIMADO</span>
-          <strong class="metrics-revenue__value" data-calc-out="fat">R$ 6 mil a R$ 15 mil</strong>
-          <span class="metrics-revenue__sub">por mês</span>
-        </div>
-        <ul class="metrics-revenue__pills">
-          <li><span class="check-yellow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Mais previsibilidade</li>
-          <li><span class="check-yellow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Mais crescimento</li>
-        </ul>
+
       </div>
 
     </div>
@@ -2828,7 +2732,7 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20261005d"></script>
+  <script src="js/main.js?v=20261103a"></script>
   <script src="js/call-prep.js?v=20261005d"></script>
 
   <!-- Gate de acesso · valida senha do time -->

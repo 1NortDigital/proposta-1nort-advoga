@@ -169,7 +169,7 @@
     });
 
     /* ----- Números da calculadora "pulam" quando o valor muda ----- */
-    document.querySelectorAll('[data-calc-out]').forEach((el) => {
+    document.querySelectorAll('[data-calc-out], [data-sim-out]').forEach((el) => {
       new MutationObserver(() => {
         el.classList.remove('is-bump');
         void el.offsetWidth;                   // reinicia a animação
@@ -260,67 +260,66 @@
       sync(root.getAttribute('data-area') || 'reclamante');
     })();
 
-    /* ----- Calculadora de investimento (Métricas) -----
-       Mantidos CPL e taxas, dobrar o investimento dobra o volume (CAC constante). */
+    /* ----- Simulador de faturamento (Métricas) -----
+       leads = tráfego / CPL · contratos = leads × taxa · faturamento = contratos × honorário */
     (function () {
-      const sec  = document.getElementById('metricas');
-      const root = sec && sec.querySelector('[data-calc]');
-      if (!sec || !root) return;
+      const root = document.querySelector('#metricas [data-sim]');
+      if (!root) return;
 
-      const DIAS_MES = 30;
-      const CPL_MIN  = 12;    // R$/contato no melhor caso
-      const CPL_MAX  = 15;    // R$/contato no pior caso
-      const CAC      = 171;   // custo por contrato fechado
-      const TX = { resp: 0.8, oport: 0.5, agend: 0.3, realiz: 0.21, contMin: 0.05, contMax: 0.10 };  // 100 → 80 → 50 → 30 → 21 → 5 a 10
+      const CPL = 15;   // R$ por lead (estimativa conservadora — ajuste aqui)
+      const st = { invest: 1200, ticket: 1500, taxa: 7, meses: 1 };
 
-      const INVEST = { min: 30,  max: 300,   step: 10,  valor: 40 };
-      const TICKET = { min: 500, max: 20000, step: 500, valor: 1500 };
-
-      const br  = (n) => n.toLocaleString('pt-BR');
-      const mil = (n) => 'R$ ' + (n / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' mil';
-      const alvoDe = (nome) => (nome === 'invest' ? INVEST : TICKET);
+      const brl = (n) => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+      const num = (n) => Math.round(n).toLocaleString('pt-BR');
       const outs = {};
-      sec.querySelectorAll('[data-calc-out]').forEach((el) => { outs[el.getAttribute('data-calc-out')] = el; });
+      root.querySelectorAll('[data-sim-out]').forEach((el) => { outs[el.getAttribute('data-sim-out')] = el; });
+      const set = (k, txt) => { if (outs[k] && outs[k].textContent !== txt) outs[k].textContent = txt; };
 
-      const render = () => {
-        const mensal   = INVEST.valor * DIAS_MES;
-        const leadsMin = Math.round(mensal / CPL_MAX);
-        const leadsMax = Math.round(mensal / CPL_MIN);
-        const faixa = (t) => br(Math.round(leadsMin * t)) + ' a ' + br(Math.round(leadsMax * t));
-        const cMin = Math.max(1, Math.round(leadsMin * TX.contMin));
-        const cMax = Math.max(cMin, Math.round(leadsMax * TX.contMax));
-        const set = (k, txt) => { if (outs[k] && outs[k].textContent !== txt) outs[k].textContent = txt; };
-
-        set('invest', br(INVEST.valor));
-        set('mensal', 'R$ ' + br(mensal));
-        set('ticket', (TICKET.valor / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 1 }));
-        set('leads', br(leadsMin) + ' a ' + br(leadsMax));
-        set('resp',  faixa(TX.resp));
-        set('oport', faixa(TX.oport));
-        set('agend', faixa(TX.agend));
-        set('realiz', faixa(TX.realiz));
-        set('vendas', cMin === cMax ? br(cMin) : br(cMin) + ' a ' + br(cMax));
-        set('cac', br(Math.round(mensal / cMax)) + ' a ' + br(Math.round(mensal / cMin)));
-        set('fat', mil(cMin * TICKET.valor) + ' a ' + mil(cMax * TICKET.valor));
-
-        root.querySelectorAll('[data-calc-step]').forEach((b) => {
-          const alvo = alvoDe(b.getAttribute('data-calc-step'));
-          const prox = alvo.valor + Number(b.getAttribute('data-calc-dir')) * alvo.step;
-          b.disabled = prox < alvo.min || prox > alvo.max;
-        });
-        const lim = root.querySelector('[data-calc-limit="invest"]');
-        if (lim) lim.textContent = INVEST.valor <= INVEST.min ? 'mínimo R$ 30/dia'
-                               : INVEST.valor >= INVEST.max ? 'máximo R$ 300/dia' : '';
+      const fill = (inp) => {
+        const p = ((inp.value - inp.min) / (inp.max - inp.min)) * 100;
+        inp.style.setProperty('--p', p + '%');
       };
 
-      root.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-calc-step]');
-        if (!btn || btn.disabled) return;
-        const alvo = alvoDe(btn.getAttribute('data-calc-step'));
-        const prox = alvo.valor + Number(btn.getAttribute('data-calc-dir')) * alvo.step;
-        if (prox < alvo.min || prox > alvo.max) return;
-        alvo.valor = prox;
-        render();
+      const render = () => {
+        const total     = st.invest * st.meses;
+        const leads     = Math.round(total / CPL);
+        const contratos = Math.round(leads * st.taxa / 100);
+        const fat       = contratos * st.ticket;
+        const roi       = total ? fat / total : 0;
+
+        set('invest', brl(st.invest));
+        set('dia', '≈ ' + brl(st.invest / 30) + '/dia');
+        set('ticket', brl(st.ticket));
+        set('taxa', st.taxa + '%');
+        set('cpl', brl(CPL));
+        set('total', brl(total));
+        set('leads', num(leads));
+        set('contratos', num(contratos));
+        set('fat', brl(fat));
+        set('roi', roi.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + 'x');
+        set('lucro', (fat - total < 0 ? '− ' : '') + brl(Math.abs(fat - total)));
+        set('periodo', st.meses === 1 ? 'no mês' : 'em ' + st.meses + ' meses');
+        set('cac', contratos ? brl(total / contratos) : '—');
+        root.classList.toggle('is-neg', fat < total);
+      };
+
+      root.querySelectorAll('[data-sim-in]').forEach((inp) => {
+        const k = inp.getAttribute('data-sim-in');
+        st[k] = Number(inp.value);
+        fill(inp);
+        inp.addEventListener('input', () => { st[k] = Number(inp.value); fill(inp); render(); });
+      });
+
+      root.querySelectorAll('[data-sim-period]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          st.meses = Number(btn.getAttribute('data-sim-period'));
+          root.querySelectorAll('[data-sim-period]').forEach((b) => {
+            const on = b === btn;
+            b.classList.toggle('is-active', on);
+            b.setAttribute('aria-checked', on ? 'true' : 'false');
+          });
+          render();
+        });
       });
       render();
     })();

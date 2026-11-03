@@ -17346,3 +17346,217 @@ html.is-locked .call-prep { display: none; }
   .call-prep { right: 10px; bottom: 10px; width: min(245px, calc(100vw - 20px)); }
 }
 @media print { .call-prep { display: none !important; } }
+
+/* ============================================================
+   SIMULADOR DE FATURAMENTO (#metricas) — 2026-11-03
+============================================================ */
+.sim {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  margin: 8px 0 36px;
+  align-items: stretch;
+}
+.sim-panel {
+  background: linear-gradient(180deg, #161616, #101010);
+  border: 1px solid var(--c-border-soft);
+  border-radius: 20px;
+  padding: 30px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sim-field { padding: 18px 0 20px; border-bottom: 1px solid var(--c-border-soft); }
+.sim-field:first-child { padding-top: 4px; }
+.sim-field:last-child { border-bottom: 0; padding-bottom: 0; }
+.sim-field__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.sim-field__label {
+  font-family: var(--f-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+.sim-field__val {
+  font-family: var(--f-display);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 800;
+  color: var(--c-yellow);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.sim-field__hint { margin: 12px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--c-text-muted); }
+.sim-field__hint span { color: var(--c-text-soft); }
+
+/* Slider */
+.sim-range {
+  --p: 50%;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--c-yellow) 0 var(--p), #2c2c2c var(--p) 100%);
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+}
+.sim-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--c-yellow);
+  border: 4px solid #1a1a1a;
+  box-shadow: 0 0 0 2px var(--c-yellow), 0 4px 14px rgba(255, 184, 0, 0.45);
+  transition: transform var(--t-fast);
+}
+.sim-range::-moz-range-thumb {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--c-yellow);
+  border: 4px solid #1a1a1a;
+  box-shadow: 0 0 0 2px var(--c-yellow), 0 4px 14px rgba(255, 184, 0, 0.45);
+}
+.sim-range:active::-webkit-slider-thumb { transform: scale(1.15); }
+.sim-range:focus-visible { box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.3); }
+
+/* Período */
+.sim-field--period .sim-field__label { display: block; margin-bottom: 14px; }
+.sim-period {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 4px;
+  background: #0c0c0c;
+  border: 1px solid var(--c-border-soft);
+  border-radius: 12px;
+}
+.sim-period__btn {
+  font: 600 13px/1 var(--f-display);
+  color: var(--c-text-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 6px;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.sim-period__btn:hover { color: #fff; }
+.sim-period__btn.is-active { background: var(--c-yellow); color: #0a0a0a; }
+
+/* Resultados */
+.sim-results { display: flex; flex-direction: column; gap: 16px; }
+.sim-hero {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  border-radius: 20px;
+  padding: 30px 32px;
+  background: linear-gradient(135deg, #ffc845 0%, #ffb800 55%, #e09a00 100%);
+  color: #0a0a0a;
+  box-shadow: 0 24px 60px rgba(255, 184, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.12) inset;
+  display: flex;
+  flex-direction: column;
+}
+.sim-hero::before,
+.sim-hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 260px; height: 260px;
+  border-top: 56px solid rgba(255, 255, 255, 0.16);
+  border-right: 56px solid rgba(255, 255, 255, 0.16);
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+.sim-hero::before { right: 40px; }
+.sim-hero::after { right: -70px; opacity: 0.6; }
+.sim-hero > * { position: relative; z-index: 1; }
+.sim-hero__label {
+  font-family: var(--f-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.sim-hero__value {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 10px 0 8px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sim-hero__roi { font-size: 14px; font-weight: 600; opacity: 0.85; margin-bottom: 28px; }
+.sim-hero__roi b { font-weight: 800; }
+.sim-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  gap: 18px 24px;
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.sim-hero__stat strong {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.sim-hero__stat span {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+@media (max-width: 520px) { .sim-hero__grid { grid-template-columns: 1fr 1fr; } .sim-hero__stat--wide { grid-column: 1 / -1; } }
+
+.sim-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sim-card {
+  background: linear-gradient(180deg, #161616, #101010);
+  border: 1px solid var(--c-border-soft);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+.sim-card strong {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.sim-card span { display: block; margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--c-text-soft); }
+.sim-card--accent { border-color: rgba(255, 184, 0, 0.4); background: linear-gradient(180deg, rgba(255,184,0,0.12), rgba(255,184,0,0.03)); }
+.sim-card--accent strong { color: var(--c-yellow); }
+.sim-note { margin: 0; font-size: 12px; line-height: 1.5; color: var(--c-text-muted); }
+
+.sim.is-neg .sim-hero { background: linear-gradient(135deg, #3a3a3a, #262626); color: #fff; }
+
+.sim-hero__value.is-bump { animation: simBump 0.35s ease; }
+@keyframes simBump { 0% { transform: scale(0.97); } 60% { transform: scale(1.02); } 100% { transform: scale(1); } }
+
+@media (max-width: 900px) {
+  .sim { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .sim-panel { padding: 22px 18px 20px; }
+  .sim-hero { padding: 24px 20px; }
+  .sim-cards { grid-template-columns: 1fr; }
+  .sim-period__btn { font-size: 12px; padding: 11px 2px; }
+}
+@media (max-width: 520px) {
+  .sim-hero__value { white-space: normal; overflow-wrap: anywhere; font-size: clamp(2rem, 11vw, 2.8rem); }
+}
