@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261103h" />
+  <link rel="stylesheet" href="css/style.css?v=20261103i" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -391,129 +391,80 @@
     </div>
 
     <div class="container">
-      <!-- Header centralizado -->
       <header class="section__head anim-fade-up">
         <span class="kicker"><span class="kicker__dot"></span>RESULTADOS</span>
         <h2 class="section__title">
-          Resultados reais de <span class="text-yellow">nossos clientes.</span>
+          Quem já roda o sistema,<br/>
+          <span class="text-yellow">fecha contrato todo mês.</span>
         </h2>
-        <p class="section__sub">
-          Cases em vídeo e depoimentos de quem já estruturou o funil com a 1Nort. Mais no nosso <a href="https://instagram.com/1nortdigital" target="_blank" rel="noopener" class="text-yellow">Instagram</a>.
-        </p>
       </header>
 
-      <!-- ===== CASES · 4 vídeos em destaque (sem carrossel) ===== -->
-      <div class="cases-block anim-fade-up" data-delay="0.1" style="margin-bottom: 80px;">
-        <div class="cases-grid" data-cases style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
-          <article class="video-card" data-cm-video="assets/videos/depoimento-1.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 1">
-            <img class="video-card__iframe" src="assets/videos/depoimento-1-poster.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="video-card__overlay" aria-hidden="true"></span>
-            <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+      <div class="rcases">
+          <article class="rcase" data-reveal style="--d: 0.05s">
+            <div class="rcase__vid" data-cm-video="assets/videos/depoimento-1.mp4" tabindex="0" role="button" aria-label="Assistir depoimento de Fábio Gil">
+              <img src="assets/videos/depoimento-1-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="rcase__play" aria-hidden="true"></span>
+            </div>
+            <div class="rcase__body">
+              <span class="rcase__tag">Trabalhista</span>
+              <strong class="rcase__num">31 contratos</strong>
+              <span class="rcase__lab">fechados em dezembro</span>
+              <q class="rcase__quote">Quero compartilhar com vocês o resultado excelente de dezembro. Foram 31 contratos fechados na área trabalhista.</q>
+              <div class="rcase__who">
+                <div><b>Fábio Gil</b><span>Fábio Gil Advocacia</span></div>
+                <button type="button" class="rcase__more" data-conversa-img="assets/images/case-1.webp" data-conversa-caption="Fábio Gil Advogados · +30 contratos no 3º mês">Ver case ↗</button>
+              </div>
+            </div>
           </article>
-          <article class="video-card" data-cm-video="assets/videos/depoimento-2.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 2">
-            <img class="video-card__iframe" src="assets/videos/depoimento-2-poster.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="video-card__overlay" aria-hidden="true"></span>
-            <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+          <article class="rcase" data-reveal style="--d: 0.10s">
+            <div class="rcase__vid" data-cm-video="assets/videos/depoimento-2.mp4" tabindex="0" role="button" aria-label="Assistir depoimento de Rafaela Fabrine">
+              <img src="assets/videos/depoimento-2-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="rcase__play" aria-hidden="true"></span>
+            </div>
+            <div class="rcase__body">
+              <span class="rcase__tag">Trabalhista</span>
+              <strong class="rcase__num">R$ 20k a 50k</strong>
+              <span class="rcase__lab">por contrato, fechados em 1 mês</span>
+              <div class="rcase__who">
+                <div><b>Rafaela Fabrine</b><span>Advogada · Trabalhista</span></div>
+                <button type="button" class="rcase__more" data-conversa-img="assets/images/case-2.webp" data-conversa-caption="Rafaela Fabrine · Contratos de 20k e 50k em 1 mês">Ver case ↗</button>
+              </div>
+            </div>
           </article>
-          <article class="video-card" data-cm-video="assets/videos/depoimento-3.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 3">
-            <img class="video-card__iframe" src="assets/videos/depoimento-3-poster.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="video-card__overlay" aria-hidden="true"></span>
-            <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+          <article class="rcase" data-reveal style="--d: 0.15s">
+            <div class="rcase__vid" data-cm-video="assets/videos/depoimento-3.mp4" tabindex="0" role="button" aria-label="Assistir depoimento de Farinelli &amp; Altinier">
+              <img src="assets/videos/depoimento-3-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="rcase__play" aria-hidden="true"></span>
+            </div>
+            <div class="rcase__body">
+              <span class="rcase__tag">Trabalhista</span>
+              <strong class="rcase__num">9 contratos</strong>
+              <span class="rcase__lab">no mês, com follow-up organizado</span>
+              <q class="rcase__quote">Esse mês eu organizei o WhatsApp, fiz mensagens para follow-up, o que melhorou. Hoje fechamos o nono contrato!</q>
+              <div class="rcase__who">
+                <div><b>Farinelli &amp; Altinier</b><span>Escritório Farinelli Altinier</span></div>
+                <button type="button" class="rcase__more" data-conversa-img="assets/images/case-4.webp" data-conversa-caption="Altinier Coutinho · +8 fechamentos mensais">Ver case ↗</button>
+              </div>
+            </div>
           </article>
-          <article class="video-card" data-cm-video="assets/videos/depoimento-4.mp4" style="aspect-ratio: 9/14; cursor: pointer;" tabindex="0" role="button" aria-label="Abrir depoimento 4">
-            <img class="video-card__iframe" src="assets/videos/depoimento-4-poster.jpg" alt="" loading="lazy" decoding="async" />
-            <span class="video-card__overlay" aria-hidden="true"></span>
-            <button class="video-card__play" aria-label="Reproduzir depoimento" type="button">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
+          <article class="rcase" data-reveal style="--d: 0.20s">
+            <div class="rcase__vid" data-cm-video="assets/videos/depoimento-4.mp4" tabindex="0" role="button" aria-label="Assistir depoimento de VV Advogados">
+              <img src="assets/videos/depoimento-4-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="rcase__play" aria-hidden="true"></span>
+            </div>
+            <div class="rcase__body">
+              <span class="rcase__tag">Trabalhista · Curitiba</span>
+              <strong class="rcase__num">Curitiba</strong>
+              <span class="rcase__lab">operação trabalhista rodando o sistema</span>
+              <div class="rcase__who">
+                <div><b>VV Advogados</b><span>Vale &amp; Vale · Curitiba</span></div>
+                <button type="button" class="rcase__more" data-conversa-img="assets/images/case-3.webp" data-conversa-caption="VV Advogados · Trabalhista · Curitiba">Ver case ↗</button>
+              </div>
+            </div>
           </article>
-        </div>
       </div>
 
-      <!-- Depoimentos textuais de escritórios reais -->
-      <div class="testimonials anim-fade-up" data-delay="0.2">
-        <header class="testimonials__head">
-          <span class="kicker"><span class="kicker__dot"></span>DEPOIMENTOS</span>
-          <h3 style="font-family: var(--f-display); font-size: 32px; font-weight: 700; margin: 16px 0 12px;">
-            Resultado de quem <span class="text-yellow">já roda o sistema</span>
-          </h3>
-        </header>
-
-        <!-- Cases em destaque · grid 2x2 (slides escritórios) -->
-        <div class="cases-highlight anim-fade-up" data-delay="0.15" style="margin-bottom: 60px;">
-          <div class="cases-highlight__grid" data-track>
-            <figure class="case-card" data-zoom>
-              <img src="assets/images/case-1.webp" alt="Fábio Gil Advogados · Escritório especializado na área trabalhista · Fechamento de contrato em 2h · +30 contratos fechados no terceiro mês de parceria" loading="lazy" />
-              <button class="case-card__zoom" aria-label="Expandir">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <figcaption>Fábio Gil Advogados · +30 contratos no 3º mês</figcaption>
-            </figure>
-            <figure class="case-card" data-zoom>
-              <img src="assets/images/case-2.webp" alt="Advogada Rafaela Fabrine · Escritório especializado na área trabalhista · Contratos de 20k e 50k fechados em 1 mês" loading="lazy" />
-              <button class="case-card__zoom" aria-label="Expandir">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <figcaption>Rafaela Fabrine · Contratos de 20k e 50k em 1 mês</figcaption>
-            </figure>
-            <figure class="case-card" data-zoom>
-              <img src="assets/images/case-3.webp" alt="VV Advogados · Escritório especializado na área trabalhista com atuação em Curitiba" loading="lazy" />
-              <button class="case-card__zoom" aria-label="Expandir">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <figcaption>VV Advogados · Trabalhista · Curitiba</figcaption>
-            </figure>
-            <figure class="case-card" data-zoom>
-              <img src="assets/images/case-4.webp" alt="Escritório Altinier Coutinho · Escritório especializado na área trabalhista · +8 fechamentos mensais" loading="lazy" />
-              <button class="case-card__zoom" aria-label="Expandir">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <figcaption>Altinier Coutinho · +8 fechamentos mensais</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="testimonials-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <figure class="testimonial">
-            <span class="testimonial__quote">&ldquo;</span>
-            <blockquote>Pessoal, quero compartilhar com vocês o resultado excelente de Dezembro. Foram <strong class="text-yellow">31 contratos fechados</strong> na área trabalhista. Quero agradecer pelo empenho e dedicação de toda equipe 1Nort.</blockquote>
-            <figcaption>
-              <div>
-                <strong>Fabio Gil</strong>
-                <span>Fabio Gil Advocacia · Trabalhista</span>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="testimonial">
-            <span class="testimonial__quote">&ldquo;</span>
-            <blockquote>Esse mês eu organizei o WhatsApp, fiz mensagens para follow-up, o que melhorou. Hoje fechamos o <strong class="text-yellow">nono contrato</strong>!</blockquote>
-            <figcaption>
-              <div>
-                <strong>Farinelli &amp; Altinier</strong>
-                <span>Escritório Farinelli Altinier</span>
-              </div>
-            </figcaption>
-          </figure>
-
-          <figure class="testimonial">
-            <span class="testimonial__quote">&ldquo;</span>
-            <blockquote>Parabéns a todos, acredito que estamos no caminho certo, nos últimos dias vieram <strong class="text-yellow">mais leads do Mato Grosso</strong> e no geral mais qualificados. Vieram leads também do auxílio acidente, qualificados também!</blockquote>
-            <figcaption>
-              <div>
-                <strong>Rosalen &amp; Cordeiro</strong>
-                <span>Rosalen &amp; Cordeiro Advogados</span>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+      <p class="rcases__foot">Mais resultados no nosso <a href="https://instagram.com/1nortdigital" target="_blank" rel="noopener" class="text-yellow">Instagram</a>.</p>
     </div>
   </section>
 
