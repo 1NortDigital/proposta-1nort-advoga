@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Proposta comercial 1Nort Digital — assessoria de marketing jurídico pra escritórios de advocacia. Sistema de aquisição previsível pra escritórios trabalhistas (reclamante e reclamada), previdenciários, bancários e de consumidor." />
+  <meta name="description" content="Proposta comercial 1Nort Digital — assessoria de marketing jurídico pra escritórios de advocacia. Sistema de aquisição previsível pra escritórios trabalhistas, previdenciários, bancários, de consumidor, família e criminal." />
   <title>Proposta 1Nort Digital — Marketing Jurídico</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261103r" />
+  <link rel="stylesheet" href="css/style.css?v=20261106a" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -28,7 +28,7 @@
   <script>
     // Área de atuação: ?area=previdenciario abre a proposta já na área do cliente.
     (function () {
-      var ok = ['reclamante','reclamada','previdenciario','bancario','consumidor'];
+      var ok = ['reclamante','reclamada','previdenciario','bancario','consumidor','familia','criminal'];
       var a = 'reclamante';
       try {
         var q = (new URLSearchParams(window.location.search).get('area') || '').toLowerCase();
@@ -141,6 +141,8 @@
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="previdenciario">Previdenciário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="bancario">Bancário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="consumidor">Consumidor</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="familia">Família</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="criminal">Criminal</button>
           </div>
       </div>
 
@@ -291,7 +293,7 @@
             <span class="diff-panel__pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Nicho jurídico</span>
             <h3 class="diff-panel__title" data-reveal-words>Somos <strong>nichados</strong></h3>
             <p class="diff-panel__lead">
-              Squad jurídico próprio dentro da 1Nort. Cada estratégia, criativo e funil é desenhado para advocacia e calibrado por área: trabalhista (reclamante e reclamada), previdenciário, bancário e consumidor.
+              Squad jurídico próprio dentro da 1Nort. Cada estratégia, criativo e funil é desenhado para advocacia e calibrado por área: trabalhista (reclamante e reclamada), previdenciário, bancário, consumidor, família e criminal.
             </p>
             <ul class="diff-panel__bullets">
               <li><span class="diff-check diff-check--icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="diff-bullet__text"><strong>Time dedicado</strong> à vertical jurídica</span></li>
@@ -647,7 +649,7 @@
           <span class="funnel-block__line"></span>
         </header>
 
-        <div class="lpx anim-fade-up" data-delay="0.05">
+        <div class="lpx anim-fade-up" data-delay="0.05" data-area-show="reclamante reclamada previdenciario bancario consumidor">
           <div class="lpx-copy">
             <span class="lpx-live"><i></i>Página real, no ar</span>
             <h4 class="lpx-title">Uma página própria do escritório, <span class="text-yellow">por área e por cidade</span>.</h4>
@@ -672,6 +674,56 @@
             </div>
           </div>
         </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="familia">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP real de Família com <span class="text-yellow">autoridade e atendimento humanizado</span>.</h4>
+            <p class="lpx-sub">Referência: Patrícia Torres Advocacia. A página apresenta especialização, serviços e prova de autoridade antes de levar o visitante ao agendamento.</p>
+            <ul class="lpx-tags">
+              <li><b>Especialização no topo</b><span>Posicionamento claro em Direito de Família.</span></li>
+              <li><b>Dores específicas</b><span>Divórcio, partilha, pensão e guarda.</span></li>
+              <li><b>Autoridade profissional</b><span>Tempo de carreira e formação em destaque.</span></li>
+              <li><b>CTA para consulta</b><span>Próximo passo visível desde a primeira dobra.</span></li>
+            </ul>
+            <a class="lpx-btn" href="https://patriciatorresadvogada.com.br/advogada-de-familia/" target="_blank" rel="noopener">Abrir a referência no ar ↗</a>
+          </div>
+
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>patriciatorresadvogada.com.br</b>/advogada-de-familia/</span></div>
+              <a class="lpx-view lpx-view--reference" href="https://patriciatorresadvogada.com.br/advogada-de-familia/" target="_blank" rel="noopener" aria-label="Abrir a landing page real de Patrícia Torres Advocacia">
+                <img src="assets/images/lp-familia-referencia.jpg" alt="Primeira dobra da landing page de Direito de Família de Patrícia Torres Advocacia" width="1400" height="850" loading="lazy" />
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Abrir referência real</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="criminal">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP criminal real construída em torno de <span class="text-yellow">urgência e ação imediata</span>.</h4>
+            <p class="lpx-sub">Referência: Caroline Araújo Advocacia Criminal. A primeira dobra comunica plantão, situações atendidas e contato imediato sem criar atrito para quem está em urgência.</p>
+            <ul class="lpx-tags">
+              <li><b>Urgência na headline</b><span>“Sua liberdade não pode esperar”.</span></li>
+              <li><b>Plantão 24 horas</b><span>Flagrante e custódia já na primeira tela.</span></li>
+              <li><b>Identidade de confiança</b><span>Imagem profissional e linguagem direta.</span></li>
+              <li><b>WhatsApp imediato</b><span>CTA principal sem etapas intermediárias.</span></li>
+            </ul>
+            <a class="lpx-btn" href="https://carolinearaujoadv.com.br/" target="_blank" rel="noopener">Abrir a referência no ar ↗</a>
+          </div>
+
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>carolinearaujoadv.com.br</b>/</span></div>
+              <a class="lpx-view lpx-view--reference" href="https://carolinearaujoadv.com.br/" target="_blank" rel="noopener" aria-label="Abrir a landing page real de Caroline Araújo Advocacia Criminal">
+                <img src="assets/images/lp-criminal-referencia.jpg" alt="Primeira dobra da landing page de Direito Criminal de Caroline Araújo Advocacia" width="1400" height="850" loading="lazy" />
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Abrir referência real</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- BLOCO 1 — Antes do clique (Aquisição) -->
@@ -689,6 +741,8 @@
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="previdenciario">Previdenciário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="bancario">Bancário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="consumidor">Consumidor</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="familia">Família</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="criminal">Criminal</button>
           </div>
         </div>
 
@@ -811,6 +865,48 @@
               <span class="fs-target__chip">+6</span>
             </div>
           </div>
+          <div class="fs-target" data-area-show="familia">
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Idade</span>
+              <span class="fs-target__val">25 – 60</span>
+            </div>
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Perfil</span>
+              <span class="fs-target__val">Público amplo local</span>
+            </div>
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Localização</span>
+              <span class="fs-target__val">Raio 80 km</span>
+            </div>
+            <div class="fs-target__chips">
+              <span class="fs-target__chip">Divórcio</span>
+              <span class="fs-target__chip">Pensão</span>
+              <span class="fs-target__chip">Guarda</span>
+              <span class="fs-target__chip">Inventário</span>
+              <span class="fs-target__chip">+5</span>
+            </div>
+          </div>
+          <div class="fs-target" data-area-show="criminal">
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Idade</span>
+              <span class="fs-target__val">21 – 60</span>
+            </div>
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Perfil</span>
+              <span class="fs-target__val">Público amplo local</span>
+            </div>
+            <div class="fs-target__row">
+              <span class="fs-target__lbl">Localização</span>
+              <span class="fs-target__val">Raio 80 km</span>
+            </div>
+            <div class="fs-target__chips">
+              <span class="fs-target__chip">Flagrante</span>
+              <span class="fs-target__chip">Audiência</span>
+              <span class="fs-target__chip">Inquérito</span>
+              <span class="fs-target__chip">Defesa criminal</span>
+              <span class="fs-target__chip">+4</span>
+            </div>
+          </div>
           <p class="funnel-step__hint">Você não fala com quem não pode te contratar.</p>
         </article>
 
@@ -910,6 +1006,20 @@
               </figure>
             </div>
           </div>
+          <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="familia">
+            <div class="area-creatives__images">
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-familia-1.jpg" alt="Criativo de Direito de Família sobre divórcio" loading="lazy" /></figure>
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-familia-2.jpg" alt="Criativo de Direito de Família sobre guarda e pensão" loading="lazy" /></figure>
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-familia-3.jpg" alt="Criativo de Direito de Família para captação qualificada" loading="lazy" /></figure>
+            </div>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real area-creatives" data-area-show="criminal">
+            <div class="area-creatives__images">
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-criminal-1.jpg" alt="Criativo de Direito Criminal para atendimento de urgência" loading="lazy" /></figure>
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-criminal-2.jpg" alt="Criativo de Direito Criminal sobre defesa técnica" loading="lazy" /></figure>
+              <figure class="fs-real" data-zoom><img src="assets/images/criativo-criminal-3.jpg" alt="Criativo de Direito Criminal para captação qualificada" loading="lazy" /></figure>
+            </div>
+          </div>
           <button class="fs-creative-cta" data-open-creatives type="button">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/>
@@ -975,6 +1085,18 @@
               <img class="fs-real__vid" src="assets/videos/criativo-consumidor-1-poster.jpg" alt="" loading="lazy" decoding="async" />
               <span class="fs-real__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
               <figcaption class="visually-hidden">Vídeo · direito do consumidor</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="familia">
+            <figure class="fs-real fs-qual-media" data-zoom>
+              <img src="assets/images/criativo-familia-1.jpg" alt="Criativo de primeira qualificação para Direito de Família" loading="lazy" />
+              <figcaption class="visually-hidden">Anúncio real · Direito de Família</figcaption>
+            </figure>
+          </div>
+          <div class="funnel-step__mock funnel-step__creatives-real fs-adwrap" data-area-show="criminal">
+            <figure class="fs-real fs-qual-media" data-zoom>
+              <img src="assets/images/criativo-criminal-1.jpg" alt="Criativo de primeira qualificação para Direito Criminal" loading="lazy" />
+              <figcaption class="visually-hidden">Anúncio real · Direito Criminal</figcaption>
             </figure>
           </div>
         </article>
@@ -1224,6 +1346,60 @@
               <strong>82<small>/100</small></strong>
             </div>
           </div>
+          <div class="fs-quiz" data-area-show="familia">
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <div class="fs-quiz__body"><strong>Tipo de situação</strong><span>Divórcio, guarda, pensão ou inventário?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Filhos e patrimônio</strong><span>Há menores ou bens para partilhar?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Estágio do caso</strong><span>Existe processo ou acordo em andamento?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Urgência</strong><span>Há risco, prazo ou medida urgente?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__score">
+              <span>Score do lead</span>
+              <div class="fs-quiz__bar"><i style="width:87%"></i></div>
+              <strong>87<small>/100</small></strong>
+            </div>
+          </div>
+          <div class="fs-quiz" data-area-show="criminal">
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <div class="fs-quiz__body"><strong>Nível de urgência</strong><span>Há flagrante, prisão ou audiência próxima?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Fase do caso</strong><span>Inquérito, denúncia, processo ou recurso?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Dados do processo</strong><span>Tem boletim, intimação ou número do caso?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__row">
+              <span class="fs-quiz__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2"/></svg></span>
+              <div class="fs-quiz__body"><strong>Quem busca ajuda</strong><span>Investigado, acusado ou familiar?</span></div>
+              <span class="fs-quiz__pill">✓</span>
+            </div>
+            <div class="fs-quiz__score">
+              <span>Score do lead</span>
+              <div class="fs-quiz__bar"><i style="width:94%"></i></div>
+              <strong>94<small>/100</small></strong>
+            </div>
+          </div>
         </article>
 
         <!-- 5. Eliminação -->
@@ -1430,6 +1606,8 @@
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="previdenciario">Previdenciário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="bancario">Bancário</button>
             <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="consumidor">Consumidor</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="familia">Família</button>
+            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="criminal">Criminal</button>
           </div>
       </div>
 
@@ -1646,6 +1824,76 @@
           </footer>
         </article>
 
+        <article class="ia-conversation anim-fade-up" data-delay="0.1" data-area-show="familia" aria-label="Exemplo de conversa da IA para Direito de Família">
+          <header class="ia-conversation__top">
+            <div class="ia-agent">
+              <span class="ia-agent__avatar" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.65 4.35L18 9l-4.35 1.65L12 15l-1.65-4.35L6 9l4.35-1.65L12 3z" stroke="currentColor" stroke-width="1.8"/><path d="M18.5 15l.85 2.15L21.5 18l-2.15.85L18.5 21l-.85-2.15L15.5 18l2.15-.85L18.5 15z" fill="currentColor"/></svg></span>
+              <span class="ia-agent__copy"><strong>Agente IA 1Nort</strong><small>online 24/7 · respondendo agora</small></span>
+            </div>
+            <span class="ia-live-pill"><i></i> conversa em andamento</span>
+          </header>
+
+          <div class="ia-conversation__lead">
+            <div><span>LEAD DIREITO DE FAMÍLIA</span><strong>Ana · Divórcio, guarda e pensão</strong></div>
+            <span class="ia-stage-pill">Em qualificação</span>
+          </div>
+
+          <div class="ia-conversation__messages phone-chat__body" data-chat>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Quero me separar, mas temos uma filha pequena e ainda não definimos guarda nem pensão.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Entendo, Ana. Vou organizar as informações com cuidado. Vocês são casados oficialmente e existe patrimônio para dividir?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Sim, há 7 anos. Temos um apartamento financiado e um carro.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Obrigada. E sobre sua filha: já existe algum acordo provisório de convivência ou contribuição mensal?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Ainda não. Tenho receio de a situação piorar.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Faz sentido agir com orientação antes disso. Posso agendar uma conversa reservada para o advogado avaliar divórcio, guarda, pensão e partilha juntos?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Pode ser amanhã de manhã.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Perfeito. Registrei o contexto e vou confirmar o melhor horário com a equipe agora.</div>
+            <div class="phone-typing" data-typing><i></i><i></i><i></i></div>
+          </div>
+
+          <footer class="ia-conversation__pipeline" aria-label="Etapas concluídas pela IA">
+            <span class="is-done"><i>✓</i>Atendido</span>
+            <span class="is-done"><i>✓</i>Contexto familiar</span>
+            <span class="is-done"><i>✓</i>Urgência mapeada</span>
+            <span class="is-done"><i>✓</i>Consulta solicitada</span>
+            <span class="is-human"><i>↗</i>Equipe confirma horário</span>
+          </footer>
+        </article>
+
+        <article class="ia-conversation anim-fade-up" data-delay="0.1" data-area-show="criminal" aria-label="Exemplo de conversa da IA para Direito Criminal">
+          <header class="ia-conversation__top">
+            <div class="ia-agent">
+              <span class="ia-agent__avatar" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.65 4.35L18 9l-4.35 1.65L12 15l-1.65-4.35L6 9l4.35-1.65L12 3z" stroke="currentColor" stroke-width="1.8"/><path d="M18.5 15l.85 2.15L21.5 18l-2.15.85L18.5 21l-.85-2.15L15.5 18l2.15-.85L18.5 15z" fill="currentColor"/></svg></span>
+              <span class="ia-agent__copy"><strong>Agente IA 1Nort</strong><small>online 24/7 · respondendo agora</small></span>
+            </div>
+            <span class="ia-live-pill"><i></i> atendimento urgente</span>
+          </header>
+
+          <div class="ia-conversation__lead">
+            <div><span>LEAD DIREITO CRIMINAL</span><strong>Marcos · Familiar preso em flagrante</strong></div>
+            <span class="ia-stage-pill">Prioridade máxima</span>
+          </div>
+
+          <div class="ia-conversation__messages phone-chat__body" data-chat>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Meu irmão foi preso agora e não sabemos para onde levaram. Precisamos de um advogado urgente.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Entendi, Marcos. Vou tratar como prioridade. Em qual cidade aconteceu e qual foi o horário aproximado da prisão?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Foi em Campinas, há cerca de uma hora.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Obrigado. Vocês receberam alguma informação sobre delegacia, motivo da prisão ou audiência de custódia?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Só disseram que levariam para o plantão policial.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Certo. Já organizei os dados essenciais. Posso confirmar seu telefone e acionar imediatamente o advogado de plantão?</div>
+            <div class="phone-msg phone-msg--out"><span class="ia-msg__label">Lead</span>Sim, por favor.</div>
+            <div class="phone-msg phone-msg--in"><span class="ia-msg__label">IA 1Nort</span>Confirmado. O caso foi marcado como urgente e a equipe está sendo acionada com todo o contexto.</div>
+            <div class="phone-typing" data-typing><i></i><i></i><i></i></div>
+          </div>
+
+          <footer class="ia-conversation__pipeline" aria-label="Etapas concluídas pela IA">
+            <span class="is-done"><i>✓</i>Atendido em segundos</span>
+            <span class="is-done"><i>✓</i>Urgência identificada</span>
+            <span class="is-done"><i>✓</i>Dados essenciais</span>
+            <span class="is-done"><i>✓</i>Prioridade máxima</span>
+            <span class="is-human"><i>↗</i>Advogado acionado</span>
+          </footer>
+        </article>
+
         <div class="ia-capabilities anim-fade-up" data-delay="0.2">
           <span class="ia-eyebrow"><i></i> IA DE FECHAMENTO · 24/7</span>
           <h2 class="section__title ia-capabilities__title">
@@ -1767,10 +2015,10 @@
                       </header>
                       <ul>
                         <li><span>Origem:</span> [Meta] Whatsapp</li>
-                        <li><span>Nome:</span> <span data-area-show="reclamante">Valter João Silva</span><span data-area-show="reclamada">Marcos Pereira</span><span data-area-show="previdenciario">Antônio Carlos</span><span data-area-show="bancario">Pedro Henrique</span><span data-area-show="consumidor">Lucas Martins</span></li>
+                        <li><span>Nome:</span> <span data-area-show="reclamante">Valter João Silva</span><span data-area-show="reclamada">Marcos Pereira</span><span data-area-show="previdenciario">Antônio Carlos</span><span data-area-show="bancario">Pedro Henrique</span><span data-area-show="consumidor">Lucas Martins</span><span data-area-show="familia">Carla Menezes</span><span data-area-show="criminal">Rafael Souza</span></li>
                         <li><span>Telefone:</span> <b>554884050069</b></li>
-                        <li><span>Campanha:</span> <span data-area-show="reclamante">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="reclamada">1N [ADVOGA] [B2B] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="previdenciario">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="bancario">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="consumidor">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span></li>
-                        <li><span>Conjunto:</span> <span data-area-show="reclamante">[TRABALHISTA] [MANDADO-EMBORA] [SP] - OT/b</span><span data-area-show="reclamada">[RECLAMADA] [EMPRESARIOS] [SP] - OT/b</span><span data-area-show="previdenciario">[PREVIDENCIARIO] [APOSENTADORIA-NEGADA] [SP] - OT/b</span><span data-area-show="bancario">[BANCARIO] [REVISIONAL-VEICULO] [SP] - OT/b</span><span data-area-show="consumidor">[CONSUMIDOR] [NEGATIVACAO] [SP] - OT/b</span></li>
+                        <li><span>Campanha:</span> <span data-area-show="reclamante">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="reclamada">1N [ADVOGA] [B2B] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="previdenciario">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="bancario">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="consumidor">1N [ADVOGA] [B2C] [SP] R$30,00 - 16/06 OT/Y</span><span data-area-show="familia">1N [ADVOGA] [FAMÍLIA] [SP] R$30,00 - OT/Y</span><span data-area-show="criminal">1N [ADVOGA] [CRIMINAL] [SP] R$30,00 - OT/Y</span></li>
+                        <li><span>Conjunto:</span> <span data-area-show="reclamante">[TRABALHISTA] [MANDADO-EMBORA] [SP] - OT/b</span><span data-area-show="reclamada">[RECLAMADA] [EMPRESARIOS] [SP] - OT/b</span><span data-area-show="previdenciario">[PREVIDENCIARIO] [APOSENTADORIA-NEGADA] [SP] - OT/b</span><span data-area-show="bancario">[BANCARIO] [REVISIONAL-VEICULO] [SP] - OT/b</span><span data-area-show="consumidor">[CONSUMIDOR] [NEGATIVACAO] [SP] - OT/b</span><span data-area-show="familia">[FAMÍLIA] [DIVÓRCIO-GUARDA] [SP] - OT/b</span><span data-area-show="criminal">[CRIMINAL] [URGÊNCIA] [SP] - OT/b</span></li>
                         <li><span>Anúncio:</span> 1202312262349430432</li>
                       </ul>
                       <span class="crm-notif__time">12:39 <svg width="14" height="10" viewBox="0 0 18 12" fill="none"><path d="M1 6l4 4 7-7M7 10l4-4 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1785,12 +2033,12 @@
                       </header>
                       <ul>
                         <li><span>Origem:</span> [Meta] Whatsapp</li>
-                        <li><span>Nome:</span> <span data-area-show="reclamante">Patricia</span><span data-area-show="reclamada">Construtora Lima</span><span data-area-show="previdenciario">Sebastião</span><span data-area-show="bancario">Cláudia</span><span data-area-show="consumidor">Fernanda</span></li>
+                        <li><span>Nome:</span> <span data-area-show="reclamante">Patricia</span><span data-area-show="reclamada">Construtora Lima</span><span data-area-show="previdenciario">Sebastião</span><span data-area-show="bancario">Cláudia</span><span data-area-show="consumidor">Fernanda</span><span data-area-show="familia">Renata Alves</span><span data-area-show="criminal">Juliano Costa</span></li>
                         <li><span>Telefone:</span> <b>554899994159</b></li>
-                        <li><span>Valor:</span> <span data-area-show="reclamante">R$ 4.500</span><span data-area-show="reclamada">R$ 6.000</span><span data-area-show="previdenciario">R$ 3.800</span><span data-area-show="bancario">R$ 4.200</span><span data-area-show="consumidor">R$ 2.500</span></li>
-                        <li><span>Campanha:</span> <span data-area-show="reclamante">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="reclamada">1N [ADVOGA] [B2B] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="previdenciario">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="bancario">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="consumidor">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span></li>
-                        <li><span>Conjunto:</span> <span data-area-show="reclamante">[TRABALHISTA] [HORA-EXTRA] 22/07 OT/Y</span><span data-area-show="reclamada">[RECLAMADA] [DEFESA-TRABALHISTA] 22/07 OT/Y</span><span data-area-show="previdenciario">[PREVIDENCIARIO] [AUXILIO-DOENCA] 22/07 OT/Y</span><span data-area-show="bancario">[BANCARIO] [CONSIGNADO] 22/07 OT/Y</span><span data-area-show="consumidor">[CONSUMIDOR] [VOO-CANCELADO] 22/07 OT/Y</span></li>
-                        <li><span>Anúncio:</span> <span data-area-show="reclamante">[HORA-EXTRA] 22/07</span><span data-area-show="reclamada">[DEFESA-TRABALHISTA] 22/07</span><span data-area-show="previdenciario">[AUXILIO-DOENCA] 22/07</span><span data-area-show="bancario">[CONSIGNADO] 22/07</span><span data-area-show="consumidor">[VOO-CANCELADO] 22/07</span></li>
+                        <li><span>Valor:</span> <span data-area-show="reclamante">R$ 4.500</span><span data-area-show="reclamada">R$ 6.000</span><span data-area-show="previdenciario">R$ 3.800</span><span data-area-show="bancario">R$ 4.200</span><span data-area-show="consumidor">R$ 2.500</span><span data-area-show="familia">R$ 4.500</span><span data-area-show="criminal">R$ 6.000</span></li>
+                        <li><span>Campanha:</span> <span data-area-show="reclamante">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="reclamada">1N [ADVOGA] [B2B] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="previdenciario">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="bancario">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="consumidor">1N [ADVOGA] [B2C] [SP] R$50,00 11/07 - OT/Y</span><span data-area-show="familia">1N [ADVOGA] [FAMÍLIA] [SP] R$50,00 - OT/Y</span><span data-area-show="criminal">1N [ADVOGA] [CRIMINAL] [SP] R$50,00 - OT/Y</span></li>
+                        <li><span>Conjunto:</span> <span data-area-show="reclamante">[TRABALHISTA] [HORA-EXTRA] 22/07 OT/Y</span><span data-area-show="reclamada">[RECLAMADA] [DEFESA-TRABALHISTA] 22/07 OT/Y</span><span data-area-show="previdenciario">[PREVIDENCIARIO] [AUXILIO-DOENCA] 22/07 OT/Y</span><span data-area-show="bancario">[BANCARIO] [CONSIGNADO] 22/07 OT/Y</span><span data-area-show="consumidor">[CONSUMIDOR] [VOO-CANCELADO] 22/07 OT/Y</span><span data-area-show="familia">[FAMÍLIA] [PENSÃO-GUARDA] OT/Y</span><span data-area-show="criminal">[CRIMINAL] [FLAGRANTE] OT/Y</span></li>
+                        <li><span>Anúncio:</span> <span data-area-show="reclamante">[HORA-EXTRA] 22/07</span><span data-area-show="reclamada">[DEFESA-TRABALHISTA] 22/07</span><span data-area-show="previdenciario">[AUXILIO-DOENCA] 22/07</span><span data-area-show="bancario">[CONSIGNADO] 22/07</span><span data-area-show="consumidor">[VOO-CANCELADO] 22/07</span><span data-area-show="familia">[GUARDA] 05/11</span><span data-area-show="criminal">[URGÊNCIA] 05/11</span></li>
                       </ul>
                       <span class="crm-notif__time">14:07 <svg width="14" height="10" viewBox="0 0 18 12" fill="none"><path d="M1 6l4 4 7-7M7 10l4-4 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
@@ -2461,13 +2709,15 @@
       </header>
 
       <div class="creatives-modal__tabs" role="tablist">
-        <button class="creatives-modal__tab is-active" data-tab="imgs" data-area-show="reclamante reclamada" type="button">
+        <button class="creatives-modal__tab is-active" data-tab="imgs" data-area-show="reclamante reclamada familia criminal" type="button">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Imagens
           <span class="creatives-modal__count" data-area-show="reclamante">4</span>
           <span class="creatives-modal__count" data-area-show="reclamada">1</span>
+          <span class="creatives-modal__count" data-area-show="familia">3</span>
+          <span class="creatives-modal__count" data-area-show="criminal">3</span>
         </button>
-        <button class="creatives-modal__tab" data-tab="vids" type="button">
+        <button class="creatives-modal__tab" data-tab="vids" data-area-show="reclamante reclamada previdenciario bancario consumidor" type="button">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           Vídeos
           <span class="creatives-modal__count">3</span>
@@ -2505,6 +2755,16 @@
               <button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
               <figcaption>Defesa trabalhista empresarial</figcaption>
             </figure>
+          </div>
+          <div class="creatives-modal__grid" data-area-show="familia">
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-familia-1.jpg" alt="Criativo de Direito de Família 1" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Família · Criativo 1</figcaption></figure>
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-familia-2.jpg" alt="Criativo de Direito de Família 2" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Família · Criativo 2</figcaption></figure>
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-familia-3.jpg" alt="Criativo de Direito de Família 3" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Família · Criativo 3</figcaption></figure>
+          </div>
+          <div class="creatives-modal__grid" data-area-show="criminal">
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-criminal-1.jpg" alt="Criativo de Direito Criminal 1" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Criminal · Criativo 1</figcaption></figure>
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-criminal-2.jpg" alt="Criativo de Direito Criminal 2" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Criminal · Criativo 2</figcaption></figure>
+            <figure class="cm-thumb" data-zoom><img src="assets/images/criativo-criminal-3.jpg" alt="Criativo de Direito Criminal 3" loading="lazy" /><button class="cm-thumb__zoom" aria-label="Expandir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2"/></svg></button><figcaption>Criminal · Criativo 3</figcaption></figure>
           </div>
         </div>
 

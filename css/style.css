@@ -17167,6 +17167,8 @@ html[data-area="reclamada"] [data-area-show]:not([data-area-show~="reclamada"]) 
 html[data-area="previdenciario"] [data-area-show]:not([data-area-show~="previdenciario"]) { display: none !important; }
 html[data-area="bancario"] [data-area-show]:not([data-area-show~="bancario"]) { display: none !important; }
 html[data-area="consumidor"] [data-area-show]:not([data-area-show~="consumidor"]) { display: none !important; }
+html[data-area="familia"] [data-area-show]:not([data-area-show~="familia"]) { display: none !important; }
+html[data-area="criminal"] [data-area-show]:not([data-area-show~="criminal"]) { display: none !important; }
 
 .area-select { margin: 0 auto 28px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .area-select .prod-tabs { justify-content: center; margin-bottom: 0; }
@@ -17188,6 +17190,21 @@ html[data-area="consumidor"] [data-area-show]:not([data-area-show~="consumidor"]
   aspect-ratio: 9 / 16;
 }
 .area-creatives__video:hover .fs-real__play { transform: translate(-50%, -50%) scale(1.08); }
+.area-creatives__images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.area-creatives__images .fs-real {
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.area-creatives__images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .area-creatives__image {
   height: clamp(190px, 22vw, 260px);
   margin-top: 10px;
@@ -17199,6 +17216,7 @@ html[data-area="consumidor"] [data-area-show]:not([data-area-show~="consumidor"]
 .media-contain { object-fit: contain !important; background: #090909; }
 @media (max-width: 520px) {
   .area-creatives__videos { gap: 5px; }
+  .area-creatives__images { gap: 5px; }
   .area-creatives__video .fs-real__play { width: 30px; height: 30px; }
   .area-creatives__image { height: 200px; }
 }
@@ -17708,6 +17726,7 @@ html.is-locked .call-prep { display: none; }
 ============================================================ */
 .lpx-block { margin-bottom: 72px; }
 .lpx { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 44px; align-items: center; }
+.lpx-copy, .lpx-show { min-width: 0; }
 .lpx-live { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 99px; background: #141414; border: 1px solid var(--c-border-soft); font: 600 12.5px/1 var(--f-display); color: var(--c-text-soft); }
 .lpx-live i { width: 8px; height: 8px; border-radius: 50%; background: #28c840; box-shadow: 0 0 0 4px rgba(40, 200, 64, .18); }
 .lpx-title { margin: 16px 0 10px; font: 800 clamp(1.4rem, 2.4vw, 1.9rem)/1.2 var(--f-display); color: #fff; letter-spacing: -0.01em; }
@@ -17735,6 +17754,7 @@ html.is-locked .call-prep { display: none; }
 .lpx-live-frame iframe { position: absolute; top: 0; left: 0; border: 0; background: #fff; transform-origin: 0 0; opacity: 0; transition: opacity .4s; }
 .lpx-live-frame.ready iframe { opacity: 1; }
 .lpx-live-frame--static { pointer-events: none; }
+.lpx-view--reference { display: block; cursor: pointer; }
 
 @media (max-width: 960px) {
   .lpx { grid-template-columns: 1fr; gap: 32px; }
@@ -17746,6 +17766,7 @@ html.is-locked .call-prep { display: none; }
   .lpx-phone { width: 110px; border-radius: 20px; padding: 5px; }
   .lpx-screen { border-radius: 16px; }
   .lpx-block { margin-bottom: 56px; }
+  .lpx--area .lpx-show { padding: 0; }
 }
 
 /* ---- Entregáveis v2: diferenciais + listas maiores (2026-11-03) ---- */
