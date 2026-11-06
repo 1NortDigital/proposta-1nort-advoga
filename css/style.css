@@ -17841,6 +17841,20 @@ html.is-locked .call-prep { display: none; }
 /* ============================================================
    RESULTADOS v2 — card por cliente (vídeo + número + depoimento)
 ============================================================ */
+.rcases-featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+.rcase-feature { overflow: hidden; border-radius: 20px; background: linear-gradient(160deg, #1c1c1c, #111); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+.rcase-feature__media { position: relative; aspect-ratio: 1248 / 696; margin: 0; overflow: hidden; background: #0b0b0b; cursor: zoom-in; }
+.rcase-feature__media::after { content: ""; position: absolute; inset: auto 0 0; height: 28%; background: linear-gradient(180deg, transparent, rgba(0,0,0,.42)); pointer-events: none; }
+.rcase-feature__media img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .45s ease; }
+.rcase-feature:hover .rcase-feature__media img { transform: scale(1.015); }
+.rcase-feature__zoom { position: absolute; right: 14px; bottom: 12px; z-index: 2; padding: 7px 11px; border-radius: 999px; background: rgba(8,8,8,.86); color: #fff; font: 700 10px/1 var(--f-display); letter-spacing: .04em; }
+.rcase-feature__body { display: flex; align-items: flex-end; justify-content: space-between; gap: 22px; padding: 18px 20px 20px; }
+.rcase-feature__body > div:first-child { display: grid; justify-items: start; min-width: 0; }
+.rcase-feature__num { margin-top: 10px; font: 900 clamp(1.45rem, 2.2vw, 2rem)/1 var(--f-display); letter-spacing: -.025em; color: var(--c-yellow); }
+.rcase-feature__lab { margin-top: 5px; font-size: 12.5px; line-height: 1.35; color: var(--c-text-soft); }
+.rcase-feature__who { flex-shrink: 0; text-align: right; }
+.rcase-feature__who b { display: block; font: 700 14px/1.25 var(--f-display); color: #fff; }
+.rcase-feature__who span { display: block; margin-top: 4px; font-size: 11.5px; color: var(--c-text-muted); }
 .rcases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .rcase { display: grid; grid-template-columns: 200px 1fr; border-radius: 22px; overflow: hidden; background: linear-gradient(160deg, #1c1c1c, #121212); border: 1px solid rgba(255,255,255,.07); box-shadow: 0 24px 60px rgba(0,0,0,.35); }
 .rcase__vid { position: relative; aspect-ratio: 9 / 14; background: #111; cursor: pointer; }
@@ -17910,6 +17924,15 @@ html.is-locked .call-prep { display: none; }
 .rcases__foot { margin-top: 16px; }
 @media (max-width: 1100px) { .rcases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .rcases { grid-template-columns: 1fr; } .rcase { grid-template-columns: 120px 1fr; } }
+@media (max-width: 760px) {
+  .rcases-featured { grid-template-columns: 1fr; }
+  .rcase-feature__body { align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .rcase-feature__body { display: grid; gap: 14px; padding: 15px 16px 17px; }
+  .rcase-feature__who { text-align: left; }
+  .rcase-feature__zoom { right: 10px; bottom: 9px; }
+}
 /* thumbs: rosto centralizado */
 .rcase__vid img { object-position: center 28%; }
 /* play no canto pra não tampar o rosto */
