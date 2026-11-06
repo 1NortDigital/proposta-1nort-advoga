@@ -221,6 +221,14 @@
           const on = b.getAttribute('data-area-set') === area;
           b.classList.toggle('is-active', on);
           b.setAttribute('aria-selected', on ? 'true' : 'false');
+          if (on) {
+            const tabs = b.closest('.prod-tabs');
+            if (tabs && tabs.scrollWidth > tabs.clientWidth) {
+              requestAnimationFrame(() => {
+                tabs.scrollLeft = Math.max(0, b.offsetLeft - (tabs.clientWidth - b.offsetWidth) / 2);
+              });
+            }
+          }
         });
       };
       const setArea = (area) => {
@@ -275,13 +283,27 @@
       const dlg = document.getElementById('lpx-dlg');
       if (!dlg) return;
       const fr = dlg.querySelector('iframe');
-      const open = () => { if (!fr.src) fr.src = fr.dataset.src; dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); };
-      const close = () => (dlg.close ? dlg.close() : dlg.removeAttribute('open'));
+      const urlLabel = dlg.querySelector('[data-lpx-dialog-url]');
+      const openLink = dlg.querySelector('.lpx-dlg__open');
+      const open = (trigger) => {
+        const url = trigger && trigger.getAttribute('data-lpx-url');
+        if (!url) return;
+        fr.src = url;
+        fr.title = 'Landing page de referência — ' + (trigger.getAttribute('aria-label') || 'área selecionada');
+        if (urlLabel) urlLabel.textContent = url;
+        if (openLink) openLink.href = url;
+        dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', '');
+      };
+      const close = () => {
+        if (dlg.close) dlg.close(); else dlg.removeAttribute('open');
+        fr.removeAttribute('src');
+      };
       document.querySelectorAll('[data-lpx-open]').forEach((el) => {
-        el.addEventListener('click', open);
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+        el.addEventListener('click', () => open(el));
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); } });
       });
       dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.lpx-dlg__x')) close(); });
+      dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
     })();
 
     /* ----- Simulador de faturamento (Métricas) -----

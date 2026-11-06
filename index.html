@@ -13,7 +13,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="css/style.css?v=20261106c" />
+  <link rel="stylesheet" href="css/style.css?v=20261106d" />
 
   <script>
     // Bloqueia conteúdo antes da renderização se ainda não autenticado nesta aba.
@@ -663,6 +663,19 @@
         </h2>
       </header>
 
+      <div class="area-select area-select--lp anim-fade-up" data-delay="0.05">
+        <span class="area-select__eyebrow">Escolha a área para ver a estrutura personalizada</span>
+        <div class="prod-tabs area-tabs" role="tablist" aria-label="Área de atuação do escritório">
+          <button class="prod-tab area-tab is-active" type="button" role="tab" aria-selected="true" data-area-set="reclamante">Trabalhista reclamante</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="reclamada">Trabalhista reclamada</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="previdenciario">Previdenciário</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="bancario">Bancário</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="consumidor">Consumidor</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="familia">Família</button>
+          <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="criminal">Criminal</button>
+        </div>
+      </div>
+
       <!-- BLOCO 0 — Landing page do escritório (onde o tráfego chega) -->
       <div class="funnel-block lpx-block">
         <header class="funnel-block__head">
@@ -671,7 +684,7 @@
           <span class="funnel-block__line"></span>
         </header>
 
-        <div class="lpx anim-fade-up" data-delay="0.05" data-area-show="reclamante reclamada previdenciario bancario consumidor">
+        <div class="lpx anim-fade-up" data-delay="0.05" data-area-show="reclamante">
           <div class="lpx-copy">
             <span class="lpx-live"><i></i>Página real, no ar</span>
             <h4 class="lpx-title">Uma página própria do escritório, <span class="text-yellow">por área e por cidade</span>.</h4>
@@ -682,15 +695,115 @@
               <li><b>WhatsApp em toda a página</b><span>Um toque pra falar com o escritório.</span></li>
               <li><b>Feita pro celular</b><span>Onde quase todo cliente pesquisa.</span></li>
             </ul>
-            <a class="lpx-btn" href="https://robsongagoadvogados.com.br/trabalhista/" target="_blank" rel="noopener">Abrir a página no ar ↗</a>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://robsongagoadvogados.com.br/trabalhista/">Abrir em tela cheia ↗</button>
           </div>
 
           <div class="lpx-show">
             <div class="lpx-browser">
               <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>robsongagoadvogados.com.br</b>/trabalhista/</span></div>
-              <div class="lpx-view" role="button" tabindex="0" data-lpx-open aria-label="Expandir a landing page">
+              <div class="lpx-view" role="button" tabindex="0" data-lpx-open data-lpx-url="https://robsongagoadvogados.com.br/trabalhista/" aria-label="Expandir a landing page trabalhista para reclamante">
                 <img src="assets/images/lp-modelo-topo.webp" alt="Topo da landing page do Roberto Gago Advogados no computador" width="1400" height="729" loading="lazy" />
-                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://robsongagoadvogados.com.br/trabalhista/" title="Landing page do Roberto Gago Advogados" sandbox="" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
+                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://robsongagoadvogados.com.br/trabalhista/" title="Landing page trabalhista para reclamante" sandbox="allow-scripts allow-same-origin" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="reclamada">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP para empresas focada em <span class="text-yellow">defesa e prevenção trabalhista</span>.</h4>
+            <p class="lpx-sub">Referência: Risoleta Henrique Advocacia. A página fala diretamente com empresários, mostra riscos concretos e organiza a solução em uma jornada consultiva.</p>
+            <ul class="lpx-tags">
+              <li><b>Mensagem para empresários</b><span>O decisor se reconhece desde o título.</span></li>
+              <li><b>Defesa + prevenção</b><span>Processos atuais e redução de novos passivos.</span></li>
+              <li><b>Serviços empresariais</b><span>Contratos, compliance e representação.</span></li>
+              <li><b>CTA consultivo</b><span>Contato com especialista sem linguagem genérica.</span></li>
+            </ul>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://risoletahenriqueadvocacia.com.br/direito-trabalhista-para-empresas/">Abrir em tela cheia ↗</button>
+          </div>
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>risoletahenriqueadvocacia.com.br</b>/direito-trabalhista-para-empresas/</span></div>
+              <div class="lpx-view" role="button" tabindex="0" data-lpx-open data-lpx-url="https://risoletahenriqueadvocacia.com.br/direito-trabalhista-para-empresas/" aria-label="Expandir referência de landing page trabalhista para empresas">
+                <div class="lpx-preview-fallback" aria-hidden="true"><span>Trabalhista empresarial</span><strong>Defesa estratégica para empresas</strong><small>Processos · prevenção · consultoria</small></div>
+                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://risoletahenriqueadvocacia.com.br/direito-trabalhista-para-empresas/" title="Landing page trabalhista para empresas" sandbox="allow-scripts allow-same-origin" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="previdenciario">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP previdenciária que traduz o INSS em <span class="text-yellow">clareza e próximo passo</span>.</h4>
+            <p class="lpx-sub">Referência: Pinheiro Cavalcante Advocacia. A página separa as principais demandas previdenciárias e conduz o segurado para uma análise simples pelo WhatsApp.</p>
+            <ul class="lpx-tags">
+              <li><b>Especialidade local</b><span>Direito Previdenciário + cidade no topo.</span></li>
+              <li><b>Benefícios organizados</b><span>Aposentadoria, BPC, pensão e negativa do INSS.</span></li>
+              <li><b>Processo explicado</b><span>O cliente entende documentos e próximos passos.</span></li>
+              <li><b>Confiança objetiva</b><span>Experiência, atendimento e prova social.</span></li>
+            </ul>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://pinheirocavalcanteadv.com.br/advogado-previdenciario-fortaleza/">Abrir em tela cheia ↗</button>
+          </div>
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>pinheirocavalcanteadv.com.br</b>/advogado-previdenciario-fortaleza/</span></div>
+              <div class="lpx-view" role="button" tabindex="0" data-lpx-open data-lpx-url="https://pinheirocavalcanteadv.com.br/advogado-previdenciario-fortaleza/" aria-label="Expandir referência de landing page previdenciária">
+                <div class="lpx-preview-fallback" aria-hidden="true"><span>Direito Previdenciário</span><strong>Seu benefício do INSS começa com uma análise clara</strong><small>Aposentadoria · BPC/LOAS · benefício negado</small></div>
+                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://pinheirocavalcanteadv.com.br/advogado-previdenciario-fortaleza/" title="Landing page previdenciária" sandbox="allow-scripts allow-same-origin" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="bancario">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP bancária construída para <span class="text-yellow">diagnosticar o contrato</span> antes da ação.</h4>
+            <p class="lpx-sub">Referência: Boyadjian Advogados. A página organiza financiamento, consignado, tarifas e busca e apreensão sem prometer resultado e com CTA de análise.</p>
+            <ul class="lpx-tags">
+              <li><b>Dor financeira no topo</b><span>Juros, parcelas e risco de perder o veículo.</span></li>
+              <li><b>Serviços por contrato</b><span>Financiamento, consignado e capital de giro.</span></li>
+              <li><b>Análise técnica</b><span>Taxa contratada comparada ao mercado.</span></li>
+              <li><b>CTA de pré-análise</b><span>Convite responsável e de baixo atrito.</span></li>
+            </ul>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://www.boyadjianadvogados.com.br/">Abrir em tela cheia ↗</button>
+          </div>
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>boyadjianadvogados.com.br</b>/</span></div>
+              <div class="lpx-view" role="button" tabindex="0" data-lpx-open data-lpx-url="https://www.boyadjianadvogados.com.br/" aria-label="Expandir referência de landing page de Direito Bancário">
+                <div class="lpx-preview-fallback" aria-hidden="true"><span>Direito Bancário</span><strong>Juros altos? O contrato é o ponto de partida.</strong><small>Financiamento · consignado · busca e apreensão</small></div>
+                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://www.boyadjianadvogados.com.br/" title="Landing page de Direito Bancário" sandbox="allow-scripts allow-same-origin" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lpx lpx--area anim-fade-up" data-delay="0.05" data-area-show="consumidor">
+          <div class="lpx-copy">
+            <span class="lpx-live"><i></i>Referência real, no ar</span>
+            <h4 class="lpx-title">Uma LP de Consumidor organizada pela <span class="text-yellow">situação que trouxe o cliente</span>.</h4>
+            <p class="lpx-sub">Referência: SPD Advocacia. A página parte do problema — negativação, cobrança, fraude ou voo — e conduz cada pessoa para a análise adequada.</p>
+            <ul class="lpx-tags">
+              <li><b>Problema antes do juridiquês</b><span>O visitante escolhe o que aconteceu.</span></li>
+              <li><b>Dores específicas</b><span>Nome sujo, fraude, compra e transporte aéreo.</span></li>
+              <li><b>Provas orientadas</b><span>Prints, protocolos e documentos necessários.</span></li>
+              <li><b>WhatsApp contextual</b><span>Contato já parte do problema selecionado.</span></li>
+            </ul>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://spd.adv.br/consumidor/">Abrir em tela cheia ↗</button>
+          </div>
+          <div class="lpx-show">
+            <div class="lpx-browser">
+              <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>spd.adv.br</b>/consumidor/</span></div>
+              <div class="lpx-view" role="button" tabindex="0" data-lpx-open data-lpx-url="https://spd.adv.br/consumidor/" aria-label="Expandir referência de landing page de Direito do Consumidor">
+                <div class="lpx-preview-fallback" aria-hidden="true"><span>Direito do Consumidor</span><strong>Quando a empresa erra, o consumidor tem direitos</strong><small>Negativação · cobrança · fraude · voo cancelado</small></div>
+                <div class="lpx-live-frame lpx-live-frame--static" data-w="1280"><iframe src="https://spd.adv.br/consumidor/" title="Landing page de Direito do Consumidor" sandbox="allow-scripts allow-same-origin" loading="lazy" tabindex="-1" referrerpolicy="no-referrer"></iframe></div>
                 <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
               </div>
             </div>
@@ -708,16 +821,16 @@
               <li><b>Autoridade profissional</b><span>Tempo de carreira e formação em destaque.</span></li>
               <li><b>CTA para consulta</b><span>Próximo passo visível desde a primeira dobra.</span></li>
             </ul>
-            <a class="lpx-btn" href="https://patriciatorresadvogada.com.br/advogada-de-familia/" target="_blank" rel="noopener">Abrir a referência no ar ↗</a>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://patriciatorresadvogada.com.br/advogada-de-familia/">Abrir em tela cheia ↗</button>
           </div>
 
           <div class="lpx-show">
             <div class="lpx-browser">
               <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>patriciatorresadvogada.com.br</b>/advogada-de-familia/</span></div>
-              <a class="lpx-view lpx-view--reference" href="https://patriciatorresadvogada.com.br/advogada-de-familia/" target="_blank" rel="noopener" aria-label="Abrir a landing page real de Patrícia Torres Advocacia">
+              <div class="lpx-view lpx-view--reference" role="button" tabindex="0" data-lpx-open data-lpx-url="https://patriciatorresadvogada.com.br/advogada-de-familia/" aria-label="Expandir a landing page real de Patrícia Torres Advocacia">
                 <img src="assets/images/lp-familia-referencia.jpg" alt="Primeira dobra da landing page de Direito de Família de Patrícia Torres Advocacia" width="1400" height="850" loading="lazy" />
-                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Abrir referência real</span>
-              </a>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
             </div>
           </div>
         </div>
@@ -733,16 +846,16 @@
               <li><b>Identidade de confiança</b><span>Imagem profissional e linguagem direta.</span></li>
               <li><b>WhatsApp imediato</b><span>CTA principal sem etapas intermediárias.</span></li>
             </ul>
-            <a class="lpx-btn" href="https://carolinearaujoadv.com.br/" target="_blank" rel="noopener">Abrir a referência no ar ↗</a>
+            <button class="lpx-btn" type="button" data-lpx-open data-lpx-url="https://carolinearaujoadv.com.br/">Abrir em tela cheia ↗</button>
           </div>
 
           <div class="lpx-show">
             <div class="lpx-browser">
               <div class="lpx-bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>carolinearaujoadv.com.br</b>/</span></div>
-              <a class="lpx-view lpx-view--reference" href="https://carolinearaujoadv.com.br/" target="_blank" rel="noopener" aria-label="Abrir a landing page real de Caroline Araújo Advocacia Criminal">
+              <div class="lpx-view lpx-view--reference" role="button" tabindex="0" data-lpx-open data-lpx-url="https://carolinearaujoadv.com.br/" aria-label="Expandir a landing page real de Caroline Araújo Advocacia Criminal">
                 <img src="assets/images/lp-criminal-referencia.jpg" alt="Primeira dobra da landing page de Direito Criminal de Caroline Araújo Advocacia" width="1400" height="850" loading="lazy" />
-                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Abrir referência real</span>
-              </a>
+                <span class="lpx-expand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Clique para expandir</span>
+              </div>
             </div>
           </div>
         </div>
@@ -755,18 +868,6 @@
           <h3 class="funnel-block__title">Aquisição — quem vê e o que vê</h3>
           <span class="funnel-block__line"></span>
         </header>
-
-        <div class="area-select anim-fade-up" data-delay="0.05">
-          <div class="prod-tabs area-tabs " role="tablist" aria-label="Área de atuação do escritório">
-            <button class="prod-tab area-tab is-active" type="button" role="tab" aria-selected="true" data-area-set="reclamante">Trabalhista reclamante</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="reclamada">Trabalhista reclamada</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="previdenciario">Previdenciário</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="bancario">Bancário</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="consumidor">Consumidor</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="familia">Família</button>
-            <button class="prod-tab area-tab" type="button" role="tab" aria-selected="false" data-area-set="criminal">Criminal</button>
-          </div>
-        </div>
 
         <div class="funnel-grid funnel-grid--primary">
         <!-- 1. Segmentação de público (antes do anúncio sair) -->
@@ -2912,7 +3013,7 @@
   ============================================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=20261103d"></script>
+  <script src="js/main.js?v=20261106e"></script>
   <script src="js/call-prep.js?v=20261005d"></script>
 
   <!-- Gate de acesso · valida senha do time -->
@@ -2971,8 +3072,8 @@
     })();
   </script>
 <dialog class="lpx-dlg" id="lpx-dlg" aria-label="Landing page modelo em tela cheia">
-  <div class="lpx-dlg__bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url">https://<b>robsongagoadvogados.com.br</b>/trabalhista/</span><a class="lpx-dlg__open" href="https://robsongagoadvogados.com.br/trabalhista/" target="_blank" rel="noopener">Abrir no ar ↗</a><button type="button" class="lpx-dlg__x" aria-label="Fechar">×</button></div>
-  <iframe data-src="https://robsongagoadvogados.com.br/trabalhista/" title="Landing page modelo — role para navegar" sandbox="" referrerpolicy="no-referrer"></iframe>
+  <div class="lpx-dlg__bar"><span class="lpx-dots"><i></i><i></i><i></i></span><span class="lpx-url" data-lpx-dialog-url>Landing page de referência</span><a class="lpx-dlg__open" href="#" target="_blank" rel="noopener">Abrir no ar ↗</a><button type="button" class="lpx-dlg__x" aria-label="Fechar">×</button></div>
+  <iframe title="Landing page de referência" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
 </dialog>
 </body>
 </html>
